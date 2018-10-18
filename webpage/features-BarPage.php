@@ -1,3 +1,10 @@
+<?php
+$connect = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+$query = '';
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en-US" class="scheme_original">
 <head>
@@ -6,14 +13,6 @@
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 	<title>Oldstory – Whiskey Bar HTML</title>
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />
@@ -25,6 +24,23 @@
 	<link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
 	
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/prettyphoto/css/prettyPhoto.min.css">
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(<?php echo $jsonTable; ?>);
+
+        var options = {
+          title: 'Top Drinkers who are Largest Spenders',
+          legend: { position: 'none' },
+        };
+
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 
 </head>
 

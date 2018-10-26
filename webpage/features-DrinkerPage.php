@@ -216,13 +216,13 @@ $query = '';
 						<a href="#">Features</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-BarPage.html">Bar Page</a>
+								<a href="features-BarPage.php">Bar Page</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-DrinkerPage.html">Drinker Page</a>
+								<a href="features-DrinkerPage.php">Drinker Page</a>
 							</li>
 							<li class="menu-item current-menu-item">
-								<a href="features-BeerPage.html">Beer Page</a>
+								<a href="features-BeerPage.php">Beer Page</a>
 							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">Gallery</a>
@@ -336,40 +336,7 @@ $query = '';
 												<h1 class="sc_title margin_top_tiny- margin_bottom_large">Accordion</h1>
 												<div class="sc_accordion" data-active="0">
 													<div class="sc_accordion_item odd first">
-														<h3 class="sc_accordion_title">
-															<span class="sc_accordion_icon sc_accordion_icon_closed icon-down"></span>
-															<span class="sc_accordion_icon sc_accordion_icon_opened icon-cancel"></span>
-															Title 1
-														</h3>
-														<div class="sc_accordion_content">
-															<div class="mbn_ne">
-																<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem, quia voluptas sit.</p>
-															</div>
-														</div>
-													</div>
-													<div class="sc_accordion_item even">
-														<h3 class="sc_accordion_title">
-															<span class="sc_accordion_icon sc_accordion_icon_closed icon-down"></span>
-															<span class="sc_accordion_icon sc_accordion_icon_opened icon-cancel"></span>
-															Title 2
-														</h3>
-														<div class="sc_accordion_content">
-															<div class="mbn_ne">
-																<p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-															</div>
-														</div>
-													</div>
-													<div class="sc_accordion_item odd">
-														<h3 class="sc_accordion_title">
-															<span class="sc_accordion_icon sc_accordion_icon_closed icon-down"></span>
-															<span class="sc_accordion_icon sc_accordion_icon_opened icon-cancel"></span>
-															Title 3
-														</h3>
-														<div class="sc_accordion_content">
-															<div class="mbn_ne">
-																<p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-															</div>
-														</div>
+
 													</div>
 												</div>
 											</div>

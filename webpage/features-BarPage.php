@@ -63,7 +63,7 @@ $query = '';
 				</div>
 				<div class="contact_logo">
 					<div class="logo">
-						<a href="index.html">
+						<a href="index.php">
 							<img src="images/logo.png" class="logo_main" alt="" width="132" height="54">
 						<img src="images/logo.png" class="logo_fixed" alt="" width="132" height="54"></a>
 					</div>
@@ -83,7 +83,7 @@ $query = '';
 	<div class="pushy_inner">
 		<a href="#" class="close-pushy"></a>
 		<div class="logo">
-			<a href="index.html">
+			<a href="index.php">
 				<img src="images/logo.png" class="logo_side" alt="" width="132" height="54">
 			</a>
 		</div>
@@ -107,13 +107,13 @@ $query = '';
 						<a href="#">Gallery</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-masonry.html">Masonry</a>
+								<a href="features-gallery-masonry.php">Masonry</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-grid.html">Grid</a>
+								<a href="features-gallery-grid.php">Grid</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-cobbles.html">Cobbles</a>
+								<a href="features-gallery-cobbles.php">Cobbles</a>
 							</li>
 						</ul>
 					</li>
@@ -123,10 +123,10 @@ $query = '';
 				<a href="#">About us</a>
 				<ul class="sub-menu">
 					<li class="menu-item menu-item-object-page ">
-						<a href="about-us-about-us.html">About us</a>
+						<a href="about-us-about-us.php">About us</a>
 					</li>
 					<li class="menu-item ">
-						<a href="about-us-bartender.html">Bartender&#8217;s Page</a>
+						<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
 					</li>
 				</ul>
 			</li>
@@ -134,19 +134,19 @@ $query = '';
 				<a href="#">News</a>
 				<ul class="sub-menu">
 					<li class="menu-item ">
-						<a href="news-post-formats.html">Post Formats</a>
+						<a href="news-post-formats.php">Post Formats</a>
 					</li>
 					<li class="menu-item ">
-						<a href="news-classic.html">Classic Style</a>
+						<a href="news-classic.php">Classic Style</a>
 					</li>
 					<li class="menu-item menu-item-has-children ">
 						<a href="#">Masonry Layout</a>
 						<ul class="sub-menu">
 							<li class="menu-item ">
-								<a href="news-masonry-layout-2-columns.html">Masonry (2 columns)</a>
+								<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
 							</li>
 							<li class="menu-item ">
-								<a href="news-masonry-layout-3-columns.html">Masonry (3 columns)</a>
+								<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
 							</li>
 						</ul>
 					</li>
@@ -154,34 +154,34 @@ $query = '';
 						<a href="#">Portfolio Layout</a>
 						<ul class="sub-menu">
 							<li class="menu-item ">
-								<a href="news-portfolio-layout-2-columns.html">Portfolio (2 columns)</a>
+								<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
 							</li>
 							<li class="menu-item ">
-								<a href="news-portfolio-layout-3-columns.html">Portfolio (3 columns)</a>
+								<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 			</li>
 			<li class="menu-item menu-item-object-page ">
-				<a href="menu.html">Menu</a>
+				<a href="menu.php">Menu</a>
 			</li>
 			<li class="menu-item menu-item-has-children ">
 				<a href="#">Store</a>
 				<ul class="sub-menu">
 					<li class="menu-item menu-item-object-page ">
-						<a href="store-shop.html">Shop</a>
+						<a href="store-shop.php">Shop</a>
 					</li>
 					<li class="menu-item menu-item-object-page ">
-						<a href="store-cart.html">Cart</a>
+						<a href="store-cart.php">Cart</a>
 					</li>
 					<li class="menu-item menu-item-object-page ">
-						<a href="store-checkout.html">Checkout</a>
+						<a href="store-checkout.php">Checkout</a>
 					</li>
 				</ul>
 			</li>
 			<li class="menu-item menu-item-object-page ">
-				<a href="contacts.html">Contacts</a>
+				<a href="contacts.php">Contacts</a>
 			</li>
 		</ul>
 	</div>
@@ -193,7 +193,7 @@ $query = '';
 	<div class="content_wrap">
 		<div class="menu_button icon-menu"></div>
 		<div class="logo">
-			<a href="index.html">
+			<a href="index.php">
 				<img src="images/logo.png" class="logo_main" alt="" width="132" height="54">
 			</a>
 		</div>
@@ -210,25 +210,25 @@ $query = '';
 						<a href="#">Features</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page current-menu-item">
-								<a href="features-BarPage.html">Bar Page</a>
+								<a href="features-BarPage.php">Bar Page</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-DrinkerPage.html">Drinker Page</a>
+								<a href="features-DrinkerPage.php">Drinker Page</a>
 							</li>
 							<li class="menu-item ">
-								<a href="features-BeerPage.html">Beer Page</a>
+								<a href="features-BeerPage.php">Beer Page</a>
 							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">Gallery</a>
 								<ul class="sub-menu">
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-masonry.html">Masonry</a>
+										<a href="features-gallery-masonry.php">Masonry</a>
 									</li>
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-grid.html">Grid</a>
+										<a href="features-gallery-grid.php">Grid</a>
 									</li>
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-cobbles.html">Cobbles</a>
+										<a href="features-gallery-cobbles.php">Cobbles</a>
 									</li>
 								</ul>
 							</li>
@@ -238,10 +238,10 @@ $query = '';
 						<a href="#">About us</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page ">
-								<a href="about-us-about-us.html">About us</a>
+								<a href="about-us-about-us.php">About us</a>
 							</li>
 							<li class="menu-item ">
-								<a href="about-us-bartender.html">Bartender&#8217;s Page</a>
+								<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
 							</li>
 						</ul>
 					</li>
@@ -249,19 +249,19 @@ $query = '';
 						<a href="#">News</a>
 						<ul class="sub-menu">
 							<li class="menu-item ">
-								<a href="news-post-formats.html">Post Formats</a>
+								<a href="news-post-formats.php">Post Formats</a>
 							</li>
 							<li class="menu-item ">
-								<a href="news-classic.html">Classic Style</a>
+								<a href="news-classic.php">Classic Style</a>
 							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">Masonry Layout</a>
 								<ul class="sub-menu">
 									<li class="menu-item ">
-										<a href="news-masonry-layout-2-columns.html">Masonry (2 columns)</a>
+										<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
 									</li>
 									<li class="menu-item ">
-										<a href="news-masonry-layout-3-columns.html">Masonry (3 columns)</a>
+										<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
 									</li>
 								</ul>
 							</li>
@@ -269,34 +269,34 @@ $query = '';
 								<a href="#">Portfolio Layout</a>
 								<ul class="sub-menu">
 									<li class="menu-item ">
-										<a href="news-portfolio-layout-2-columns.html">Portfolio (2 columns)</a>
+										<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
 									</li>
 									<li class="menu-item ">
-										<a href="news-portfolio-layout-3-columns.html">Portfolio (3 columns)</a>
+										<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 					<li class="menu-item menu-item-object-page ">
-						<a href="menu.html">Menu</a>
+						<a href="menu.php">Menu</a>
 					</li>
 					<li class="menu-item menu-item-has-children ">
 						<a href="#">Store</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page ">
-								<a href="store-shop.html">Shop</a>
+								<a href="store-shop.php">Shop</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="store-cart.html">Cart</a>
+								<a href="store-cart.php">Cart</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="store-checkout.html">Checkout</a>
+								<a href="store-checkout.php">Checkout</a>
 							</li>
 						</ul>
 					</li>
 					<li class="menu-item menu-item-object-page ">
-						<a href="contacts.html">Contacts</a>
+						<a href="contacts.php">Contacts</a>
 					</li>
 				</ul>
 			</nav>
@@ -325,106 +325,25 @@ $query = '';
 
 								<section class="">
 									<div class="container">
-										<h1 class="sc_title margin_top_tiny-">Heading 1</h1>
-										<h2 class="sc_title">Heading 2</h2>
-										<h3 class="sc_title">Heading 3</h3>
-										<h4 class="sc_title">Heading 4</h4>
-										<h5 class="sc_title">Heading 5</h5>
-										<h6 class="sc_title margin_bottom_null">Heading 6</h6>
+										<h1 class="sc_title margin_top_tiny-">Top 10 drinkers</h1>
+									</div>
+									<div id="chart_div" style="width: 100%; height: 500px"></div>
+								</section>
+
+								<section class="">
+									<div class="container">
+										<h1 class="sc_title margin_top_huge margin_bottom_large">10 Most popular Beers</h1>
 									</div>
 								</section>
 
 								<section class="">
 									<div class="container">
-										<h1 class="sc_title margin_top_huge margin_bottom_large">Dropcaps</h1>
-										<div class="columns_wrap sc_columns sc_columns_count_2">
-											<div class="column-1_2 sc_column_item odd first">
-												<div class="sc_dropcaps sc_dropcaps_style_1 margin_bottom_2em">
-													<span class="sc_dropcaps_item">C</span>Epsum factorial non deposit qd pro quo hic escorol. Olypian qarrels et gorilla congolium sic ad nauseum. Svlaki autem<br />
-													defacto lingo est inlay. Marquee selectus non prov ncongruous feline nolo condre. Gratuitous octopus niacin, sodium glutimate.</div>
-													<div class="sc_dropcaps sc_dropcaps_style_2 margin_top_medium">
-													<span class="sc_dropcaps_item">C</span>
-													<p></p>
-													<h3>olypian qarrels etorila congolium sicad use</h3>
-													<p>Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo condre.</p>
-												</div>
-											</div><div class="column-1_2 sc_column_item sc_column_item_2 even">
-												<div class="sc_dropcaps sc_dropcaps_style_4">
-													<span class="sc_dropcaps_item">C</span>
-													<p></p>
-													<h3>olypian qarrels etorila congolium sicad use</h3>
-													<p>Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo condre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hic estrogen. Glorious baklava ex librus hup hey ad infinitum.<br />
-													Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quic escorol. Marquee selectus non provisio.</p>
-												</div>
-											</div>
-										</div>
+										<h1 class="sc_title margin_top_huge margin_bottom_large">10 Best Selling manufacturers</h1>
 									</div>
 								</section>
-
-								<section class="">
-									<div class="container">
-										<h1 class="sc_title margin_top_huge margin_bottom_large">Blockquotes</h1>
-										<div class="mbn_ne">
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-										</div>
-										<blockquote cite="#" class="sc_quote margin_top_medium margin_bottom_small  sc_quote_style2">
-											<p>Our Cocktail Menu is Inspired by Vintage and Contemporary Recipes</p>
-											<p class="sc_quote_title">
-												<a href="#">- marta rich</a>
-											</p>
-										</blockquote>
-										<div class="mbn_ne">
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-										</div>
-										<blockquote cite="#" class="sc_quote margin_top_large margin_bottom_small margin_left_huge">
-											<p>Ut wisi enim ad minim veniam, quis nos<br />
-											trud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex.</p>
-											<p class="sc_quote_title">
-												<a href="#">- marta rich</a>
-											</p>
-										</blockquote>
-										<div class="mbn_ne">
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-										</div>
-									</div>
-								</section>
-
 								<section>
 									<div class="container">
-										<h1 class="sc_title margin_top_huge margin_bottom_large">Image alignment</h1>
-										<div class="mb16em mbn_ne">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-										</div>
-										<figure class="sc_image  alignleft sc_image_shape_square mb2 margin_top_tiny">
-											<img src="images/image-10.jpg" alt="" />
-											<figcaption>
-												<span></span> 
-												Title of Image
-											</figcaption>
-										</figure>
-										<div class="mbn_ne">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-										</div>
-										<div class="mbn_ne mt155em mb19em">
-											<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugi, sed quia consequunatione voluptatem sequi nesciunt.</p>
-										</div>
-										<div class="mbn_ne mb16em">
-											<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-										</div>
-										<figure class="sc_image  alignright sc_image_shape_square hover_iconed mb2 margin_top_tiny">
-											<a href="images/image-9.jpg">
-												<img src="images/image-9.jpg" alt="" />
-											</a>
-										</figure>
-										<div class="mbn_ne mb165em">
-											<p>Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis.</p>
-										</div>
-										<div class="mbn_ne mb2em">
-											<p>Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis.</p>
-										</div>
-										<div class="mbn_ne">
-											<p>Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim.</p>
-										</div>
+										
 									</div>
 								</section>
 
@@ -921,7 +840,7 @@ $query = '';
 				<div class="contacts_wrap_inner">
 					<div class="content_wrap">
 						<div class="logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="images/logo_footer.png" class="logo_footer" alt="" width="132" height="54">
 							</a>
 						</div>

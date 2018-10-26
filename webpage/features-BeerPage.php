@@ -69,7 +69,7 @@ $query = '';
 				</div>
 				<div class="contact_logo">
 					<div class="logo">
-						<a href="index.html">
+						<a href="index.php">
 							<img src="images/logo.png" class="logo_main" alt="" width="132" height="54">
 						<img src="images/logo.png" class="logo_fixed" alt="" width="132" height="54"></a>
 					</div>
@@ -89,7 +89,7 @@ $query = '';
 	<div class="pushy_inner">
 		<a href="#" class="close-pushy"></a>
 		<div class="logo">
-			<a href="index.html">
+			<a href="index.php">
 				<img src="images/logo.png" class="logo_side" alt="" width="132" height="54">
 			</a>
 		</div>
@@ -113,13 +113,13 @@ $query = '';
 						<a href="#">Gallery</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-masonry.html">Masonry</a>
+								<a href="features-gallery-masonry.php">Masonry</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-grid.html">Grid</a>
+								<a href="features-gallery-grid.php">Grid</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-cobbles.html">Cobbles</a>
+								<a href="features-gallery-cobbles.php">Cobbles</a>
 							</li>
 						</ul>
 					</li>
@@ -129,10 +129,10 @@ $query = '';
 				<a href="#">About us</a>
 				<ul class="sub-menu">
 					<li class="menu-item menu-item-object-page ">
-						<a href="about-us-about-us.html">About us</a>
+						<a href="about-us-about-us.php">About us</a>
 					</li>
 					<li class="menu-item ">
-						<a href="about-us-bartender.html">Bartender&#8217;s Page</a>
+						<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
 					</li>
 				</ul>
 			</li>
@@ -140,19 +140,19 @@ $query = '';
 				<a href="#">News</a>
 				<ul class="sub-menu">
 					<li class="menu-item ">
-						<a href="news-post-formats.html">Post Formats</a>
+						<a href="news-post-formats.php">Post Formats</a>
 					</li>
 					<li class="menu-item ">
-						<a href="news-classic.html">Classic Style</a>
+						<a href="news-classic.php">Classic Style</a>
 					</li>
 					<li class="menu-item menu-item-has-children ">
 						<a href="#">Masonry Layout</a>
 						<ul class="sub-menu">
 							<li class="menu-item ">
-								<a href="news-masonry-layout-2-columns.html">Masonry (2 columns)</a>
+								<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
 							</li>
 							<li class="menu-item ">
-								<a href="news-masonry-layout-3-columns.html">Masonry (3 columns)</a>
+								<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
 							</li>
 						</ul>
 					</li>
@@ -160,34 +160,34 @@ $query = '';
 						<a href="#">Portfolio Layout</a>
 						<ul class="sub-menu">
 							<li class="menu-item ">
-								<a href="news-portfolio-layout-2-columns.html">Portfolio (2 columns)</a>
+								<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
 							</li>
 							<li class="menu-item ">
-								<a href="news-portfolio-layout-3-columns.html">Portfolio (3 columns)</a>
+								<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 			</li>
 			<li class="menu-item menu-item-object-page ">
-				<a href="menu.html">Menu</a>
+				<a href="menu.php">Menu</a>
 			</li>
 			<li class="menu-item menu-item-has-children ">
 				<a href="#">Store</a>
 				<ul class="sub-menu">
 					<li class="menu-item menu-item-object-page ">
-						<a href="store-shop.html">Shop</a>
+						<a href="store-shop.php">Shop</a>
 					</li>
 					<li class="menu-item menu-item-object-page ">
-						<a href="store-cart.html">Cart</a>
+						<a href="store-cart.php">Cart</a>
 					</li>
 					<li class="menu-item menu-item-object-page ">
-						<a href="store-checkout.html">Checkout</a>
+						<a href="store-checkout.php">Checkout</a>
 					</li>
 				</ul>
 			</li>
 			<li class="menu-item menu-item-object-page ">
-				<a href="contacts.html">Contacts</a>
+				<a href="contacts.php">Contacts</a>
 			</li>
 		</ul>
 	</div>
@@ -199,7 +199,7 @@ $query = '';
 	<div class="content_wrap">
 		<div class="menu_button icon-menu"></div>
 		<div class="logo">
-			<a href="index.html">
+			<a href="index.php">
 				<img src="images/logo.png" class="logo_main" alt="" width="132" height="54">
 			</a>
 		</div>
@@ -216,25 +216,25 @@ $query = '';
 						<a href="#">Features</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-BarPage.html">Bar Page</a>
+								<a href="features-BarPage.php">Bar Page</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-DrinkerPage.html">Drinker Page</a>
+								<a href="features-DrinkerPage.php">Drinker Page</a>
 							</li>
 							<li class="menu-item current-menu-item">
-								<a href="features-BeerPage.html">Beer Page</a>
+								<a href="features-BeerPage.php">Beer Page</a>
 							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">Gallery</a>
 								<ul class="sub-menu">
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-masonry.html">Masonry</a>
+										<a href="features-gallery-masonry.php">Masonry</a>
 									</li>
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-grid.html">Grid</a>
+										<a href="features-gallery-grid.php">Grid</a>
 									</li>
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-cobbles.html">Cobbles</a>
+										<a href="features-gallery-cobbles.php">Cobbles</a>
 									</li>
 								</ul>
 							</li>
@@ -244,10 +244,10 @@ $query = '';
 						<a href="#">About us</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page ">
-								<a href="about-us-about-us.html">About us</a>
+								<a href="about-us-about-us.php">About us</a>
 							</li>
 							<li class="menu-item ">
-								<a href="about-us-bartender.html">Bartender&#8217;s Page</a>
+								<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
 							</li>
 						</ul>
 					</li>
@@ -255,19 +255,19 @@ $query = '';
 						<a href="#">News</a>
 						<ul class="sub-menu">
 							<li class="menu-item ">
-								<a href="news-post-formats.html">Post Formats</a>
+								<a href="news-post-formats.php">Post Formats</a>
 							</li>
 							<li class="menu-item ">
-								<a href="news-classic.html">Classic Style</a>
+								<a href="news-classic.php">Classic Style</a>
 							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">Masonry Layout</a>
 								<ul class="sub-menu">
 									<li class="menu-item ">
-										<a href="news-masonry-layout-2-columns.html">Masonry (2 columns)</a>
+										<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
 									</li>
 									<li class="menu-item ">
-										<a href="news-masonry-layout-3-columns.html">Masonry (3 columns)</a>
+										<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
 									</li>
 								</ul>
 							</li>
@@ -275,34 +275,34 @@ $query = '';
 								<a href="#">Portfolio Layout</a>
 								<ul class="sub-menu">
 									<li class="menu-item ">
-										<a href="news-portfolio-layout-2-columns.html">Portfolio (2 columns)</a>
+										<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
 									</li>
 									<li class="menu-item ">
-										<a href="news-portfolio-layout-3-columns.html">Portfolio (3 columns)</a>
+										<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 					<li class="menu-item menu-item-object-page ">
-						<a href="menu.html">Menu</a>
+						<a href="menu.php">Menu</a>
 					</li>
 					<li class="menu-item menu-item-has-children ">
 						<a href="#">Store</a>
 						<ul class="sub-menu">
 							<li class="menu-item menu-item-object-page ">
-								<a href="store-shop.html">Shop</a>
+								<a href="store-shop.php">Shop</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="store-cart.html">Cart</a>
+								<a href="store-cart.php">Cart</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="store-checkout.html">Checkout</a>
+								<a href="store-checkout.php">Checkout</a>
 							</li>
 						</ul>
 					</li>
 					<li class="menu-item menu-item-object-page ">
-						<a href="contacts.html">Contacts</a>
+						<a href="contacts.php">Contacts</a>
 					</li>
 				</ul>
 			</nav>
@@ -397,7 +397,7 @@ $query = '';
 				<div class="contacts_wrap_inner">
 					<div class="content_wrap">
 						<div class="logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="images/logo_footer.png" class="logo_footer" alt="" width="132" height="54">
 							</a>
 						</div>

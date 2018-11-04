@@ -317,6 +317,55 @@ $result = mysqli_query($connect, $query);
 						<article class="post_item post_item_single page">
 							<div class="post_content">
 
+								<section>
+									<div class="content table-responsive table-full-width">
+											<h1 class="sc_title margin_top_tiny-">Bar List</h1>
+											<?php
+											error_reporting(0);
+											$servername = "rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com";
+											$username = "yuyangchen0122";
+											$password = "a123123q45";
+											$dbname = "RUCS336Group66";
+											$datatable = "BAR"; // MySQL table name
+											$results_per_page = 20; // number of results per page
+											 
+											// Create connection
+											$conn = new mysqli($servername, $username, $password, $dbname);
+											// Check connection
+											if ($conn->connect_error) {
+											    die("Connection failed: " . $conn->connect_error);
+											} 
+											?>
+											<?php
+											if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; 
+											$start_from = ($page-1) * $results_per_page;
+											$sql = "SELECT * FROM ".$datatable." GROUP BY Bar LIMIT $start_from, ".$results_per_page;
+											$rs_result = $conn->query($sql); 
+											?> 
+											<table class="table table-striped">
+											<?php
+                        					$fields_num = mysqli_num_fields($rs_result);
+                        					// printing table headers
+                            				for($i=0; $i<$fields_num; $i++){
+                                				$field = mysqli_fetch_field($rs_result);
+                                				echo "<td>{$field->name}</td>";
+                            				}
+                            				echo "</tr>\n";
+                                    		// printing table rows
+                            				while($row = mysqli_fetch_row($rs_result)){
+                                				echo "<tr>";
+                                        	// $row is array... foreach( .. ) puts every element
+                                        	// of $row to $cell variable
+                                				foreach($row as $cell)
+                                    			echo "<td>$cell</td>";
+                                				echo "</tr>\n";
+                            				}
+                            				mysqli_free_result($rs_result);
+                            				?>
+											</table>
+									</div>
+								</section>
+
 								<section class="">
 									<div class="container">
 										<h1 class="sc_title margin_top_tiny-">Top 10 drinkers</h1>

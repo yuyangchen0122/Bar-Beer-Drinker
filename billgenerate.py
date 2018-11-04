@@ -42,14 +42,13 @@ bar_bar_license = bar_df.License.tolist()
 bar_name = bar_df.Bar.tolist()
 
 
-def lookup_bar_state(License_list, State_list, License_id, Bar_list):
+def lookup_bar_state(License_list, State_list, License_id):
     index = License_list.index(License_id)
     return State_list[index]
-    return Bar_list[index]
 
 
 states = drinker_df.State.tolist()
-drinker_name = drinker_df.Name.tolist()
+drinker_ssn = drinker_df.SSN.tolist()
 
 file = open('BILL.csv', 'w')
 
@@ -68,10 +67,10 @@ with open('BAR.csv') as csv_file:
                 ran_time = random_time(open_hour, close_hour)
                 date = random_date()
 
-                st = lookup_bar_state(bar_bar_license, bar_state, bar_license, bar_name)
-                person_name = drinker_name[random_person(states, st)]
+                st = lookup_bar_state(bar_bar_license, bar_state, bar_license, )
+                person_ssn = drinker_ssn[random_person(states, st)]
                 s = ','
-                seq = (ran_time, str(date), str(person_name), str(bar_license), str(bar_name))
+                seq = (ran_time, str(date), str(person_ssn), str(bar_license))
                 temp = s.join(seq)
                 file.write(temp + '\n')
                 print(line_count)

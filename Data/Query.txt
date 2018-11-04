@@ -1,0 +1,62 @@
+Pattern Testing Query
+Group #66
+Yuyang Chen   168008482  yc791
+Zihao Ding    166000492  zd75
+
+
+Pattern 1: Transactions/bills  cannot be issued  at times when the given bar is closed.
+
+Query:
+select exists (select * from
+(Select count(*) as c from
+(SELECT BILL.Time, BAR.License, BAR.Open, BAR.Close FROM BILL, BAR
+where BAR.License = BILL.License) as temp
+where time(temp.Time) between time(temp.Open) and time(temp.Close)) b
+where BILL.c <> 22314)
+
+Result:
+18:45:45	select exists (select * from
+(Select count(*) as c from
+(SELECT BILL.Time, BAR.License, BAR.Open, BAR.Close FROM BILL, BAR
+where BAR.License = BILL.License) as temp
+where time(temp.Time) between time(temp.Open) and time(temp.Close)) b
+where BILL.c <> 22314)	0 row(s) returned
+
+Pattern 2: Drinkers cannot frequent bars in different state.
+
+Query:
+SELECT * FROM BarBeerDrinker.Frequents f1,BarBeerDrinker.Frequents f2
+WHERE f1.SSN=f2.SSN AND f1.BarState<>f2.DrinkerState;
+
+Result:
+18:43:29	SELECT * FROM BarBeerDrinker.Frequents f1,BarBeerDrinker.Frequents f2 WHERE f1.SSN=f2.SSN AND f1.BarState<>f2.DrinkerState	0 row(s) returned	18.709 sec / 0.000021 sec
+
+
+Pattern 3: For every two beers, b1 and b2, different bars may charge differently for b1 and b2 but b1 should either be less expensive than b2 in ALL bars or more expensive than b2 in ALL bars.  Cannot be the case that in one bar Corona is more expensive than Bud and in another Bud is more expensive than Corona.  But Corona may be more expensive than Bud in one bar, and have the same price as Bud in another.
+
+Query:
+SELECT EXISTS 
+(SELECT a1.ItemID,a2.ItemID FROM
+(SELECT ItemID, MAX(Price) AS max_price, MIN(Price) AS min_price 
+FROM Sell 
+GROUP BY ItemID
+ORDER BY max_price) a1,
+(SELECT ItemID, MAX(Price) AS max_price, MIN(Price) AS min_price 
+FROM Sell 
+GROUP BY ItemID
+ORDER BY max_price) a2
+WHERE (a1.max_price > a2.min_price AND a1.max_price < a2.max_price) OR (a1.min_price > a2.min_price AND a1.min_price < a2.max_price) AND (a1.ItemID <> a2.ItemID))
+
+Result:
+
+18:48:02	SELECT EXISTS 
+(SELECT a1.ItemID,a2.ItemID FROM
+(SELECT ItemID, MAX(Price) AS max_price, MIN(Price) AS min_price 
+FROM Sell 
+GROUP BY ItemID
+ORDER BY max_price) a1,
+(SELECT ItemID, MAX(Price) AS max_price, MIN(Price) AS min_price 
+FROM Sell 
+GROUP BY ItemID
+ORDER BY max_price) a2
+WHERE (a1.max_price > a2.min_price AND a1.max_price < a2.max_price) OR (a1.min_price > a2.min_price AND a1.min_price < a2.max_price) AND (a1.ItemID <> a2.ItemID))		0 row(s) returned	

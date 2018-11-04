@@ -1,6 +1,8 @@
 <?php
 $connect = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-$query = '';
+$query = 'SELECT id, State, COUNT(State) AS AmountOfPeople FROM BarBeerDrinker.DRINKER GROUP BY State ORDER BY AmountOfPeople DESC LIMIT 10;';
+
+$result = mysqli_query($connect, $query);
 ?>
 
 
@@ -27,19 +29,27 @@ $query = '';
 
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable(<?php echo $jsonTable; ?>);
+      google.charts.load('visualization', '1', {packages: ['corechart', 'bar']});
+      google.charts.setOnLoadCallback(drawMaterial);
+
+       function drawMaterial() {
+       var data = google.visualization.arrayToDataTable([
+       	['State','AmountOfPeople'],
+       	<?php 
+          while($row = mysqli_fetch_array($result)){
+            echo "['".$row[1]."', ".$row[2]."],";  
+          }
+        ?>
+        ]);
 
         var options = {
-          title: 'Top Drinkers who are Largest Spenders',
-          legend: { position: 'none' },
+          title: 'Top Ten Drinker',
+          bars: 'horizontal'
         };
 
-        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
+        var material = new google.charts.Bar(document.getElementById('barchart'));
+          material.draw(data, options);
+         }
     </script>
 
 </head>
@@ -91,33 +101,17 @@ $query = '';
 			<li class="menu-item menu-item-object-page ">
 				<a href="index.php">Home</a>
 			</li>
-			<li class="menu-item current-menu-ancestor menu-item-has-children">
-				<a href="#">Features</a>
-				<ul class="sub-menu">
-					<li class="menu-item menu-item-object-page ">
-						<a href="features-BarPage.php">Bar Page</a>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="features-DrinkerPage.php">Drinker Page</a>
-					</li>
-					<li class="menu-item ">
-						<a href="features-BeerPage.php">Beer Page</a>
-					</li>
-					<li class="menu-item  menu-item-has-children">
-						<a href="#">Gallery</a>
-						<ul class="sub-menu">
-							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-masonry.php">Masonry</a>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-grid.php">Grid</a>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-cobbles.php">Cobbles</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
+			<li class="menu-item menu-item-object-page ">
+				<a href="features-BarPage.php">Bar Page</a>
+			</li>
+			<li class="menu-item menu-item-object-page ">
+				<a href="features-DrinkerPage.php">Drinker Page</a>
+			</li>
+			<li class="menu-item menu-item-object-page ">
+				<a href="features-BeerPage.php">Beer Page</a>
+			</li>
+			<li class="menu-item menu-item-object-page ">
+				<a href="features-query.php">SQL Query Page</a>
 			</li>
 			<li class="menu-item menu-item-has-children ">
 				<a href="#">About us</a>
@@ -327,7 +321,7 @@ $query = '';
 									<div class="container">
 										<h1 class="sc_title margin_top_tiny-">Top 10 drinkers</h1>
 									</div>
-									<div id="chart_div" style="width: 100%; height: 500px"></div>
+									<div id="barchart" style="width: 100%; height: 40em;"></div>
 								</section>
 
 								<section class="">

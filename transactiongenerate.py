@@ -31,25 +31,22 @@ sell_item_code_list = sells.ItemID.tolist()
 sell_price_list = sells.Price.tolist()
 
 bill_license_list = bill.License.tolist()
-bill_transaction_id_list = bill.TransactionID.tolist()
-bill_name_list = bill.Bar.tolist()
-
+bill_id_list = bill.BillID.tolist()
 
 file = open('transaction.csv', 'w')
 line_count = 0
 
 
-for i in range(len(bill_transaction_id_list)):
-    t = random.randint(1, 12)
+for i in range(len(bill_id_list)):
+    t = random.randint(2, 5)
 
     for j in range(t):
-        transaction_id = bill_transaction_id_list[i]
+        bill_id = bill_id_list[i]
         bar_license = bill_license_list[i]
-        bar_name = bill_name_list[i]
         ind = random_item(sell_license_list,bar_license)
         item = lookup_item_price(ind, sell_item_code_list, sell_price_list)
         s = ','
-        seq = (str(bar_name), str(bar_license), str(transaction_id), str(item))
+        seq = (str(bar_license), str(bill_id), str(item))
         temp = s.join(seq)
         file.write(temp + '\n')
         print(line_count)

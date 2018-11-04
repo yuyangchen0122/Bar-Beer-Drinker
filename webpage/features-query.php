@@ -275,7 +275,7 @@
 											<h3 class="page_subtitle">Please type in your query here</h3>
 											<p class="page_description">
 												Please follow the SQL rules, you can get from the below link
-												<a href="https://www.w3schools.com/sql/"><font color = 'red'>Clike me -_-</a>.
+												<a href="https://www.w3schools.com/sql/">Clike me -_-</a>.
 											</p>
 											<div class="page_search">
 												<div class="search_wrap search_style_regular search_state_fixed">
@@ -295,35 +295,36 @@
 												</div>
 											</div>
 											<div>
-												<table class="table table-striped">
-													<?php
-													$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-													$query = $_POST['inputquery'];
-													$result = mysqli_query($db,$query);
+												<div class="content table-responsive table-full-width">
+													<table class="table table-striped">
+														<?php
+														$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+														$query = $_POST['inputquery'];
+														$result = mysqli_query($db,$query);
 
 
-													if (isset($_POST['modify_query'])) {
-														$fields_num = mysqli_num_fields($result);
-														echo "<table border='1'><tr>";
-														// printing table headers
-														for($i=0; $i<$fields_num; $i++){
-															$field = mysqli_fetch_field($result);
-															echo "<td>{$field->name}</td>";
-														}
-														echo "</tr>\n";
-														// printing table rows
-														while($row = mysqli_fetch_row($result)){
-															echo "<tr>";
-															// $row is array... foreach( .. ) puts every element
-															// of $row to $cell variable
-															foreach($row as $cell)
-															echo "<td>$cell</td>";
+														if (isset($_POST['modify_query'])) {
+															$fields_num = mysqli_num_fields($result);
+															// printing table headers
+															for($i=0; $i<$fields_num; $i++){
+																$field = mysqli_fetch_field($result);
+																echo "<td>{$field->name}</td>";
+															}
 															echo "</tr>\n";
+															// printing table rows
+															while($row = mysqli_fetch_row($result)){
+																echo "<tr>";
+																// $row is array... foreach( .. ) puts every element
+																// of $row to $cell variable
+																foreach($row as $cell)
+																echo "<td>$cell</td>";
+																echo "</tr>\n";
+															}
+															mysqli_free_result($result);
 														}
-														mysqli_free_result($result);
-													}
-													?>
-												</table>
+														?>
+													</table>
+												</div>
 											</div>
 										</div>
 									</article>

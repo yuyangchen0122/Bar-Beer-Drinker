@@ -15,8 +15,8 @@ $result = mysqli_query($connect, $query);
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 	<title>Oldstory – Whiskey Bar HTML</title>
-	
-	
+
+
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/core.animation.min.css" />
@@ -24,7 +24,7 @@ $result = mysqli_query($connect, $query);
 	<link rel="stylesheet" type="text/css" media="all" href="css/plugin.instagram-widget.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="css/skin.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
-	
+
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/prettyphoto/css/prettyPhoto.min.css">
 
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,9 +35,9 @@ $result = mysqli_query($connect, $query);
        function drawMaterial() {
        var data = google.visualization.arrayToDataTable([
        	['State','AmountOfPeople'],
-       	<?php 
+       	<?php
           while($row = mysqli_fetch_array($result)){
-            echo "['".$row[1]."', ".$row[2]."],";  
+            echo "['".$row[1]."', ".$row[2]."],";
           }
         ?>
         ]);
@@ -55,11 +55,11 @@ $result = mysqli_query($connect, $query);
 </head>
 
 <body class="page body_filled article_style_stretch scheme_original top_panel_above sidebar_show sidebar_right">
-			
+
 	<div class="body_wrap header_style_8">
 
 		<div class="page_wrap">
-			
+
 			<div class="top_panel_fixed_wrap"></div>
 
 			<header class="top_panel_wrap top_panel_style_8 scheme_original">
@@ -320,49 +320,34 @@ $result = mysqli_query($connect, $query);
 								<section>
 									<div class="content table-responsive table-full-width">
 											<h1 class="sc_title margin_top_tiny-">Bar List</h1>
-											<?php
-											error_reporting(0);
-											$servername = "rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com";
-											$username = "yuyangchen0122";
-											$password = "a123123q45";
-											$dbname = "RUCS336Group66";
-											$datatable = "BAR"; // MySQL table name
-											$results_per_page = 20; // number of results per page
-											 
-											// Create connection
-											$conn = new mysqli($servername, $username, $password, $dbname);
-											// Check connection
-											if ($conn->connect_error) {
-											    die("Connection failed: " . $conn->connect_error);
-											} 
-											?>
-											<?php
-											if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; 
-											$start_from = ($page-1) * $results_per_page;
-											$sql = "SELECT * FROM ".$datatable." GROUP BY Bar LIMIT $start_from, ".$results_per_page;
-											$rs_result = $conn->query($sql); 
-											?> 
 											<table class="table table-striped">
 											<?php
-                        					$fields_num = mysqli_num_fields($rs_result);
-                        					// printing table headers
-                            				for($i=0; $i<$fields_num; $i++){
-                                				$field = mysqli_fetch_field($rs_result);
-                                				echo "<td>{$field->name}</td>";
-                            				}
-                            				echo "</tr>\n";
-                                    		// printing table rows
-                            				while($row = mysqli_fetch_row($rs_result)){
-                                				echo "<tr>";
-                                        	// $row is array... foreach( .. ) puts every element
-                                        	// of $row to $cell variable
-                                				foreach($row as $cell)
-                                    			echo "<td>$cell</td>";
-                                				echo "</tr>\n";
-                            				}
-                            				mysqli_free_result($rs_result);
-                            				?>
-											</table>
+											$results_per_page = 20; // number of results per page
+
+											if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+											$start_from = ($page-1) * $results_per_page;
+											$query1 = "SELECT * FROM BAR GROUP BY Bar LIMIT '$start_from', '$results_per_page'";
+											$result1 = mysqli_query($connect, $query1);
+
+            					$fields_num = mysqli_num_fields($result1);
+            					// printing table headers
+                			for($i=0; $i<$fields_num; $i++){
+												$field = mysqli_fetch_field($result1);
+												echo "<td>{$field->name}</td>";
+											}
+											echo "</tr>\n";
+                      // printing table rows
+                			while($row = mysqli_fetch_row($result1)){
+												echo "<tr>";
+                        // $row is array... foreach( .. ) puts every element
+												// of $row to $cell variable
+												foreach($row as $cell)
+												echo "<td>$cell</td>";
+												echo "</tr>\n";
+											}
+											mysqli_free_result($result1);
+											?>
+										</table>
 									</div>
 								</section>
 
@@ -386,7 +371,7 @@ $result = mysqli_query($connect, $query);
 								</section>
 								<section>
 									<div class="container">
-										
+
 									</div>
 								</section>
 
@@ -535,7 +520,7 @@ $result = mysqli_query($connect, $query);
 								<a href="#" data-type="post" data-year="2016" data-month="04" title="View posts for March 2016"></a>
 							</th>
 							<th class="month_cur" colspan="5">
-								May 
+								May
 								<span>2016</span>
 							</th>
 							<th class="month_next">
@@ -850,7 +835,7 @@ $result = mysqli_query($connect, $query);
 				</div>
 
 			</div>
-			
+
 			<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
 				<div class="footer_wrap_inner widget_area_inner">
 					<div class="content_wrap">
@@ -889,8 +874,8 @@ $result = mysqli_query($connect, $query);
 						</div>
 					</div>
 				</div>
-			</footer>	
-	
+			</footer>
+
 			<div class="copyright_wrap copyright_style_socials scheme_original">
 				<div class="copyright_wrap_inner">
 					<div class="content_wrap">
@@ -918,22 +903,22 @@ $result = mysqli_query($connect, $query);
 						</div>
 					</div>
 				</div>
-			</div> 
-							
+			</div>
+
 		</div>
 
 	</div>
-	
-	
+
+
 <a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
 	<script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
 	<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
-	
-	
-	
-	
-	
+
+
+
+
+
 	<script type='text/javascript' src='js/custom/__main.js'></script>
 	<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
 	<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
@@ -941,23 +926,23 @@ $result = mysqli_query($connect, $query);
 	<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
 	<script type='text/javascript' src='js/custom/core.init.js'></script>
 	<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
-	
+
 	<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
 	<script type='text/javascript' src='js/vendor/core.min.js'></script>
 	<script type='text/javascript' src='js/vendor/widget.min.js'></script>
 	<script type='text/javascript' src='js/vendor/tabs.min.js'></script>
 	<script type='text/javascript' src='js/vendor/effect.min.js'></script>
 	<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	<script type="text/javascript" src="js/vendor/prettyphoto/jquery.prettyPhoto.min.js"></script>
-	
-	
+
+
 
 </body>
 </html>

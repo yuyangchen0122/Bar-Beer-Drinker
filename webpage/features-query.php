@@ -5,25 +5,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-	<title>Oldstory – Whiskey Bar HTML</title>
-	
-	
+	<title>Best 336 Bar Project</title>
+
+
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/core.animation.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/theme.shortcodes.css" />
-	
+
 	<link rel="stylesheet" type="text/css" media="all" href="css/skin.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
 
 </head>
 
 <body class="error404 body_filled article_style_stretch layout_excerpt top_panel_above sidebar_hide">
-			
+
 	<div class="body_wrap header_style_8">
 
 		<div class="page_wrap">
-			
+
 			<div class="top_panel_fixed_wrap"></div>
 
 			<header class="top_panel_wrap top_panel_style_8 scheme_original">
@@ -77,7 +84,7 @@
 			<li class="menu-item menu-item-object-page ">
 				<a href="features-query.php">SQL Query Page</a>
 			</li>
-			
+
 			<li class="menu-item menu-item-has-children ">
 				<a href="#">About us</a>
 				<ul class="sub-menu">
@@ -277,52 +284,52 @@
 												Please follow the SQL rules, you can get from the below link
 												<a href="https://www.w3schools.com/sql/">Clike me -_-</a>.
 											</p>
-											<div class="page_search">
-												<div class="search_wrap search_style_regular search_state_fixed">
-													<div class="search_form_wrap">
-														<form action="features-query.php" method="post"> 
-															
-															<input type="text" class="search_field" placeholder="To type query and hit enter" 
+											<div class="container">
+														<form action="features-query.php" method="post">
+
+															<input type="text" style="width: 100%;
+																						    padding: 12px 20px;
+																						    margin: 8px 0;
+																						    box-sizing: border-box;
+																						    border: 2px solid black;
+																						    border-radius: 4px;" placeholder="To type query and hit enter"
 															value="<?php echo $query;?>" name="inputquery" />
 															<button type="submit" title="Start type" name="modify_query">Submit</button>
 														</form>
-													</div>
-													<div class="search_results widget_area scheme_original">
-														<a class="search_results_close icon-cancel"></a>
-														<div class="search_results_content"></div>
-													</div>
 
-												</div>
 											</div>
 											<div>
-												<div class="content table-responsive table-full-width">
+												<div class="table-responsive">
 													<table class="table table-striped">
 														<?php
+														if (isset($_POST['modify_query'])) {
 														$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
 														$query = $_POST['inputquery'];
 														$result = mysqli_query($db,$query);
 
-
-														if (isset($_POST['modify_query'])) {
-															$fields_num = mysqli_num_fields($result);
-															// printing table headers
-															for($i=0; $i<$fields_num; $i++){
-																$field = mysqli_fetch_field($result);
-																echo "<td>{$field->name}</td>";
-															}
-															echo "</tr>\n";
-															// printing table rows
-															while($row = mysqli_fetch_row($result)){
-																echo "<tr>";
-																// $row is array... foreach( .. ) puts every element
-																// of $row to $cell variable
-																foreach($row as $cell)
-																echo "<td>$cell</td>";
-																echo "</tr>\n";
-															}
-															mysqli_free_result($result);
+														if (!$result) {
+															die("Query to show fields from table failed");
 														}
-														?>
+
+														$fields_num = mysqli_num_fields($result);
+														// printing table headers
+														for($i=0; $i<$fields_num; $i++){
+															$field = mysqli_fetch_field($result);
+															echo "<td>{$field->name}</td>";
+														}
+														echo "</tr>\n";
+														// printing table rows
+														while($row = mysqli_fetch_row($result)){
+															echo "<tr>";
+															// $row is array... foreach( .. ) puts every element
+															// of $row to $cell variable
+															foreach($row as $cell)
+															echo "<td>$cell</td>";
+															echo "</tr>\n";
+														}
+														mysqli_free_result($result);
+													}
+													?>
 													</table>
 												</div>
 											</div>
@@ -336,7 +343,7 @@
 				</div>
 
 			</div>
-			
+
 			<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
 				<div class="footer_wrap_inner widget_area_inner">
 					<div class="content_wrap">
@@ -375,8 +382,8 @@
 						</div>
 					</div>
 				</div>
-			</footer>	
-	
+			</footer>
+
 			<div class="copyright_wrap copyright_style_socials scheme_original">
 				<div class="copyright_wrap_inner">
 					<div class="content_wrap">
@@ -404,17 +411,15 @@
 						</div>
 					</div>
 				</div>
-			</div> 
-							
+			</div>
+
 		</div>
 
 	</div>
-	
-	
+
+
 <a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
-	<script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
-	<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
 	<script type='text/javascript' src='js/custom/__main.js'></script>
 	<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
 	<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
@@ -422,7 +427,7 @@
 	<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
 	<script type='text/javascript' src='js/custom/core.init.js'></script>
 	<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
-	
+
 	<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
 	<script type='text/javascript' src='js/vendor/core.min.js'></script>
 	<script type='text/javascript' src='js/vendor/widget.min.js'></script>
@@ -432,3 +437,9 @@
 
 </body>
 </html>
+
+<script>
+$(document).ready(function(){
+$('#drinker_data').DataTable();
+});
+</script>

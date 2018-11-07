@@ -5,33 +5,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-	<title>Oldstory – Whiskey Bar HTML</title>
+	<title>Best 336 Bar Project</title>
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/essential-grid/public/assets/css/settings.css">
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/essential-grid/public/assets/css/lightbox.css">
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/revslider/public/assets/css/settings.css">
 	<style id="rs-plugin-settings-inline-css" type="text/css"></style>
-	
-	
-	
-	
+
+
+
+
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/core.animation.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/theme.shortcodes.css" />
-	
+
 	<link rel="stylesheet" type="text/css" media="all" href="css/skin.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
-	
-	
+
+
 
 </head>
 
 <body class="home page body_filled article_style_stretch scheme_original top_panel_over sidebar_hide">
-	
+
 	<div class="body_wrap header_style_8">
 
 		<div class="page_wrap">
-			
+
 			<div class="top_panel_fixed_wrap"></div>
 
 			<header class="top_panel_wrap top_panel_style_8 scheme_original">
@@ -290,7 +290,7 @@
 
 
 			<section id="mainslider_1" class="slider_wrap slider_fullwide slider_engine_revo slider_alias_oldstorybar_slider1 mainslider_1">
-				
+
 				<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container">
 					<div id="rev_slider_1_1" class="rev_slider fullwidthabanner" data-version="5.1">
 						<ul>	<!-- SLIDE  -->
@@ -546,7 +546,7 @@
 					</div>
 				</div>
 			</div>
-				
+
 			<div class="page_content_wrap page_paddings_no">
 
 				<div class="content">
@@ -1197,7 +1197,7 @@
 														<h1 class="sc_title sc_align_center margin_top_null margin_bottom_large white">upcoming events</h1>
 														<div class="sc_events_wrap">
 															<div class="sc_events sc_events_style_events-2  margin_bottom_larges">
-																<div class="sc_columns columns_wrap">		
+																<div class="sc_columns columns_wrap">
 																	<div class="sc_events_item sc_events_item_1 odd first">
 																		<span class="sc_events_item_date">
 																			<span class="sc_events_item_day">09</span>
@@ -1405,7 +1405,7 @@
 				</div>
 
 			</div>
-			
+
 			<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
 				<div class="footer_wrap_inner widget_area_inner">
 					<div class="content_wrap">
@@ -1445,8 +1445,8 @@
 						</div>
 					</div>
 				</div>
-			</footer>	
-	
+			</footer>
+
 			<div class="copyright_wrap copyright_style_socials scheme_original">
 				<div class="copyright_wrap_inner">
 					<div class="content_wrap">
@@ -1474,13 +1474,13 @@
 						</div>
 					</div>
 				</div>
-			</div>	 
-							
+			</div>
+
 		</div>
 
 	</div>
-	
-	
+
+
 <a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
 	<script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
@@ -1497,23 +1497,23 @@
 	<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
 	<script type='text/javascript' src='js/custom/core.init.js'></script>
 	<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
-	
+
 	<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
 	<script type='text/javascript' src='js/vendor/core.min.js'></script>
 	<script type='text/javascript' src='js/vendor/widget.min.js'></script>
 	<script type='text/javascript' src='js/vendor/tabs.min.js'></script>
 	<script type='text/javascript' src='js/vendor/effect.min.js'></script>
 	<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

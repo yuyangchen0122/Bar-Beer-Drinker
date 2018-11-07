@@ -13,7 +13,7 @@ $result = mysqli_query($db, $query);
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
   </head>
   <body>
-      <h3 align="left">Display Drinker Information<br></h3>
+      <h3 align="left">Display Bar Information<br></h3>
       <div class="table-responsive">
         <table id="drinker_data" class="table table-striped table-bordered">
           <thead class="thead-dark">

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-	<title>Oldstory – Whiskey Bar HTML</title>
+	<title>Best 336 Bar Project</title>
 
 
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />
@@ -21,6 +21,7 @@
 	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
 
+</style>
 </head>
 
 <body class="error404 body_filled article_style_stretch layout_excerpt top_panel_above sidebar_hide">
@@ -265,9 +266,166 @@
 
 			<div class="container">
 	      <div class="table-responsive">
-	        <?php include 'barTest.php';?>
+	        <?php include 'features-BarPage-include.php';?>
 	      </div>
 	    </div>
+
+			<div class="container">
+				<h3 class="page_title">Top drinkers who are largest spenders</h1>
+				<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+				<form action="features-BarPage.php" method="post">
+
+					<input style="    width: 100%;
+												    padding: 12px 20px;
+												    margin: 8px 0;
+												    box-sizing: border-box;
+												    border: 2px solid black;
+												    border-radius: 4px;
+														"type="text" placeholder="Please Enter the Bar Name"
+														value="<?php echo $bar;?>" name="inputBar" />
+
+
+					<button type="submit" title="Start type" name="modify_query">Submit</button>
+				</form>
+				<?php
+				$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+				$query = "SELECT * FROM BarBeerDrinker.BAR";
+				$result = mysqli_query($db, $query);
+				?>
+				<script type="text/javascript" src="loder.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart(){
+            var data = new google.visualization.DataTable();
+            var data = google.visualization.arrayToDataTable([
+                ['Date_time','Tempout'],
+                <?php
+                    while($row = mysqli_fetch_assoc($aresult)){
+                        echo "['".$row["0"]."', ".$row["1"]."],";
+                    }
+                ?>
+               ]);
+
+            var options = {
+                title: 'Date_time Vs Room Out Temp',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('Barchart'));
+            chart.draw(data, options);
+        }
+
+    </script>
+		<div id="Barchart" style="width: 900px; height: 400px"></div>
+			</div>
+
+			<div class="container">
+				<h3 class="page_title">Beers which are most popular</h1>
+				<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+				<form action="features-BarPage.php" method="post">
+
+					<input style="    width: 100%;
+														padding: 12px 20px;
+														margin: 8px 0;
+														box-sizing: border-box;
+														border: 2px solid black;
+														border-radius: 4px;
+														"type="text" placeholder="Please Enter the Bar Name"
+														value="<?php echo $bar;?>" name="inputBar" />
+
+
+					<button type="submit" title="Start type" name="modify_query">Submit</button>
+				</form>
+				<?php
+				$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+				$query = "SELECT * FROM BarBeerDrinker.BAR";
+				$result = mysqli_query($db, $query);
+				?>
+				<script type="text/javascript" src="loder.js"></script>
+		<script type="text/javascript">
+				google.charts.load('current', {'packages':['corechart']});
+
+				google.charts.setOnLoadCallback(drawChart);
+				function drawChart(){
+						var data = new google.visualization.DataTable();
+						var data = google.visualization.arrayToDataTable([
+								['Date_time','Tempout'],
+								<?php
+										while($row = mysqli_fetch_assoc($aresult)){
+												echo "['".$row["0"]."', ".$row["1"]."],";
+										}
+								?>
+							 ]);
+
+						var options = {
+								title: 'Date_time Vs Room Out Temp',
+								curveType: 'function',
+								legend: { position: 'bottom' }
+						};
+
+						var chart = new google.visualization.BarChart(document.getElementById('Barchart'));
+						chart.draw(data, options);
+				}
+
+		</script>
+		<div id="Barchart" style="width: 900px; height: 400px"></div>
+			</div>
+
+			<div class="container">
+				<h3 class="page_title">Manufacturers who sell the most beers</h1>
+				<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+				<form action="features-BarPage.php" method="post">
+
+					<input style="    width: 100%;
+														padding: 12px 20px;
+														margin: 8px 0;
+														box-sizing: border-box;
+														border: 2px solid black;
+														border-radius: 4px;
+														"type="text" placeholder="Please Enter the Bar Name"
+														value="<?php echo $bar;?>" name="inputBar" />
+
+
+					<button type="submit" title="Start type" name="modify_query">Submit</button>
+				</form>
+				<?php
+				$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+				$query = "SELECT * FROM BarBeerDrinker.BAR";
+				$result = mysqli_query($db, $query);
+				?>
+				<script type="text/javascript" src="loder.js"></script>
+		<script type="text/javascript">
+				google.charts.load('current', {'packages':['corechart']});
+
+				google.charts.setOnLoadCallback(drawChart);
+				function drawChart(){
+						var data = new google.visualization.DataTable();
+						var data = google.visualization.arrayToDataTable([
+								['Date_time','Tempout'],
+								<?php
+										while($row = mysqli_fetch_assoc($aresult)){
+												echo "['".$row["0"]."', ".$row["1"]."],";
+										}
+								?>
+							 ]);
+
+						var options = {
+								title: 'Date_time Vs Room Out Temp',
+								curveType: 'function',
+								legend: { position: 'bottom' }
+						};
+
+						var chart = new google.visualization.BarChart(document.getElementById('Barchart'));
+						chart.draw(data, options);
+				}
+
+		</script>
+		<div id="Barchart" style="width: 900px; height: 400px"></div>
+			</div>
+
 
 
 			<footer class="footer_wrap widget_area scheme_original show-footer-border-no">

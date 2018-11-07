@@ -10,17 +10,17 @@ $query = '';
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-	<title>Oldstory – Whiskey Bar HTML</title>
-	
-	
-	
-	
-	
-	
-	
-	
+	<title>Best 336 Bar Project</title>
+
+
+
+
+
+
+
+
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/mediaelement/mediaelementplayer.min.css">
-	
+
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/core.animation.min.css" />
@@ -51,11 +51,11 @@ $query = '';
 </head>
 
 <body class="page body_filled article_style_stretch scheme_original top_panel_above sidebar_show sidebar_right">
-			
+
 	<div class="body_wrap header_style_8">
 
 		<div class="page_wrap">
-			
+
 			<div class="top_panel_fixed_wrap"></div>
 
 			<header class="top_panel_wrap top_panel_style_8 scheme_original">
@@ -1093,7 +1093,7 @@ $query = '';
 								<a href="#" data-type="post" data-year="2016" data-month="04" title="View posts for March 2016"></a>
 							</th>
 							<th class="month_cur" colspan="5">
-								May 
+								May
 								<span>2016</span>
 							</th>
 							<th class="month_next">
@@ -1408,7 +1408,7 @@ $query = '';
 				</div>
 
 			</div>
-			
+
 			<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
 				<div class="footer_wrap_inner widget_area_inner">
 					<div class="content_wrap">
@@ -1447,8 +1447,8 @@ $query = '';
 						</div>
 					</div>
 				</div>
-			</footer>	
-	
+			</footer>
+
 			<div class="copyright_wrap copyright_style_socials scheme_original">
 				<div class="copyright_wrap_inner">
 					<div class="content_wrap">
@@ -1476,22 +1476,22 @@ $query = '';
 						</div>
 					</div>
 				</div>
-			</div>	 
-							
+			</div>
+
 		</div>
 
 	</div>
-	
-	
+
+
 <a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
 	<script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
 	<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
-	
-	
-	
-	
-	
+
+
+
+
+
 	<script type='text/javascript' src='js/custom/__main.js'></script>
 	<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
 	<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
@@ -1507,15 +1507,15 @@ $query = '';
 	<script type='text/javascript' src='js/vendor/effect.min.js'></script>
 	<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
 	<script type="text/javascript" src="js/vendor/swiper/swiper.min.js"></script>
-	
+
 	<script type="text/javascript" src="js/vendor/accordion.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
 	<script type="text/javascript" src="js/custom/core.googlemap.min.js"></script>
 	<script type="text/javascript" src="js/vendor/chart.min.js"></script>
-	
+
 	<script type="text/javascript" src="js/vendor/prettyphoto/jquery.prettyPhoto.min.js"></script>
-	
-	
+
+
 
 </body>
 </html>

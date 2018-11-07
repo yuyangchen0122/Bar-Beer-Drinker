@@ -1,6 +1,6 @@
 <?php
 $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-$query = "SELECT * FROM BarBeerDrinker.DRINKER";
+$query = "SELECT * FROM BarBeerDrinker.DRINKER LIMIT 20";
 $result = mysqli_query($db, $query);
 ?>
 <!DOCTYPE html>

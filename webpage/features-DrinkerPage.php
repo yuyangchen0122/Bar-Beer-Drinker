@@ -325,67 +325,78 @@
 
 <div class="container">
 	<h3 class="page_title">All his/her transactions ordered by time and grouped by different bars.</h1>
-	<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
-	<form action="features-DrinkerPage.php" method="post">
+	<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
 
-		<input style="    width: 100%;
+	<form action="features-DrinkerPage.php" method="POST">
+
+		<input type="text" style="width: 100%;
 											padding: 12px 20px;
 											margin: 8px 0;
 											box-sizing: border-box;
 											border: 2px solid black;
-											border-radius: 4px;
-											"type="text" placeholder="Please Enter the Drinker Name"
-											value="<?php echo $bar;?>" name="inputDrinker1" />
+											border-radius: 4px;" placeholder="Please Enter the Drinker Name"
+											value="<?php echo $inputDrinker1;?>" name="inputDrinker1" />
 
 
-		<button type="submit" title="Start type" name="typedDrinker">Submit</button>
+		<button type="submit" title="Start type" name="typedDrinker1">Submit</button>
 	</form>
 	<?php
 	$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-	$query = "SELECT DRINKER.Name, DRINKER.SSN, BILL.BillID, BILL.Time, BILL.Date, Transaction.TransactionID, Transaction.ItemID, BAR.Bar, UNIX_TIMESTAMP(CONCAT_WS(Date, Time)) AS datetime
-						FROM BarBeerDrinker.DRINKER
-						LEFT JOIN BarBeerDrinker.BILL ON DRINKER.SSN = BILL.SSN
-						LEFT JOIN BarBeerDrinker.Transaction ON BILL.BILLID = Transaction.BillID
-						LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-						LEFT JOIN BarBeerDrinker.BAR ON Transaction.License = BAR.License
-						WHERE DRINKER.Name = '$inputDrinker1'
-						ORDER BY datetime;";
-	$result = mysqli_query($db, $query);
-	?>
+	if (isset($_POST['typedDrinker1'])) {
+		$person1=$_POST['inputDrinker1'];
+		$query1 = "SELECT DRINKER.Name, DRINKER.SSN, BILL.BillID, BILL.Time, BILL.Date, Transaction.TransactionID, Transaction.ItemID, Sells.Item, Sells.Price, BAR.Bar, BAR.License,UNIX_TIMESTAMP(CONCAT_WS(' ', Date, Time)) AS datetime
+							 FROM BarBeerDrinker.DRINKER
+							 LEFT JOIN BarBeerDrinker.BILL ON DRINKER.SSN = BILL.SSN
+							 LEFT JOIN BarBeerDrinker.Transaction ON BILL.BILLID = Transaction.BillID
+							 LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+							 LEFT JOIN BarBeerDrinker.BAR ON Transaction.License = BAR.License
+							 WHERE DRINKER.Name = '$person1'
+							 ORDER BY datetime;";
 
-	<div class="table-responsive">
-		<table id="drinker_data" class="table table-striped table-bordered">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">DrinkerName</th>
-					<th scope="col">SSN</th>
-					<th scope="col">Bar</th>
-					<th scope="col">BillID</th>
-					<th scope="col">Time</th>
-					<th scope="col">Date</th>
-					<th scope="col">TransactionID</th>
-					<th scope="col">ItemID</th>
-					<th scope="col">Price</th>
+		$result1 = mysqli_query($db, $query1);
+		?>
 
-			</tr>
-			</thead>
-			<?php
-			while($row = mysqli_fetch_array($result))
-			{
-			echo '
-			<tr>
-						<td>'.$row["DRINKER.Name"].'</td>
-						<td>'.$row["DRINKER.SSN"].'</td>
-						<td>'.$row["BAR.Bar"].'</td>
-						<td>'.$row["BILL.BillID"].'</td>
-						<td>'.$row["BILL.Time"].'</td>
-						<td>'.$row["BILL.Date"].'</td>
-						<td>'.$row["TransactionID"].'</td>
-						<td>'.$row["License"].'</td>
-						<td>'.$row["ItemID"].'</td>
-						<td>'.$row["Price"].'</td>
+		<div class="table-responsive">
+			<table id="drinker_data1" class="table table-striped table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">DrinkerName</th>
+						<th scope="col">SSN</th>
+						<th scope="col">BillID</th>
+						<th scope="col">Time</th>
+						<th scope="col">Date</th>
+						<th scope="col">TransactionID</th>
+						<th scope="col">ItemID</th>
+						<th scope="col">Item</th>
+						<th scope="col">Price</th>
+						<th scope="col">Bar</th>
+						<th scope="col">License</th>
+						<th scope="col">datatime</th>
+
+
 				</tr>
-			';
+				</thead>
+
+				<?php
+				while($row = mysqli_fetch_array($result1))
+				{
+				echo '
+				<tr>
+							<td>'.$row["Name"].'</td>
+							<td>'.$row["SSN"].'</td>
+							<td>'.$row["BillID"].'</td>
+							<td>'.$row["Time"].'</td>
+							<td>'.$row["Date"].'</td>
+							<td>'.$row["TransactionID"].'</td>
+							<td>'.$row["ItemID"].'</td>
+							<td>'.$row["Item"].'</td>
+							<td>'.$row["Price"].'</td>
+							<td>'.$row["Bar"].'</td>
+							<td>'.$row["License"].'</td>
+							<td>'.$row["datetime"].'</td>
+					</tr>
+				';
+				}
 			}
 			?>
 		</table>
@@ -396,7 +407,7 @@
 <div class="container">
 	<h3 class="page_title">Bar graphs of beers s/he orders the most</h1>
 	<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
-	<form action="features-BarPage.php" method="post">
+	<form action="features-DrinkerPage.php" method="post">
 
 		<input style="    width: 100%;
 											padding: 12px 20px;
@@ -404,16 +415,27 @@
 											box-sizing: border-box;
 											border: 2px solid black;
 											border-radius: 4px;
-											"type="text" placeholder="Please Enter the Bar Name"
-											value="<?php echo $bar;?>" name="inputDrinker2" />
+											"type="text" placeholder="Please Enter the Drinker Name"
+											value="<?php echo $inputDrinker2;?>" name="inputDrinker2" />
 
 
-		<button type="submit" title="Start type" name="modify_query">Submit</button>
+		<button type="submit" title="Start type" name="typedDrinker2">Submit</button>
 	</form>
 	<?php
 	$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-	$query = "SELECT * FROM BarBeerDrinker.BAR";
-	$result = mysqli_query($db, $query);
+	if (isset($_POST['typedDrinker2'])) {
+		$person2=$_POST['inputDrinker2'];
+		$query2 = "SELECT Items.Item, COUNT(Category) AS AmountOfBeer
+		FROM BarBeerDrinker.BILL
+		LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.TransactionID
+		LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
+		LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
+		LEFT JOIN BarBeerDrinker.Sells ON BAR.License = Sells.License
+		LEFT JOIN BarBeerDrinker.Items ON Sells.Item = Items.Item
+		WHERE DRINKER.Name = '$person2' AND Items.Category = 'beer'
+		GROUP BY Items.Item;";
+		$result2 = mysqli_query($db, $query2);
+	}
 	?>
 	<script type="text/javascript" src="loder.js"></script>
 <script type="text/javascript">
@@ -423,32 +445,32 @@
 	function drawChart(){
 			var data = new google.visualization.DataTable();
 			var data = google.visualization.arrayToDataTable([
-					['Date_time','Tempout'],
+					['Item','AmountOfBeer'],
 					<?php
-							while($row = mysqli_fetch_assoc($aresult)){
-									echo "['".$row["0"]."', ".$row["1"]."],";
+							while($row = mysqli_fetch_assoc($result2)){
+									echo "['".$row["Item"]."', ".$row["AmountOfBeer"]."],";
 							}
 					?>
 				 ]);
 
 			var options = {
-					title: 'Date_time Vs Room Out Temp',
+					title: 'Bar graphs of beers s/he orders the most',
 					curveType: 'function',
 					legend: { position: 'bottom' }
 			};
 
-			var chart = new google.visualization.BarChart(document.getElementById('Barchart'));
+			var chart = new google.visualization.BarChart(document.getElementById('Barchart1'));
 			chart.draw(data, options);
 	}
 
 </script>
-<div id="Barchart" style="width: 900px; height: 400px"></div>
+<div id="Barchart1" style="width: 900px; height: 400px"></div>
 </div>
 
 <div class="container">
 	<h3 class="page_title">Bar graph of his/her spending in different bars, on different dates/weeks/months</h1>
 	<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
-	<form action="features-BarPage.php" method="post">
+	<form action="features-DrinkerPage.php" method="post">
 
 		<input style="    width: 100%;
 											padding: 12px 20px;
@@ -457,7 +479,7 @@
 											border: 2px solid black;
 											border-radius: 4px;
 											"type="text" placeholder="Please Enter the Drinker Name"
-											value="<?php echo $bar;?>" name="inputDrinker3" />
+											value="<?php echo $inputDrinker3;?>" name="inputDrinker3" />
 
 
 		<button type="submit" title="Start type" name="modify_query">Submit</button>
@@ -600,3 +622,13 @@
 
 </body>
 </html>
+<script>
+$(document).ready(function(){
+$('#drinker_data1').DataTable();
+});
+</script>
+<script>
+$(document).ready(function(){
+$('#drinker_data2').DataTable();
+});
+</script>

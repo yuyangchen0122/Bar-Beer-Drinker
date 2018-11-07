@@ -16,11 +16,6 @@
 	<link rel="stylesheet" type="text/css" media="all" href="css/skin.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
-
 </head>
 
 <body class="error404 body_filled article_style_stretch layout_excerpt top_panel_above sidebar_hide">
@@ -263,12 +258,149 @@
 				</div>
 			</div>
 
-			<div class="container">
-	      <div class="table-responsive">
-	        <?php include 'barTest.php';?>
-	      </div>
-	    </div>
+			<div class="page_content_wrap page_paddings_no">
 
+				<div class="content">
+					<article class="post_item post_item_single page">
+						<div class="post_content">
+
+							<section class="">
+								<div class="container">
+									<article class="post_item post_item_404">
+										<div class="post_content">
+											<h3 class="page_title">Bar List</h1>
+											<h3 class="page_subtitle">Please Select a Bar below</h3>
+
+											<div class="content table-responsive table-full-width">
+												<table class="table table-striped" id="bar_data">
+													<thead class="thead-dark">
+
+  													<tr>
+															<th scope="col">id</th>
+					  									<th scope="col">Bar</th>
+					      							<th scope="col">Street</th>
+												    	<th scope="col">City</th>
+												    	<th scope="col">State</th>
+												    	<th scope="col">Phone</th>
+												    	<th scope="col">License</th>
+												    	<th scope="col">Open</th>
+															<th scope="col">Close</th>
+
+                  				</tr>
+            							</thead>
+            							<?php
+            							$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+
+													$results_per_page = 10;
+													if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+													$start_from = ($page-1) * $results_per_page;
+
+													$query = "SELECT * FROM BarBeerDrinker.BAR LIMIT $start_from," .$results_per_page;
+													$result = mysqli_query($db, $query);
+                        	while($row = mysqli_fetch_array($result)){
+                        		echo '
+                        		<tr>
+                                  <td>'.$row["id"].'</td>
+                                  <td>'.$row["Bar"].'</td>
+                                  <td>'.$row["Street"].'</td>
+                                  <td>'.$row["City"].'</td>
+                                  <td>'.$row["State"].'</td>
+                                  <td>'.$row["Phone"].'</td>
+                                  <td>'.$row["License"].'</td>
+                                  <td>'.$row["Open"].'</td>
+                                  <td>'.$row["Close"].'</td>
+                              </tr>
+                              ';
+                        	}
+                        	?>
+												</table>
+												<?php
+												$sql = "SELECT COUNT(id) AS total FROM BarBeerDrinker.BAR";
+												$result = $db->query($sql);
+												$row = $result->fetch_assoc();
+												$total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+
+												for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+												            echo "<a href='features-BarPage.php?page=".$i."'";
+												            if ($i==$page)  echo " class='curPage'";
+												            echo ">".$i."</a> ";
+												};
+												?>
+											</div>
+										</div>
+									</article>
+								</div>
+							</section>
+
+							<section class="">
+								<div class="container">
+									<article class="post_item post_item_404">
+										<div class="post_content">
+											<h3 class="page_title">Feel free to modify our database</h1>
+											<h3 class="page_subtitle">Please type in your query here</h3>
+											<p class="page_description">
+												Please follow the SQL rules, you can get from the below link
+												<a href="https://www.w3schools.com/sql/">Clike me -_-</a>.
+											</p>
+											<div class="page_search">
+												<div class="search_wrap search_style_regular search_state_fixed">
+													<div class="search_form_wrap">
+														<form action="features-query.php" method="post">
+
+															<input type="text" class="search_field" placeholder="To type query and hit enter"
+															value="<?php echo $query;?>" name="inputquery" />
+															<button type="submit" title="Start type" name="modify_query">Submit</button>
+														</form>
+													</div>
+													<div class="search_results widget_area scheme_original">
+														<a class="search_results_close icon-cancel"></a>
+														<div class="search_results_content"></div>
+													</div>
+
+												</div>
+											</div>
+											<div>
+												<div class="content table-responsive table-full-width">
+													<table class="table table-striped">
+														<?php
+														$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+														$query = $_POST['inputquery'];
+														$result = mysqli_query($db,$query);
+
+
+														if (isset($_POST['modify_query'])) {
+															$fields_num = mysqli_num_fields($result);
+															// printing table headers
+															for($i=0; $i<$fields_num; $i++){
+																$field = mysqli_fetch_field($result);
+																echo "<td>{$field->name}</td>";
+															}
+															echo "</tr>\n";
+															// printing table rows
+															while($row = mysqli_fetch_row($result)){
+																echo "<tr>";
+																// $row is array... foreach( .. ) puts every element
+																// of $row to $cell variable
+																foreach($row as $cell)
+																echo "<td>$cell</td>";
+																echo "</tr>\n";
+															}
+															mysqli_free_result($result);
+														}
+														?>
+													</table>
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+							</section>
+
+						</div>
+					</article>
+				</div>
+
+			</div>
 
 			<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
 				<div class="footer_wrap_inner widget_area_inner">
@@ -297,8 +429,6 @@
 					</div>
 				</div>
 			</footer>
-
-
 
 			<footer class="contacts_wrap scheme_original show-footer-border-no">
 				<div class="contacts_wrap_inner">
@@ -348,26 +478,22 @@
 
 <a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
-<script type='text/javascript' src='js/custom/__main.js'></script>
-<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
-<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
-<script type='text/javascript' src='js/custom/jquery.slidemenu.min.js'></script>
-<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
-<script type='text/javascript' src='js/custom/core.init.js'></script>
-<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
+	<script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
+	<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
+	<script type='text/javascript' src='js/custom/__main.js'></script>
+	<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
+	<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
+	<script type='text/javascript' src='js/custom/jquery.slidemenu.min.js'></script>
+	<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
+	<script type='text/javascript' src='js/custom/core.init.js'></script>
+	<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
 
-<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
-<script type='text/javascript' src='js/vendor/core.min.js'></script>
-<script type='text/javascript' src='js/vendor/widget.min.js'></script>
-<script type='text/javascript' src='js/vendor/tabs.min.js'></script>
-<script type='text/javascript' src='js/vendor/effect.min.js'></script>
-<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
-
+	<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
+	<script type='text/javascript' src='js/vendor/core.min.js'></script>
+	<script type='text/javascript' src='js/vendor/widget.min.js'></script>
+	<script type='text/javascript' src='js/vendor/tabs.min.js'></script>
+	<script type='text/javascript' src='js/vendor/effect.min.js'></script>
+	<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
 
 </body>
 </html>
-<script>
-$(document).ready(function(){
-$('#bar_data').DataTable();
-});
-</script>

@@ -322,7 +322,7 @@
 								box-sizing: border-box;
 								border: 2px solid black;
 								border-radius: 4px;
-								"type="text" placeholder="Please Enter the Drinker Name"
+								"type="text" placeholder="Please Enter the Bar Name"
 								value="<?php echo $bar1;?>" name="inputBar1" />
 
 
@@ -374,6 +374,71 @@
 
 						</script>
 						<div id="Barchart1" style="width: 900px; height: 400px"></div>
+					</div>
+
+
+					<div class="container">
+						<h3 class="page_subtitle">Bar graph of top drinkers who are largest spenders</h3>
+							<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+							<form action="features-BarPage.php" method="post">
+
+								<input style="    width: 100%;
+								padding: 12px 20px;
+								margin: 8px 0;
+								box-sizing: border-box;
+								border: 2px solid black;
+								border-radius: 4px;
+								"type="text" placeholder="Please Enter the Bar Name"
+								value="<?php echo $bar2;?>" name="inputBar2" />
+
+
+								<button type="submit" title="Start type" name="typedBar2">Submit</button>
+							</form>
+							<?php
+							$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+							if (isset($_POST['typedBar2'])) {
+								$bar2=$_POST['inputBar2s'];
+								$query2 = "SELECT Items.Item, COUNT(Items.Category) AS TotalAmount
+											FROM BarBeerDrinker.BILL
+											LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.BillID
+											LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+											LEFT JOIN BarBeerDrinker.BAR ON BAR.License = BILL.License
+											LEFT JOIN BarBeerDrinker.Items ON Sells.Item = Items.Item
+											WHERE BAR.Bar = '$bar2' AND Items.Category = 'beer'
+											GROUP BY Items.Item
+											ORDER BY TotalAmount";
+								$result1 = mysqli_query($db, $query2);
+							}
+								?>
+								<script type="text/javascript" src="loder.js"></script>
+								<script type="text/javascript">
+								google.charts.load('current', {'packages':['corechart']});
+
+								google.charts.setOnLoadCallback(drawChart);
+								function drawChart(){
+									var data = new google.visualization.DataTable();
+									var data = google.visualization.arrayToDataTable([
+										['Item','TotalAmount'],
+										<?php
+										while($row = mysqli_fetch_assoc($result2)){
+											echo "['".$row["Item"]."', ".$row["TotalAmount"]."],";
+										}
+										?>
+									]);
+
+									var options = {
+										title: 'Bar graph of top drinkers who are largest spenders.',
+										curveType: 'function',
+										legend: { position: 'bottom' }
+									};
+
+									var chart = new google.visualization.BarChart(document.getElementById('Barchart2'));
+									chart.draw(data, options);
+
+							}
+
+						</script>
+						<div id="Barchart2" style="width: 900px; height: 400px"></div>
 					</div>
 
 					

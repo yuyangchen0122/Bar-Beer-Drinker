@@ -26,22 +26,10 @@
 	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
 
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
-	google.charts.load("current", {packages:["corechart"]});
-	google.charts.setOnLoadCallback(drawChart);
-	function drawChart() {
-		var data = google.visualization.arrayToDataTable(<?php echo $jsonTable; ?>);
 
-		var options = {
-			title: 'Top Drinkers who are Largest Spenders',
-			legend: { position: 'none' },
-		};
-
-		var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-		chart.draw(data, options);
-	}
-	</script>
 
 </head>
 
@@ -324,160 +312,37 @@
 				</div>
 
 				<div class="container">
-					<h3 class="page_subtitle">Top drinkers who are largest spenders</h3>
-						<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+						<h3 class="page_subtitle">Bar graph of top drinkers who are largest spenders</h3>
+							<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+							<form action="features-BarPage.php" method="post">
 
-						<form action="features-BarPage.php" method="POST">
+								<input style="    width: 100%;
+								padding: 12px 20px;
+								margin: 8px 0;
+								box-sizing: border-box;
+								border: 2px solid black;
+								border-radius: 4px;
+								"type="text" placeholder="Please Enter the Drinker Name"
+								value="<?php echo $bar1;?>" name="inputBar1" />
 
-							<input type="text" style="width: 100%;
-							padding: 12px 20px;
-							margin: 8px 0;
-							box-sizing: border-box;
-							border: 2px solid black;
-							border-radius: 4px;" placeholder="Please Enter the Drinker Name"
-							value="<?php echo $inputBar1;?>" name="inputBar1" />
 
-
-							<button type="submit" title="Start type" name="typedBar1">Submit</button>
-						</form>
-						<?php
-						$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-						if (isset($_POST['typedBar1'])) {
-						$bar1=$_POST['inputBar1'];
-						$query1 = "SELECT DRINKER.Name, round(SUM(Sells.Price),2) AS TotalAmount
+								<button type="submit" title="Start type" name="typedBar1">Submit</button>
+							</form>
+							<?php
+							$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+							if (isset($_POST['typedBar1'])) {
+								$bar1=$_POST['inputBar1'];
+								$query1 = "SELECT DRINKER.Name, ROUND(SUM(Sells.Price),2) AS TotalAmount
 												FROM BarBeerDrinker.BILL
 												LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.BillID
 												LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
 												LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 												LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-												WHERE BAR.Bar = 'Blue Angel'
-												GROUP BY DRINKER.Name";
-						$result1 = mysqli_query($db, $query1);
-						}
-						?>
-						<script type="text/javascript" src="loder.js"></script>
-							<script type="text/javascript">
-							google.charts.load('current', {'packages':['corechart']});
-
-							google.charts.setOnLoadCallback(drawChart);
-							function drawChart(){
-								var data = new google.visualization.DataTable();
-								var data = google.visualization.arrayToDataTable([
-									['Name','TotalAmount'],
-									<?php
-									while($row = mysqli_fetch_assoc($result1)){
-										echo "['".$row[0]."', ".$row[1]."],";
-									}
-									?>
-								]);
-
-								var options = {
-									title: 'Bar graphs of beers s/he orders the most',
-									curveType: 'function',
-									legend: { position: 'bottom' }
-								};
-
-								var chart = new google.visualization.BarChart(document.getElementById('Barchart1'));
-								chart.draw(data, options);
-							}
-						</script>
-						<div id="Barchart1" style="width: 900px; height: 400px"></div>
-
-					</div>
-
-					<div class="container">
-						<h3 class="page_title">Bar graphs of beers s/he orders the most</h1>
-							<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
-							<form action="features-DrinkerPage.php" method="post">
-
-								<input style="    width: 100%;
-								padding: 12px 20px;
-								margin: 8px 0;
-								box-sizing: border-box;
-								border: 2px solid black;
-								border-radius: 4px;
-								"type="text" placeholder="Please Enter the Drinker Name"
-								value="<?php echo $person2;?>" name="inputDrinker2" />
-
-
-								<button type="submit" title="Start type" name="typedDrinker2">Submit</button>
-							</form>
-							<?php
-							$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-							if (isset($_POST['typedDrinker2'])) {
-								$person2=$_POST['inputDrinker2'];
-								$query2 = "SELECT Items.Item, COUNT(Category) AS AmountOfBeer
-								FROM BarBeerDrinker.BILL
-								LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.TransactionID
-								LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
-								LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
-								LEFT JOIN BarBeerDrinker.Sells ON BAR.License = Sells.License
-								LEFT JOIN BarBeerDrinker.Items ON Sells.Item = Items.Item
-								WHERE DRINKER.Name = '$person2' AND Items.Category = 'beer'
-								GROUP BY Items.Item;";
-								$result2 = mysqli_query($db, $query2);
-							}
-							?>
-							<script type="text/javascript" src="loder.js"></script>
-							<script type="text/javascript">
-							google.charts.load('current', {'packages':['corechart']});
-
-							google.charts.setOnLoadCallback(drawChart);
-							function drawChart(){
-								var data = new google.visualization.DataTable();
-								var data = google.visualization.arrayToDataTable([
-									['Item','AmountOfBeer'],
-									<?php
-									while($row = mysqli_fetch_assoc($result2)){
-										echo "['".$row["Item"]."', ".$row["AmountOfBeer"]."],";
-									}
-									?>
-								]);
-
-								var options = {
-									title: 'Bar graphs of beers s/he orders the most',
-									curveType: 'function',
-									legend: { position: 'bottom' }
-								};
-
-								var chart = new google.visualization.BarChart(document.getElementById('Barchart1'));
-								chart.draw(data, options);
-							}
-
-						</script>
-						<div id="Barchart1" style="width: 900px; height: 400px"></div>
-					</div>
-
-					<div class="container">
-						<h3 class="page_subtitle">Bar graph of his/her spending in different bars, on different dates/weeks/months</h3>
-							<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
-							<form action="features-DrinkerPage.php" method="post">
-
-								<input style="    width: 100%;
-								padding: 12px 20px;
-								margin: 8px 0;
-								box-sizing: border-box;
-								border: 2px solid black;
-								border-radius: 4px;
-								"type="text" placeholder="Please Enter the Drinker Name"
-								value="<?php echo $person3;?>" name="inputDrinker3" />
-
-
-								<button type="submit" title="Start type" name="typedDrinker3">Submit</button>
-							</form>
-							<?php
-							$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-							if (isset($_POST['typedDrinker3'])) {
-								$person3=$_POST['inputDrinker3'];
-								$query3 = "SELECT BAR.Bar, SUM(Sells.Price) AS TotalAmount, BILL.Date, BILL.Time
-													 FROM BarBeerDrinker.BILL
-												   LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.TransactionID
-													 LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
-													 LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
-													 LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-													 WHERE DRINKER.Name = '$person3'
-													 GROUP BY BILL.Date";
-								$result3 = mysqli_query($db, $query3);
+												WHERE BAR.Bar = '$bar1'
+												GROUP BY DRINKER.Name
+												ORDER BY TotalAmount DESC
+												LIMIT 10";
+								$result1 = mysqli_query($db, $query1);
 							}
 								?>
 								<script type="text/javascript" src="loder.js"></script>
@@ -488,28 +353,32 @@
 								function drawChart(){
 									var data = new google.visualization.DataTable();
 									var data = google.visualization.arrayToDataTable([
-										['Bar','TotalAmount'],
+										['Name','TotalAmount'],
 										<?php
-										while($row = mysqli_fetch_assoc($result3)){
-											echo "['".$row["Bar"]."', ".$row["TotalAmount"]."],";
+										while($row = mysqli_fetch_assoc($result1)){
+											echo "['".$row["Name"]."', ".$row["TotalAmount"]."],";
 										}
 										?>
 									]);
 
 									var options = {
-										title: 'Bar graph of his/her spending in different bars, on different dates/weeks/months.',
+										title: 'Bar graph of top drinkers who are largest spenders.',
 										curveType: 'function',
 										legend: { position: 'bottom' }
 									};
 
-									var chart = new google.visualization.BarChart(document.getElementById('Barchart2'));
+									var chart = new google.visualization.BarChart(document.getElementById('Barchart1'));
 									chart.draw(data, options);
 
 							}
 
 						</script>
-						<div id="Barchart2" style="width: 900px; height: 400px"></div>
+						<div id="Barchart1" style="width: 900px; height: 400px"></div>
 					</div>
+
+					
+
+					
 
 					<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
 						<div class="footer_wrap_inner widget_area_inner">
@@ -618,4 +487,4 @@
 		$(document).ready(function(){
 			$('#drinker_data1').DataTable();
 		});
-	</script>
+		</script>

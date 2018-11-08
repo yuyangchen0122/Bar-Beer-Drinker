@@ -277,21 +277,35 @@
 												Please follow the SQL rules, you can get from the below link
 												<a href="https://www.w3schools.com/sql/">Clike me -_-</a>.
 											</p>
+											<div class="container">
+												<div style="border-radius: 5px;padding: 30px;">
 											<form action="Modification.php" method="post">
-										    <label for="lname">Update Bar Table</label>
+										    <h3 class="page_subtitle">Update Bar Table</h3>
 										    <div>
-										     <input type="text" name="BARname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+										     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="BARname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 										    </div>
+
 										    <div class="input-group">
 										     <button type="submit" class="btn" name="BARsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
 										    </div>
 										   </form>
+										</div></div>
 										   <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <label for="lname">Update Bill Table</label>
+											    <h3 class="page_subtitle">Update Bill Table</h3>
 											    <div>
-											     <input type="text" name="BILLname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+											     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="BILLname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
 											     <button type="submit" class="btn" name="BILLsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
@@ -302,9 +316,14 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <label for="lname">Update Customer Table</label>
+											    <h3 class="page_subtitle">Update Customer Table</h3>
 											    <div>
-											     <input type="text" name="CUSname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+											     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="CUSname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
 											     <button type="submit" class="btn" name="CUSsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
@@ -315,9 +334,14 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <label for="lname">Update Frequent Table</label>
+											    <h3 class="page_subtitle">Update Frequent Table</h3>
 											    <div>
-											     <input type="text" name="FREQname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+											     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="FREQname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
 											     <button type="submit" class="btn" name="FREQsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
@@ -328,9 +352,14 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <label for="lname">Update Items Table</label>
+											    <h3 class="page_subtitle">Update Items Table</h3>
 											    <div>
-											     <input type="text" name="ITEMname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+											     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="ITEMname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
 											     <button type="submit" class="btn" name="ITEMsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
@@ -341,9 +370,14 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <label for="lname">Update Likes Table</label>
+											    <h3 class="page_subtitle">Update Likes Table</h3>
 											    <div>
-											     <input type="text" name="LIKEname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+											     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="LIKEname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
 											     <button type="submit" class="btn" name="LIKEsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
@@ -354,9 +388,14 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <label for="lname">Update Open Hour Table</label>
+											    <h3 class="page_subtitle">Update Open Hour Table</h3>
 											    <div>
-											     <input type="text" name="HOURname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+											     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="HOURname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
 											     <button type="submit" class="btn" name="HOURsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
@@ -367,9 +406,14 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <label for="lname">Update Sell Table</label>
+											    <h3 class="page_subtitle">Update Sell Table</h3>
 											    <div>
-											     <input type="text" name="SELLname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+											     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="SELLname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
 											     <button type="submit" class="btn" name="SELLsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
@@ -380,9 +424,14 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <label for="lname">Update Transaction Table</label>
+											    <h3 class="page_subtitle">Update Transaction Table</h3>
 											    <div>
-											     <input type="text" name="TRANname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+											     <input type="text" style="width: 100%;
+												padding: 12px 20px;
+												margin: 8px 0;
+												box-sizing: border-box;
+												border: 2px solid black;
+												border-radius: 4px;" name="TRANname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
 											     <button type="submit" class="btn" name="TRANsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
@@ -390,6 +439,7 @@
 											   </form>
 											  </div></div>
 											  <?php
+											  if (isset($_POST['BARsubmit']) || isset($_POST['BILLsubmit']) || isset($_POST['CUSsubmit']) || isset($_POST['FREQsubmit']) || isset($_POST['ITEMsubmit']) || isset($_POST['LIKEsubmit']) || isset($_POST['HOURsubmit']) || isset($_POST['SELLsubmit']) || isset($_POST['TRANsubmit'])){
 											   if (isset($_POST['BARsubmit'])) {
 											   $query_table = $_POST['BARname'];
 											   }elseif (isset($_POST['BILLsubmit'])) {
@@ -423,6 +473,7 @@
 											     }
 											     echo "Updated data successfully\n";
 											     mysqli_close($conn);
+											 }
 											  ?>
 										</div>
 									</article>

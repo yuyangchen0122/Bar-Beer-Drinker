@@ -271,159 +271,192 @@
 	    </div>
 
 			<div class="container">
-				<h3 class="page_title">Top drinkers who are largest spenders</h1>
-				<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
-				<form action="features-BarPage.php" method="post">
+				<h3 class="page_title">Bar graph of top drinkers who are largest spenders</h1>
+					<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+					<form action="features-BarPage.php" method="post">
 
-					<input style="    width: 100%;
-												    padding: 12px 20px;
-												    margin: 8px 0;
-												    box-sizing: border-box;
-												    border: 2px solid black;
-												    border-radius: 4px;
-														"type="text" placeholder="Please Enter the Bar Name"
-														value="<?php echo $bar;?>" name="inputBar" />
+						<input style="    width: 100%;
+						padding: 12px 20px;
+						margin: 8px 0;
+						box-sizing: border-box;
+						border: 2px solid black;
+						border-radius: 4px;
+						"type="text" placeholder="Please Enter the Bar Name"
+						value="<?php echo $inputBar1;?>" name="inputBar1" />
 
 
-					<button type="submit" title="Start type" name="modify_query">Submit</button>
-				</form>
-				<?php
-				$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-				$query = "SELECT * FROM BarBeerDrinker.BAR";
-				$result = mysqli_query($db, $query);
-				?>
-				<script type="text/javascript" src="loder.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
+						<button type="submit" title="Start type" name="typedBar1">Submit</button>
+					</form>
+					<?php
+					$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+					if (isset($_POST['typedBar1'])) {
+						$bar1=$_POST['inputBar1'];
+						$query1 = "SELECT DRINKER.SSN, round(SUM(Sells.Price),2) AS TotalAmount
+												FROM BarBeerDrinker.BILL
+												LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.BillID
+												LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
+												LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
+												LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+												WHERE BAR.Bar = 'Blue Angel'
+												GROUP BY DRINKER.Name";
+						$result1 = mysqli_query($db, $query1);
+					}
+						?>
+						<script type="text/javascript" src="loder.js"></script>
+						<script type="text/javascript">
+						google.charts.load('current', {'packages':['corechart']});
 
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart(){
-            var data = new google.visualization.DataTable();
-            var data = google.visualization.arrayToDataTable([
-                ['Date_time','Tempout'],
-                <?php
-                    while($row = mysqli_fetch_assoc($aresult)){
-                        echo "['".$row["0"]."', ".$row["1"]."],";
-                    }
-                ?>
-               ]);
+						google.charts.setOnLoadCallback(drawChart);
+						function drawChart(){
+							var data = new google.visualization.DataTable();
+							var data = google.visualization.arrayToDataTable([
+								['Name','TotalAmount'],
+								<?php
+								while($row = mysqli_fetch_assoc($result1)){
+									echo "['".$row[0]."', ".$row[1]."],";
+								}
+								?>
+							]);
 
-            var options = {
-                title: 'Date_time Vs Room Out Temp',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-            };
+							var options = {
+								title: 'Bar graph of his/her spending in different bars, on different dates/weeks/months.',
+								curveType: 'function',
+								legend: { position: 'bottom' }
+							};
 
-            var chart = new google.visualization.BarChart(document.getElementById('Barchart'));
-            chart.draw(data, options);
-        }
+							var chart = new google.visualization.BarChart(document.getElementById('Barchart1'));
+							chart.draw(data, options);
 
-    </script>
-		<div id="Barchart" style="width: 900px; height: 400px"></div>
+					}
+
+				</script>
+				<div id="Barchart1" style="width: 900px; height: 400px"></div>
 			</div>
 
 			<div class="container">
-				<h3 class="page_title">Beers which are most popular</h1>
-				<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
-				<form action="features-BarPage.php" method="post">
+				<h3 class="page_title">Bar graph of beers which are most popular</h1>
+					<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+					<form action="features-BarPage.php" method="post">
 
-					<input style="    width: 100%;
-														padding: 12px 20px;
-														margin: 8px 0;
-														box-sizing: border-box;
-														border: 2px solid black;
-														border-radius: 4px;
-														"type="text" placeholder="Please Enter the Bar Name"
-														value="<?php echo $bar;?>" name="inputBar" />
+						<input style="    width: 100%;
+						padding: 12px 20px;
+						margin: 8px 0;
+						box-sizing: border-box;
+						border: 2px solid black;
+						border-radius: 4px;
+						"type="text" placeholder="Please Enter the Drinker Name"
+						value="<?php echo $bar2;?>" name="inputBar2" />
 
 
-					<button type="submit" title="Start type" name="modify_query">Submit</button>
-				</form>
-				<?php
-				$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-				$query = "SELECT * FROM BarBeerDrinker.BAR";
-				$result = mysqli_query($db, $query);
-				?>
-				<script type="text/javascript" src="loder.js"></script>
-		<script type="text/javascript">
-				google.charts.load('current', {'packages':['corechart']});
+						<button type="submit" title="Start type" name="typedBar2">Submit</button>
+					</form>
+					<?php
+					$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+					if (isset($_POST['typedBar2'])) {
+						$bar2=$_POST['inputBar2'];
+						$query2 = "SELECT BAR.Bar, SUM(Sells.Price) AS TotalAmount, BILL.Date, BILL.Time
+											 FROM BarBeerDrinker.BILL
+											 LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.TransactionID
+											 LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
+											 LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
+											 LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+											 WHERE DRINKER.Name = '$bar2'
+											 GROUP BY BILL.Date";
+						$result2 = mysqli_query($db, $query2);
+					}
+						?>
+						<script type="text/javascript" src="loder.js"></script>
+						<script type="text/javascript">
+						google.charts.load('current', {'packages':['corechart']});
 
-				google.charts.setOnLoadCallback(drawChart);
-				function drawChart(){
-						var data = new google.visualization.DataTable();
-						var data = google.visualization.arrayToDataTable([
-								['Date_time','Tempout'],
+						google.charts.setOnLoadCallback(drawChart);
+						function drawChart(){
+							var data = new google.visualization.DataTable();
+							var data = google.visualization.arrayToDataTable([
+								['Bar','TotalAmount'],
 								<?php
-										while($row = mysqli_fetch_assoc($aresult)){
-												echo "['".$row["0"]."', ".$row["1"]."],";
-										}
+								while($row = mysqli_fetch_assoc($result2)){
+									echo "['".$row["Bar"]."', ".$row["TotalAmount"]."],";
+								}
 								?>
-							 ]);
+							]);
 
-						var options = {
-								title: 'Date_time Vs Room Out Temp',
+							var options = {
+								title: 'Bar graph of his/her spending in different bars, on different dates/weeks/months.',
 								curveType: 'function',
 								legend: { position: 'bottom' }
-						};
+							};
 
-						var chart = new google.visualization.BarChart(document.getElementById('Barchart'));
-						chart.draw(data, options);
-				}
+							var chart = new google.visualization.BarChart(document.getElementById('Barchart2'));
+							chart.draw(data, options);
 
-		</script>
-		<div id="Barchart" style="width: 900px; height: 400px"></div>
+					}
+
+				</script>
+				<div id="Barchart2" style="width: 900px; height: 400px"></div>
 			</div>
 
 			<div class="container">
-				<h3 class="page_title">Manufacturers who sell the most beers</h1>
-				<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
-				<form action="features-BarPage.php" method="post">
+				<h3 class="page_title">Bar graph of manufacturers who sell the most beers</h1>
+					<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+					<form action="features-BarPage.php" method="post">
 
-					<input style="    width: 100%;
-														padding: 12px 20px;
-														margin: 8px 0;
-														box-sizing: border-box;
-														border: 2px solid black;
-														border-radius: 4px;
-														"type="text" placeholder="Please Enter the Bar Name"
-														value="<?php echo $bar;?>" name="inputBar" />
+						<input style="    width: 100%;
+						padding: 12px 20px;
+						margin: 8px 0;
+						box-sizing: border-box;
+						border: 2px solid black;
+						border-radius: 4px;
+						"type="text" placeholder="Please Enter the Drinker Name"
+						value="<?php echo $bar3;?>" name="inputBar3" />
 
 
-					<button type="submit" title="Start type" name="modify_query">Submit</button>
-				</form>
-				<?php
-				$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-				$query = "SELECT * FROM BarBeerDrinker.BAR";
-				$result = mysqli_query($db, $query);
-				?>
-				<script type="text/javascript" src="loder.js"></script>
-		<script type="text/javascript">
-				google.charts.load('current', {'packages':['corechart']});
+						<button type="submit" title="Start type" name="typedBar3">Submit</button>
+					</form>
+					<?php
+					$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+					if (isset($_POST['typedBar3'])) {
+						$bar3=$_POST['inputBar3'];
+						$query3 = "SELECT BAR.Bar, SUM(Sells.Price) AS TotalAmount, BILL.Date, BILL.Time
+											 FROM BarBeerDrinker.BILL
+											 LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.TransactionID
+											 LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
+											 LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
+											 LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+											 WHERE DRINKER.Name = '$bar3'
+											 GROUP BY BILL.Date";
+						$result3 = mysqli_query($db, $query3);
+					}
+						?>
+						<script type="text/javascript" src="loder.js"></script>
+						<script type="text/javascript">
+						google.charts.load('current', {'packages':['corechart']});
 
-				google.charts.setOnLoadCallback(drawChart);
-				function drawChart(){
-						var data = new google.visualization.DataTable();
-						var data = google.visualization.arrayToDataTable([
-								['Date_time','Tempout'],
+						google.charts.setOnLoadCallback(drawChart);
+						function drawChart(){
+							var data = new google.visualization.DataTable();
+							var data = google.visualization.arrayToDataTable([
+								['Bar','TotalAmount'],
 								<?php
-										while($row = mysqli_fetch_assoc($aresult)){
-												echo "['".$row["0"]."', ".$row["1"]."],";
-										}
+								while($row = mysqli_fetch_assoc($result3)){
+									echo "['".$row["Bar"]."', ".$row["TotalAmount"]."],";
+								}
 								?>
-							 ]);
+							]);
 
-						var options = {
-								title: 'Date_time Vs Room Out Temp',
+							var options = {
+								title: 'Bar graph of his/her spending in different bars, on different dates/weeks/months.',
 								curveType: 'function',
 								legend: { position: 'bottom' }
-						};
+							};
 
-						var chart = new google.visualization.BarChart(document.getElementById('Barchart'));
-						chart.draw(data, options);
-				}
+							var chart = new google.visualization.BarChart(document.getElementById('Barchart3'));
+							chart.draw(data, options);
 
-		</script>
-		<div id="Barchart" style="width: 900px; height: 400px"></div>
+					}
+
+				</script>
+				<div id="Barchart3" style="width: 900px; height: 400px"></div>
 			</div>
 
 
@@ -506,8 +539,7 @@
 
 <a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
-<script type='text/javascript' src='js/custom/__main.js'></script>
-<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
+
 <script type='text/javascript' src='js/vendor/superfish.min.js'></script>
 <script type='text/javascript' src='js/custom/jquery.slidemenu.min.js'></script>
 <script type='text/javascript' src='js/custom/core.utils.min.js'></script>

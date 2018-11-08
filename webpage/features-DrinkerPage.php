@@ -468,7 +468,7 @@
 					</div>
 
 					<div class="container">
-						<h3 class="page_title">Bar graph of his/her spending in different bars, on different dates/weeks/months</h1>
+						<h3 class="page_subtitle">Bar graph of his/her spending in different bars, on different dates/weeks/months</h3>
 							<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
 							<form action="features-DrinkerPage.php" method="post">
 

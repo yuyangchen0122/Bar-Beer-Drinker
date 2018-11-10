@@ -1,3 +1,6 @@
+<?php 
+$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66'); 
+?>
 <!DOCTYPE html>
 <html lang="en-US" class="scheme_original">
 <head>
@@ -92,21 +95,13 @@
 									<li class="menu-item ">
 										<a href="features-BeerPage.php">Beer Page</a>
 									</li>
-									<li class="menu-item  menu-item-has-children">
-										<a href="#">Gallery</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-gallery-masonry.php">Masonry</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-gallery-grid.php">Grid</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-gallery-cobbles.php">Cobbles</a>
-											</li>
-										</ul>
-									</li>
 								</ul>
+							</li>
+							<li class="menu-item menu-item-object-page ">
+								<a href="features-query.php">SQL QUERY INTERFACE</a>
+							</li>
+							<li class="menu-item menu-item-object-page ">
+								<a href="modification.php">Modification</a>
 							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">About us</a>
@@ -119,56 +114,7 @@
 									</li>
 								</ul>
 							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">News</a>
-								<ul class="sub-menu">
-									<li class="menu-item ">
-										<a href="news-post-formats.php">Post Formats</a>
-									</li>
-									<li class="menu-item ">
-										<a href="news-classic.php">Classic Style</a>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">Masonry Layout</a>
-										<ul class="sub-menu">
-											<li class="menu-item ">
-												<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
-											</li>
-											<li class="menu-item ">
-												<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">Portfolio Layout</a>
-										<ul class="sub-menu">
-											<li class="menu-item ">
-												<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
-											</li>
-											<li class="menu-item ">
-												<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="menu.php">Menu</a>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">Store</a>
-								<ul class="sub-menu">
-									<li class="menu-item menu-item-object-page ">
-										<a href="store-shop.php">Shop</a>
-									</li>
-									<li class="menu-item menu-item-object-page ">
-										<a href="store-cart.php">Cart</a>
-									</li>
-									<li class="menu-item menu-item-object-page ">
-										<a href="store-checkout.php">Checkout</a>
-									</li>
-								</ul>
-							</li>
+							
 							<li class="menu-item menu-item-object-page ">
 								<a href="contacts.php">Contacts</a>
 							</li>
@@ -195,100 +141,40 @@
 									<li class="menu-item menu-item-object-page ">
 										<a href="index.php">Home</a>
 									</li>
-									<li class="menu-item menu-item-has-children current-menu-ancestor">
-										<a href="#">Features</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-BarPage.php">Bar Page</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-DrinkerPage.php">Drinker Page</a>
-											</li>
-											<li class="menu-item current-menu-item">
-												<a href="features-BeerPage.php">Beer Page</a>
-											</li>
-											<li class="menu-item menu-item-has-children ">
-												<a href="#">Gallery</a>
-												<ul class="sub-menu">
-													<li class="menu-item menu-item-object-page ">
-														<a href="features-gallery-masonry.php">Masonry</a>
-													</li>
-													<li class="menu-item menu-item-object-page ">
-														<a href="features-gallery-grid.php">Grid</a>
-													</li>
-													<li class="menu-item menu-item-object-page ">
-														<a href="features-gallery-cobbles.php">Cobbles</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">About us</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-object-page ">
-												<a href="about-us-about-us.php">About us</a>
-											</li>
-											<li class="menu-item ">
-												<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">News</a>
-										<ul class="sub-menu">
-											<li class="menu-item ">
-												<a href="news-post-formats.php">Post Formats</a>
-											</li>
-											<li class="menu-item ">
-												<a href="news-classic.php">Classic Style</a>
-											</li>
-											<li class="menu-item menu-item-has-children ">
-												<a href="#">Masonry Layout</a>
-												<ul class="sub-menu">
-													<li class="menu-item ">
-														<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
-													</li>
-													<li class="menu-item ">
-														<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
-													</li>
-												</ul>
-											</li>
-											<li class="menu-item menu-item-has-children ">
-												<a href="#">Portfolio Layout</a>
-												<ul class="sub-menu">
-													<li class="menu-item ">
-														<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
-													</li>
-													<li class="menu-item ">
-														<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-object-page ">
-										<a href="menu.php">Menu</a>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">Store</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-object-page ">
-												<a href="store-shop.php">Shop</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="store-cart.php">Cart</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="store-checkout.php">Checkout</a>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-object-page ">
-										<a href="contacts.php">Contacts</a>
-									</li>
-								</ul>
-							</nav>
+									<li class="menu-item current-menu-ancestor menu-item-has-children">
+						<a href="#">Features</a>
+						<ul class="sub-menu">
+							<li class="menu-item menu-item-object-page ">
+								<a href="features-BarPage.php">Bar Page</a>
+							</li>
+							<li class="menu-item menu-item-object-page ">
+								<a href="features-DrinkerPage.php">Drinker Page</a>
+							</li>
+							<li class="menu-item ">
+								<a href="features-BeerPage.php">Beer Page</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-item menu-item-object-page ">
+						<a href="features-query.php">SQL QUERY INTERFACE</a>
+					</li>
+					<li class="menu-item menu-item-has-children ">
+						<a href="#">About us</a>
+						<ul class="sub-menu">
+							<li class="menu-item menu-item-object-page ">
+								<a href="about-us-about-us.html">About us</a>
+							</li>
+							<li class="menu-item ">
+								<a href="about-us-bartender.html">Bartender&#8217;s Page</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="menu-item menu-item-object-page ">
+						<a href="contacts.html">Contacts</a>
+					</li>
+				</ul>
+			</nav>
 						</div>
 						<div class="panel_bottom"></div>
 					</div>
@@ -313,7 +199,7 @@
 
 				<div class="container">
 						<h3 class="page_subtitle">Bar graph of top drinkers who are largest spenders</h3>
-							<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+							<h3 class="page_subtitle">Please Enter a Bar License in the Following Text Area</h3>
 							<form action="features-BarPage.php" method="post">
 
 								<input style="    width: 100%;
@@ -329,22 +215,29 @@
 								<button type="submit" title="Start type" name="typedBar1">Submit</button>
 							</form>
 							<?php
-							$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
 							if (isset($_POST['typedBar1'])) {
 								$bar1=$_POST['inputBar1'];
 								$query1 = "SELECT DRINKER.Name, ROUND(SUM(Sells.Price),2) AS TotalAmount
 												FROM BarBeerDrinker.BILL
 												LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.BillID
 												LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
-												LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 												LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-												WHERE BAR.Bar = '$bar1'
+												WHERE Transaction.License = '$bar1'
 												GROUP BY DRINKER.Name
 												ORDER BY TotalAmount DESC
 												LIMIT 10";
 								$result1 = mysqli_query($db, $query1);
 							}
 								?>
+								<div class="container">
+									<?php
+									if (!$result1) {
+								        // the query failed and debugging is enabled
+								        echo "<p>There was an error in query: $query1</p>";
+								        echo $mysqli->error;
+								    }
+									?>
+								</div>
 								<script type="text/javascript" src="loder.js"></script>
 								<script type="text/javascript">
 								google.charts.load('current', {'packages':['corechart']});
@@ -379,7 +272,7 @@
 
 					<div class="container">
 						<h3 class="page_subtitle">Bar graph of top drinkers who are largest spenders</h3>
-							<h3 class="page_subtitle">Please Enter a Bar Name in the Following Text Area</h3>
+							<h3 class="page_subtitle">Please Enter a Bar License in the Following Text Area</h3>
 							<form action="features-BarPage.php" method="post">
 
 								<input style="    width: 100%;
@@ -395,21 +288,30 @@
 								<button type="submit" title="Start type" name="typedBar2">Submit</button>
 							</form>
 							<?php
-							$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
 							if (isset($_POST['typedBar2'])) {
-								$bar2=$_POST['inputBar2s'];
-								$query2 = "SELECT Items.Item, COUNT(Items.Category) AS TotalAmount
-											FROM BarBeerDrinker.BILL
-											LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.BillID
+								$bar2=$_POST['inputBar2'];
+								$query2 = "SELECT Items.Item,COUNT(Items.Category) AS TotalAmount
+											FROM BarBeerDrinker.Transaction
+											LEFT JOIN BarBeerDrinker.BILL ON Transaction.BillID = BILL.BillID
 											LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-											LEFT JOIN BarBeerDrinker.BAR ON BAR.License = BILL.License
 											LEFT JOIN BarBeerDrinker.Items ON Sells.Item = Items.Item
-											WHERE BAR.Bar = '$bar2' AND Items.Category = 'beer'
+											WHERE Items.Category='beer' AND Transaction.License = '$bar2'
 											GROUP BY Items.Item
-											ORDER BY TotalAmount";
-								$result1 = mysqli_query($db, $query2);
+											ORDER BY TotalAmount DESC";
+								$result2 = mysqli_query($db, $query2);
+
 							}
 								?>
+
+								<div class="container">
+									<?php
+									if (!$result2) {
+								        // the query failed and debugging is enabled
+								        echo "<p>There was an error in query: $query2</p>";
+								        echo $mysqli->error;
+								    }
+									?>
+								</div>
 								<script type="text/javascript" src="loder.js"></script>
 								<script type="text/javascript">
 								google.charts.load('current', {'packages':['corechart']});
@@ -441,7 +343,77 @@
 						<div id="Barchart2" style="width: 900px; height: 400px"></div>
 					</div>
 
-					
+					<div class="container">
+						<h3 class="page_subtitle">Bar graph for manufacturers who sell the most beers</h3>
+							<h3 class="page_subtitle">Please Enter a Bar License in the Following Text Area</h3>
+							<form action="features-BarPage.php" method="post">
+
+								<input style="    width: 100%;
+								padding: 12px 20px;
+								margin: 8px 0;
+								box-sizing: border-box;
+								border: 2px solid black;
+								border-radius: 4px;
+								"type="text" placeholder="Please Enter the Bar Name"
+								value="<?php echo $bar3;?>" name="inputBar3" />
+
+
+								<button type="submit" title="Start type" name="typedBar3">Submit</button>
+							</form>
+							<?php
+							
+							if (isset($_POST['typedBar3'])) {
+								$bar3=$_POST['inputBar3'];
+								$query3 = "SELECT Items.Manufacturers, COUNT(Items.Manufacturers) AS TotalAmount
+											FROM BarBeerDrinker.Transaction
+											LEFT JOIN BarBeerDrinker.BILL ON Transaction.BillID = BILL.BillID
+											LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+											LEFT JOIN BarBeerDrinker.Items ON Sells.Item = Items.Item
+											WHERE Items.Category='beer' AND Transaction.License = '$bar3'
+											GROUP BY Items.Manufacturers
+											ORDER BY TotalAmount DESC";
+								$result3 = mysqli_query($db, $query3);
+							}
+								?>
+								<div class="container">
+									<?php
+									if (!$result3) {
+								        // the query failed and debugging is enabled
+								        echo "<p>There was an error in query: $query3</p>";
+								        echo $mysqli->error;
+								    }
+									?>
+								</div>
+								<script type="text/javascript" src="loder.js"></script>
+								<script type="text/javascript">
+								google.charts.load('current', {'packages':['corechart']});
+
+								google.charts.setOnLoadCallback(drawChart);
+								function drawChart(){
+									var data = new google.visualization.DataTable();
+									var data = google.visualization.arrayToDataTable([
+										['Manufacturers','TotalAmount'],
+										<?php
+										while($row = mysqli_fetch_assoc($result3)){
+											echo "['".$row["Manufacturers"]."', ".$row["TotalAmount"]."],";
+										}
+										?>
+									]);
+
+									var options = {
+										title: 'Bar graph of top drinkers who are largest spenders.',
+										curveType: 'function',
+										legend: { position: 'bottom' }
+									};
+
+									var chart = new google.visualization.BarChart(document.getElementById('Barchart3'));
+									chart.draw(data, options);
+
+							}
+
+						</script>
+						<div id="Barchart3" style="width: 900px; height: 400px"></div>
+					</div>
 
 					
 

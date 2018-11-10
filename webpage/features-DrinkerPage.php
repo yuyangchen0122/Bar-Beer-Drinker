@@ -104,21 +104,13 @@
 									<li class="menu-item ">
 										<a href="features-BeerPage.php">Beer Page</a>
 									</li>
-									<li class="menu-item  menu-item-has-children">
-										<a href="#">Gallery</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-gallery-masonry.php">Masonry</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-gallery-grid.php">Grid</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-gallery-cobbles.php">Cobbles</a>
-											</li>
-										</ul>
-									</li>
 								</ul>
+							</li>
+							<li class="menu-item menu-item-object-page ">
+								<a href="features-query.php">SQL QUERY INTERFACE</a>
+							</li>
+							<li class="menu-item menu-item-object-page ">
+								<a href="modification.php">Modification</a>
 							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">About us</a>
@@ -128,56 +120,6 @@
 									</li>
 									<li class="menu-item ">
 										<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">News</a>
-								<ul class="sub-menu">
-									<li class="menu-item ">
-										<a href="news-post-formats.php">Post Formats</a>
-									</li>
-									<li class="menu-item ">
-										<a href="news-classic.php">Classic Style</a>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">Masonry Layout</a>
-										<ul class="sub-menu">
-											<li class="menu-item ">
-												<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
-											</li>
-											<li class="menu-item ">
-												<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">Portfolio Layout</a>
-										<ul class="sub-menu">
-											<li class="menu-item ">
-												<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
-											</li>
-											<li class="menu-item ">
-												<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="menu.php">Menu</a>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">Store</a>
-								<ul class="sub-menu">
-									<li class="menu-item menu-item-object-page ">
-										<a href="store-shop.php">Shop</a>
-									</li>
-									<li class="menu-item menu-item-object-page ">
-										<a href="store-cart.php">Cart</a>
-									</li>
-									<li class="menu-item menu-item-object-page ">
-										<a href="store-checkout.php">Checkout</a>
 									</li>
 								</ul>
 							</li>
@@ -207,100 +149,40 @@
 									<li class="menu-item menu-item-object-page ">
 										<a href="index.php">Home</a>
 									</li>
-									<li class="menu-item menu-item-has-children current-menu-ancestor">
-										<a href="#">Features</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-BarPage.php">Bar Page</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="features-DrinkerPage.php">Drinker Page</a>
-											</li>
-											<li class="menu-item current-menu-item">
-												<a href="features-BeerPage.php">Beer Page</a>
-											</li>
-											<li class="menu-item menu-item-has-children ">
-												<a href="#">Gallery</a>
-												<ul class="sub-menu">
-													<li class="menu-item menu-item-object-page ">
-														<a href="features-gallery-masonry.php">Masonry</a>
-													</li>
-													<li class="menu-item menu-item-object-page ">
-														<a href="features-gallery-grid.php">Grid</a>
-													</li>
-													<li class="menu-item menu-item-object-page ">
-														<a href="features-gallery-cobbles.php">Cobbles</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">About us</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-object-page ">
-												<a href="about-us-about-us.php">About us</a>
-											</li>
-											<li class="menu-item ">
-												<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">News</a>
-										<ul class="sub-menu">
-											<li class="menu-item ">
-												<a href="news-post-formats.php">Post Formats</a>
-											</li>
-											<li class="menu-item ">
-												<a href="news-classic.php">Classic Style</a>
-											</li>
-											<li class="menu-item menu-item-has-children ">
-												<a href="#">Masonry Layout</a>
-												<ul class="sub-menu">
-													<li class="menu-item ">
-														<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
-													</li>
-													<li class="menu-item ">
-														<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
-													</li>
-												</ul>
-											</li>
-											<li class="menu-item menu-item-has-children ">
-												<a href="#">Portfolio Layout</a>
-												<ul class="sub-menu">
-													<li class="menu-item ">
-														<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
-													</li>
-													<li class="menu-item ">
-														<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-object-page ">
-										<a href="menu.php">Menu</a>
-									</li>
-									<li class="menu-item menu-item-has-children ">
-										<a href="#">Store</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-object-page ">
-												<a href="store-shop.php">Shop</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="store-cart.php">Cart</a>
-											</li>
-											<li class="menu-item menu-item-object-page ">
-												<a href="store-checkout.php">Checkout</a>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-object-page ">
-										<a href="contacts.php">Contacts</a>
-									</li>
-								</ul>
-							</nav>
+									<li class="menu-item current-menu-ancestor menu-item-has-children">
+						<a href="#">Features</a>
+						<ul class="sub-menu">
+							<li class="menu-item menu-item-object-page ">
+								<a href="features-BarPage.php">Bar Page</a>
+							</li>
+							<li class="menu-item menu-item-object-page ">
+								<a href="features-DrinkerPage.php">Drinker Page</a>
+							</li>
+							<li class="menu-item ">
+								<a href="features-BeerPage.php">Beer Page</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-item menu-item-object-page ">
+						<a href="features-query.php">SQL QUERY INTERFACE</a>
+					</li>
+					<li class="menu-item menu-item-has-children ">
+						<a href="#">About us</a>
+						<ul class="sub-menu">
+							<li class="menu-item menu-item-object-page ">
+								<a href="about-us-about-us.html">About us</a>
+							</li>
+							<li class="menu-item ">
+								<a href="about-us-bartender.html">Bartender&#8217;s Page</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="menu-item menu-item-object-page ">
+						<a href="contacts.html">Contacts</a>
+					</li>
+				</ul>
+			</nav>
 						</div>
 						<div class="panel_bottom"></div>
 					</div>
@@ -426,8 +308,8 @@
 							if (isset($_POST['typedDrinker2'])) {
 								$person2=$_POST['inputDrinker2'];
 								$query2 = "SELECT Items.Item, COUNT(Category) AS AmountOfBeer
-								FROM BarBeerDrinker.BILL
-								LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.TransactionID
+								FROM BarBeerDrinker.Transaction
+								LEFT JOIN BarBeerDrinker.BILL ON BILL.BillID = Transaction.TransactionID
 								LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
 								LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 								LEFT JOIN BarBeerDrinker.Sells ON BAR.License = Sells.License
@@ -489,8 +371,8 @@
 							if (isset($_POST['typedDrinker3'])) {
 								$person3=$_POST['inputDrinker3'];
 								$query3 = "SELECT BAR.Bar, SUM(Sells.Price) AS TotalAmount, BILL.Date, BILL.Time
-													 FROM BarBeerDrinker.BILL
-												   LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.TransactionID
+													 FROM BarBeerDrinker.Transaction
+												   LEFT JOIN BarBeerDrinker.BILL ON BILL.BillID=Transaction.TransactionID
 													 LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
 													 LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 													 LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID

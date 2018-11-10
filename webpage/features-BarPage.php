@@ -415,6 +415,72 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 						<div id="Barchart3" style="width: 900px; height: 400px"></div>
 					</div>
 
+					<div class="container">
+						<h3 class="page_subtitle">Bar graph of top drinkers who are largest spenders</h3>
+							<h3 class="page_subtitle">Please Enter a Bar License in the Following Text Area</h3>
+							<form action="features-BarPage.php" method="post">
+
+								<input style="    width: 100%;
+								padding: 12px 20px;
+								margin: 8px 0;
+								box-sizing: border-box;
+								border: 2px solid black;
+								border-radius: 4px;
+								"type="text" placeholder="Please Enter the Bar Name"
+								value="<?php echo $bar4;?>" name="inputBar4" />
+
+
+								<button type="submit" title="Start type" name="typedBar4">Submit</button>
+							</form>
+							<?php
+							if (isset($_POST['typedBar4'])) {
+								$bar4=$_POST['inputBar4'];
+								$query4 = "SELECT BILL.Date,BILL.Time, UNIX_TIMESTAMP(CONCAT_WS(' ', Date, Time)) AS datetime
+											FROM BarBeerDrinker.Transaction
+											LEFT JOIN BarBeerDrinker.BILL ON Transaction.BillID = BILL.BillID
+											WHERE Transaction.License = '$bar4'
+											GROUP BY BILL.Time
+											ORDER BY datetime DESC";
+								$result4 = mysqli_query($db, $query4);
+							}
+								?>
+								<div class="container">
+									<?php
+									if (!$result4) {
+								        // the query failed and debugging is enabled
+								        echo "<p>There was an error in query: $query4</p>";
+								        echo $mysqli->error;
+								    }
+									?>
+								</div>
+								<script type="text/javascript" src="loder.js"></script>
+								    <script type="text/javascript">
+								        google.charts.load('current', {packages: ['corechart', 'line']});
+								        google.charts.setOnLoadCallback(drawBasic);
+								        function drawBasic() {
+								          var data = google.visualization.arrayToDataTable([
+								          ['Date','Time'],
+								          <?php 
+								            while($row = mysqli_fetch_array($result4)){
+								              echo "['".$row['Date']."', ".$row['Time']."],";  
+								            }
+								          ?>
+								          ]);
+								              var options = {
+								                hAxis: {
+								                  title: 'Date'
+								                },
+								                vAxis: {
+								                  title: 'Time'
+								                }
+								              };
+								              var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+								              chart.draw(data, options);
+								            }
+								    </script>
+						<div id="chart_div" style="width: 900px; height: 400px"></div>
+					</div>
+
 					
 
 					<footer class="footer_wrap widget_area scheme_original show-footer-border-no">

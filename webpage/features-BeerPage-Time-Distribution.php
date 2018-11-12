@@ -21,12 +21,13 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 	<?php
 	if (isset($_POST['typedBeer3'])) {
 		$beer3=$_POST['inputBeer3'];
-		$query3 = "SELECT Transaction.TransactionID, BILL.Time
-		FROM BarBeerDrinker.BILL
-		LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.BillID
-		LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-		WHERE Sells.Item = '$beer3'
-		ORDER BY BILL.Time DESC
+		$query3 = "SELECT COUNT(Transaction.ItemID)AS TotalAmount, hour(BILL.Time) as time_hour
+					FROM BarBeerDrinker.BILL
+					LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.BillID
+					LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+					WHERE Sells.Item = '$beer3'
+					GROUP BY time_hour
+					ORDER BY time_hour DESC
 		";
 		$result3 = mysqli_query($db, $query3);
 	}
@@ -47,22 +48,22 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 		function drawChart(){
 			var data = new google.visualization.DataTable();
 			var data = google.visualization.arrayToDataTable([
-				['Time','TransactionID'],
+				['time_hour','TotalAmount'],
 				<?php
 				while($row = mysqli_fetch_assoc($result3)){
-					echo "['".$row["Time"]."', ".$row["TransactionID"]."],";
+					echo "['".$row["time_hour"]."', ".$row["TotalAmount"]."],";
 				}
 				?>
 				]);
 
-			var options = {
-				title: 'Time distribution of when this beer sells the most',
-				hAxis: {title: 'Time'},
-				vAxis: {title: 'TransactionID'},
-				legend: 'none'
-			};
+			  var options = {
+			    title: 'Time distribution of when this beer sells the most',
+			    legend: { position: 'none' },
+			    colors: ['#4285F4'],
 
-			var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+			  };
+
+			var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 			chart.draw(data, options);
 
 		}

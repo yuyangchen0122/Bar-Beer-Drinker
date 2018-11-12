@@ -341,7 +341,7 @@
 									legend: { position: 'bottom' }
 								};
 
-								var chart = new google.visualization.BarChart(document.getElementById('Barchart1'));
+								var chart = new google.visualization.ColumnChart(document.getElementById('Barchart1'));
 								chart.draw(data, options);
 							}
 

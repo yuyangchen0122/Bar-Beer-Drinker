@@ -230,17 +230,17 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <h3 class="page_subtitle">Update Customer Table</h3>
+											    <h3 class="page_subtitle">Update Drinker Table</h3>
 											    <div>
 											     <input type="text" style="width: 100%;
 												padding: 12px 20px;
 												margin: 8px 0;
 												box-sizing: border-box;
 												border: 2px solid black;
-												border-radius: 4px;" name="CUSname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
+												border-radius: 4px;" name="Drinkername" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
 											    </div>
 											    <div class="input-group">
-											     <button type="submit" class="btn" name="CUSsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
+											     <button type="submit" class="btn" name="Drinkersubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
 											    </div>
 											   </form>
 											  </div></div>
@@ -302,24 +302,6 @@
 											  <div class="container">
 											  <div style="border-radius: 5px;padding: 30px;">
 											   <form action="Modification.php" method="post">
-											    <h3 class="page_subtitle">Update Open Hour Table</h3>
-											    <div>
-											     <input type="text" style="width: 100%;
-												padding: 12px 20px;
-												margin: 8px 0;
-												box-sizing: border-box;
-												border: 2px solid black;
-												border-radius: 4px;" name="HOURname" value="" placeholder="Example: UPDATE table_name SET field1 = new-value1, field2 = new-value2 [WHERE Clause];">
-											    </div>
-											    <div class="input-group">
-											     <button type="submit" class="btn" name="HOURsubmit" style="background-color: #45a049;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
-											    </div>
-											   </form>
-											  </div></div>
-
-											  <div class="container">
-											  <div style="border-radius: 5px;padding: 30px;">
-											   <form action="Modification.php" method="post">
 											    <h3 class="page_subtitle">Update Sell Table</h3>
 											    <div>
 											     <input type="text" style="width: 100%;
@@ -353,40 +335,39 @@
 											   </form>
 											  </div></div>
 											  <?php
-											  if (isset($_POST['BARsubmit']) || isset($_POST['BILLsubmit']) || isset($_POST['CUSsubmit']) || isset($_POST['FREQsubmit']) || isset($_POST['ITEMsubmit']) || isset($_POST['LIKEsubmit']) || isset($_POST['HOURsubmit']) || isset($_POST['SELLsubmit']) || isset($_POST['TRANsubmit'])){
+											  if (isset($_POST['BARsubmit']) || isset($_POST['BILLsubmit']) || isset($_POST['Drinkersubmit']) || isset($_POST['FREQsubmit']) || isset($_POST['ITEMsubmit']) || isset($_POST['LIKEsubmit']) || isset($_POST['HOURsubmit']) || isset($_POST['SELLsubmit']) || isset($_POST['TRANsubmit'])){
 											   if (isset($_POST['BARsubmit'])) {
 											   $query_table = $_POST['BARname'];
 											   }elseif (isset($_POST['BILLsubmit'])) {
 											   $query_table = $_POST['BILLname'];
-											   }elseif (isset($_POST['CUSsubmit'])) {
-											   $query_table = $_POST['CUSname'];
+											   }elseif (isset($_POST['Drinkersubmit'])) {
+											   $query_table = $_POST['Drinkername'];
 											   }elseif (isset($_POST['FREQsubmit'])) {
 											   $query_table = $_POST['FREQname'];
 											   }elseif (isset($_POST['ITEMsubmit'])) {
 											   $query_table = $_POST['ITEMname'];
 											   }elseif (isset($_POST['LIKEsubmit'])) {
 											   $query_table = $_POST['LIKEname'];
-											   }elseif (isset($_POST['HOURsubmit'])) {
-											   $query_table = $_POST['HOURname'];
 											   }elseif (isset($_POST['SELLsubmit'])) {
 											   $query_table = $_POST['SELLname'];
 											   }elseif (isset($_POST['TRANsubmit'])) {
 											   $query_table = $_POST['TRANname'];
 											   }
 
-											     $conn = mysqli_connect('cs336.czpl6st7eswe.us-east-1.rds.amazonaws.com', 'yaoshi616', '691209545', 'cs336');
+											    $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+
 											     
-											     if(! $conn ) {
-											        die('Could not connect: ' . mysqli_error($conn));
+											     if(! $db ) {
+											        die('Could not connect: ' . mysqli_error($db));
 											     }
 
-											     $retval = mysqli_query( $conn, $query_table);
+											     $retval = mysqli_query( $db, $query_table);
 											     
 											     if(! $retval ) {
-											        die('Could not update data: ' . mysqli_error($conn));
+											        die('Could not update data: ' . mysqli_error($db));
 											     }
 											     echo "Updated data successfully\n";
-											     mysqli_close($conn);
+											     mysqli_close($db);
 											 }
 											  ?>
 										</div>

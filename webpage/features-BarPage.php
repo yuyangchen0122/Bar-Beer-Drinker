@@ -208,7 +208,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 						box-sizing: border-box;
 						border: 2px solid black;
 						border-radius: 4px;
-						"type="text" placeholder="Please Enter the Bar Name"
+						"type="text" placeholder="Please Enter the Bar License"
 						value="<?php echo $bar1;?>" name="inputBar1" />
 
 
@@ -222,7 +222,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 						LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID = Transaction.BillID
 						LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
 						LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-						WHERE Transaction.License = '$bar1'
+						WHERE BILL.License = '$bar1'
 						GROUP BY DRINKER.Name
 						ORDER BY TotalAmount DESC
 						LIMIT 10";
@@ -271,7 +271,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 
 				<div class="container">
-					<h3 class="page_subtitle">Bar graph of top drinkers who are largest spenders</h3>
+					<h3 class="page_subtitle">Bar graph of beers which are most popular.</h3>
 					<h3 class="page_subtitle">Please Enter a Bar License in the Following Text Area</h3>
 					<form action="features-BarPage.php" method="post">
 
@@ -281,7 +281,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 						box-sizing: border-box;
 						border: 2px solid black;
 						border-radius: 4px;
-						"type="text" placeholder="Please Enter the Bar Name"
+						"type="text" placeholder="Please Enter the Bar License"
 						value="<?php echo $bar2;?>" name="inputBar2" />
 
 
@@ -329,7 +329,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 								]);
 
 							var options = {
-								title: 'Bar graph of top drinkers who are largest spenders.',
+								title: 'ar graph of beers which are most popular.',
 								curveType: 'function',
 								legend: { position: 'bottom' }
 							};
@@ -354,7 +354,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 						box-sizing: border-box;
 						border: 2px solid black;
 						border-radius: 4px;
-						"type="text" placeholder="Please Enter the Bar Name"
+						"type="text" placeholder="Please Enter the Bar License"
 						value="<?php echo $bar3;?>" name="inputBar3" />
 
 
@@ -415,8 +415,10 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					<div id="Barchart3" style="width: 900px; height: 400px"></div>
 				</div>
 
+
+
 				<div class="container">
-					<h3 class="page_subtitle">Bar graph of top drinkers who are largest spenders</h3>
+					<h3 class="page_subtitle">Time distribution of sales that the busiest periods of the day.</h3>
 					<h3 class="page_subtitle">Please Enter a Bar License in the Following Text Area</h3>
 					<form action="features-BarPage.php" method="post">
 
@@ -426,7 +428,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 						box-sizing: border-box;
 						border: 2px solid black;
 						border-radius: 4px;
-						"type="text" placeholder="Please Enter the Bar Name"
+						"type="text" placeholder="Please Enter the Bar License"
 						value="<?php echo $bar4;?>" name="inputBar4" />
 
 
@@ -435,12 +437,12 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					<?php
 					if (isset($_POST['typedBar4'])) {
 						$bar4=$_POST['inputBar4'];
-						$query4 = "SELECT BILL.Date,BILL.Time, UNIX_TIMESTAMP(CONCAT_WS(' ', Date, Time)) AS datetime
-						FROM BarBeerDrinker.Transaction
-						LEFT JOIN BarBeerDrinker.BILL ON Transaction.BillID = BILL.BillID
-						WHERE Transaction.License = '$bar4'
-						GROUP BY BILL.Time
-						ORDER BY datetime DESC";
+						$query4 = "SELECT COUNT(BILL.BillID) as TotalAmount, hour(BILL.Time) as hour
+									FROM BarBeerDrinker.BILL
+									LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.BillID
+									LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+									WHERE BILL.License = '$bar4'
+									GROUP BY hour";
 						$result4 = mysqli_query($db, $query4);
 					}
 					?>
@@ -455,30 +457,104 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					</div>
 					<script type="text/javascript" src="loder.js"></script>
 					<script type="text/javascript">
-						google.charts.load('current', {packages: ['corechart', 'line']});
-						google.charts.setOnLoadCallback(drawBasic);
-						function drawBasic() {
+						google.charts.load('current', {'packages':['corechart']});
+
+						google.charts.setOnLoadCallback(drawChart);
+						function drawChart(){
+							var data = new google.visualization.DataTable();
 							var data = google.visualization.arrayToDataTable([
-								['Date','Time'],
+								['hour','TotalAmount'],
 								<?php
-								while($row = mysqli_fetch_array($result4)){
-									echo "['".$row['Date']."', ".$row['Time']."],";
+								while($row = mysqli_fetch_assoc($result4)){
+									echo "['".$row["hour"]."', ".$row["TotalAmount"]."],";
 								}
 								?>
 								]);
+
 							var options = {
-								hAxis: {
-									title: 'Date'
-								},
-								vAxis: {
-									title: 'Time'
-								}
+								title: 'Time distribution of sales that the busiest periods of the day ',
+								curveType: 'function',
+								legend: { position: 'bottom' }
 							};
-							var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+							var chart = new google.visualization.ColumnChart(document.getElementById('Barchart4'));
 							chart.draw(data, options);
+
 						}
+
 					</script>
-					<div id="chart_div" style="width: 900px; height: 400px"></div>
+					<div id="Barchart4" style="width: 900px; height: 400px"></div>
+				</div>
+
+
+
+				<div class="container">
+					<h3 class="page_subtitle">Time distribution of sales that the busiest periods of the Week.</h3>
+					<h3 class="page_subtitle">Please Enter a Bar License in the Following Text Area</h3>
+					<form action="features-BarPage.php" method="post">
+
+						<input style="    width: 100%;
+						padding: 12px 20px;
+						margin: 8px 0;
+						box-sizing: border-box;
+						border: 2px solid black;
+						border-radius: 4px;
+						"type="text" placeholder="Please Enter the Bar License"
+						value="<?php echo $bar5;?>" name="inputBar5" />
+
+
+						<button type="submit" title="Start type" name="typedBar5">Submit</button>
+					</form>
+					<?php
+					if (isset($_POST['typedBar5'])) {
+						$bar5=$_POST['inputBar5'];
+						$query5 = "SELECT COUNT(BILL.BillID) as TotalAmount, day(BILL.Date) as day
+									FROM BarBeerDrinker.BILL
+									LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.BillID
+									LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+									WHERE BILL.License = '$bar5'
+									GROUP BY day";
+						$result5 = mysqli_query($db, $query5);
+					}
+					?>
+					<div class="container">
+						<?php
+						if (!$result5) {
+								        // the query failed and debugging is enabled
+							echo "<p>There was an error in query: $query5</p>";
+							echo $mysqli->error;
+						}
+						?>
+					</div>
+					<script type="text/javascript" src="loder.js"></script>
+					<script type="text/javascript">
+						google.charts.load('current', {'packages':['corechart']});
+
+						google.charts.setOnLoadCallback(drawChart);
+						function drawChart(){
+							var data = new google.visualization.DataTable();
+							var data = google.visualization.arrayToDataTable([
+								['day','TotalAmount'],
+								<?php
+								while($row = mysqli_fetch_assoc($result5)){
+									echo "['".$row["day"]."', ".$row["TotalAmount"]."],";
+								}
+								?>
+								]);
+
+							var options = {
+								title: 'Time distribution of sales that the busiest periods of the week ',
+								curveType: 'function',
+								legend: { position: 'bottom' }
+							};
+
+							var chart = new google.visualization.ColumnChart(document.getElementById('Barchart5'));
+							chart.draw(data, options);
+
+						}
+
+					</script>
+					<div id="Barchart5" style="width: 900px; height: 400px"></div>
 				</div>
 
 

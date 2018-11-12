@@ -1,5 +1,0 @@
-Version 1.0.1
-* Fix: Events style improvement
-
-Version 1.0
-Release

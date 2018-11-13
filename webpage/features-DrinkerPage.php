@@ -226,7 +226,7 @@
 						$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
 						if (isset($_POST['typedDrinker1'])) {
 							$person1=$_POST['inputDrinker1'];
-							$query1 = "SELECT DRINKER.Name, DRINKER.SSN, BILL.BillID, BILL.Time, BILL.Date, Transaction.TransactionID, Transaction.ItemID, Sells.Item, Sells.Price, BAR.Bar, BAR.License,UNIX_TIMESTAMP(CONCAT_WS(' ', Date, Time)) AS datetime
+							$query1 = "SELECT DRINKER.Name, DRINKER.SSN, BILL.BillID, BILL.Time, BILL.Date, Transaction.ItemID, Sells.Item, Sells.Price, BAR.Bar, BAR.License,UNIX_TIMESTAMP(CONCAT_WS(' ', Date, Time)) AS datetime
 							FROM BarBeerDrinker.DRINKER
 							LEFT JOIN BarBeerDrinker.BILL ON DRINKER.SSN = BILL.SSN
 							LEFT JOIN BarBeerDrinker.Transaction ON BILL.BILLID = Transaction.BillID
@@ -247,7 +247,6 @@
 											<th scope="col">BillID</th>
 											<th scope="col">Time</th>
 											<th scope="col">Date</th>
-											<th scope="col">TransactionID</th>
 											<th scope="col">ItemID</th>
 											<th scope="col">Item</th>
 											<th scope="col">Price</th>
@@ -269,7 +268,6 @@
 										<td>'.$row["BillID"].'</td>
 										<td>'.$row["Time"].'</td>
 										<td>'.$row["Date"].'</td>
-										<td>'.$row["TransactionID"].'</td>
 										<td>'.$row["ItemID"].'</td>
 										<td>'.$row["Item"].'</td>
 										<td>'.$row["Price"].'</td>
@@ -309,7 +307,7 @@
 								$person2=$_POST['inputDrinker2'];
 								$query2 = "SELECT Items.Item, COUNT(Category) AS AmountOfBeer
 								FROM BarBeerDrinker.Transaction
-								LEFT JOIN BarBeerDrinker.BILL ON BILL.BillID = Transaction.TransactionID
+								LEFT JOIN BarBeerDrinker.BILL ON BILL.BillID = Transaction.BillID
 								LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
 								LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 								LEFT JOIN BarBeerDrinker.Sells ON BAR.License = Sells.License
@@ -372,7 +370,7 @@
 								$person3=$_POST['inputDrinker3'];
 								$query3 = "SELECT BAR.Bar, SUM(Sells.Price) AS TotalAmount, BILL.Date, BILL.Time
 													 FROM BarBeerDrinker.Transaction
-												   LEFT JOIN BarBeerDrinker.BILL ON BILL.BillID=Transaction.TransactionID
+												   LEFT JOIN BarBeerDrinker.BILL ON BILL.BillID=Transaction.BillID
 													 LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
 													 LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 													 LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID

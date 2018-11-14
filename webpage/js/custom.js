@@ -3,7 +3,7 @@ $().ready(function() {
     	var country = $( "#country" ).val();
     	$("#country option[value='0']").remove();
 
-       	$.ajax({ url: "SearchRegion.php",
+       	$.ajax({ url: "SearchBar.php",
          data: {country_id: country},
          type: 'get',
          async: false,
@@ -18,13 +18,13 @@ $().ready(function() {
        	 }
         });
     	$('#city').find('option').remove().end();
-    	$('#city').append('<option value="0">Please choose a Region/State</option>');
+    	$('#city').append('<option value="0">Please choose a Bar</option>');
 
 	});
 
 	$( "#region" ).change(function() {
     	var region = $( "#region" ).val();
-        $.ajax({ url: "SearchCity.php",
+        $.ajax({ url: "SearchItem.php",
          data: {region_id: region},
          type: 'get',
          async: false,

@@ -25,6 +25,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 	<style type="text/css">
+	
 
 </style>
 </head>
@@ -179,11 +180,15 @@
 				<br>
 				<div class="container" >
 					<div class="row">
-						<div class="col-md-4"></div>
-						<div class="col-md-4">
+						<div class="col-lg-4 col-lg-offset-4">
 							<br><br><br>
 							<form method=post name=f1 action=''><input type=hidden name=todo value=submit>
-								<div class="form-group">
+								<div class="form-group" >
+									<div class="col-sm-10">
+										<label>Input Your Name(First-Last)</label>
+										<input type=text name=name size=20 value="">
+										<br>
+									</div>
 									<div class="col-sm-10">
 										<label>Select State</label>
 										<select class="form-control" name="country" id="country">
@@ -448,6 +453,9 @@
 				$todo=$_POST['todo'];
 
 				if(isset($todo) and $todo=="submit"){
+					$name=$_POST['name'];
+
+					echo "Your name : $name<br>";
 
 					$month=$_POST['month'];
 

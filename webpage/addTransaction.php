@@ -25,7 +25,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 	<style type="text/css">
-	
+
 
 </style>
 </head>
@@ -174,14 +174,11 @@
 					<div class="mask"></div>
 				</div>
 
-				<br>
-				<br>
-				<br>
-				<br>
 				<div class="container" >
 					<div class="row">
-						<div class="col-lg-4 col-lg-offset-4">
-							<br><br><br>
+						<div class="col-lg-4">
+							<br><br>
+
 							<form method=post name=f1 action=''><input type=hidden name=todo value=submit>
 								<div class="form-group" >
 									<div class="col-sm-10">
@@ -195,7 +192,7 @@
 											<option value="0">Select State</option>	
 											<?php
 											require_once('DbConnection.php');
-											$countries=mysqli_query($connection,"SELECT * FROM BarBeerDrinker.country ORDER BY country");
+											$countries=mysqli_query($connection,"SELECT * FROM BarBeerDrinker.select_state ORDER BY country");
 											while($country = mysqli_fetch_assoc($countries)){
 												echo "<option value='".$country['id']."'>".$country['country']."</option>";
 											}

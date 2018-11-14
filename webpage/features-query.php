@@ -192,7 +192,7 @@
 											<div class="image404">
 												<img class="image-404" src="images/404_images.png" alt="">
 											</div>
-											<h1 class="page_title">Feel free to modify our database</h1>
+											<h1 class="page_title">Feel free to test our database</h1>
 											<h3 class="page_subtitle">Please type in your query here</h3>
 											<p class="page_description">
 												Please follow the SQL rules, you can get from the below link

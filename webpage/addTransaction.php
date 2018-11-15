@@ -509,6 +509,12 @@
 						echo "The Close for this bar is:$close_time<br>";
 
 					}
+					if (strtotime($time_value) > strtotime($open_time) && strtotime($time_value) < strtotime($close_time))
+					{
+					   echo 'valid time selected';
+					}else{
+						echo 'the bar has been closed';
+					}
 				}
 				?>
 

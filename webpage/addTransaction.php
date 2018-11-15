@@ -174,10 +174,14 @@
 					<div class="mask"></div>
 				</div>
 
+				<br>
+				<br>
+				<br>
+				<br>
 				<div class="container" >
 					<div class="row">
 						<div class="col-lg-4">
-							<br><br>
+							<br>
 
 							<form method=post name=f1 action=''><input type=hidden name=todo value=submit>
 								<div class="form-group" >
@@ -450,6 +454,8 @@
 				$todo=$_POST['todo'];
 
 				if(isset($todo) and $todo=="submit"){
+					
+
 					$name=$_POST['name'];
 
 					echo "Your name : $name<br>";
@@ -480,13 +486,32 @@
 					$country1=$_POST['country'];
 					$region1=$_POST['region'];
 					$city1=$_POST['city'];
+
 					echo "The State you selected is:$country1<br>";
 
 					echo "The Bar you selected is:$region1<br>";
 
 					echo "The Item you selected is:$city1<br>";
+
+
+
+					$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+					$query1 = "SELECT select_bar.id, select_bar.region, BAR.Open, BAR.Close 
+					FROM BarBeerDrinker.BAR 
+					LEFT JOIN BarBeerDrinker.select_bar ON BAR.id=select_bar.id 
+					WHERE select_bar.id = '$region1'";
+					$result1 = mysqli_query($db,$query1);
+					while($row = mysqli_fetch_array($result1))
+					{
+						$open_time = $row["Open"];
+						$close_time = $row["Close"];
+						echo "The Open time for this bar is:$open_time<br>";
+						echo "The Close for this bar is:$close_time<br>";
+
+					}
 				}
 				?>
+
 				<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
 					<div class="footer_wrap_inner widget_area_inner">
 						<div class="content_wrap">

@@ -639,9 +639,67 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 							VALUES ('$bar_license','$inputBillID', '$city1')";
 						mysqli_query($db, $query9);
 						mysqli_query($db, $query10);
-					}
+					}		
 				}
 				?>
+
+
+				<div class="table-responsive">
+					<table id="drinker_data" class="table table-striped table-bordered">
+						<thead class="thead-dark">
+							<tr>
+							<th scope="col">BillID</th>
+							<th scope="col">Time</th>
+							<th scope="col">Date</th>
+							<th scope="col">SSN</th>
+							<th scope="col">License</th>
+						</tr>
+						</thead>
+						<?php
+						$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+						$query11 = "SELECT * FROM BarBeerDrinker.BILL_testing";
+						$result11 = mysqli_query($db, $query11);
+						while($row = mysqli_fetch_array($result11))
+						{
+							echo '<tr>
+							<td>'.$row["BillID"].'</td>
+							<td>'.$row["Time"].'</td>
+							<td>'.$row["Date"].'</td>
+							<td>'.$row["SSN"].'</td>
+							<td>'.$row["License"].'</td>
+							</tr>
+							';
+						}
+			          ?>
+					</table>
+				</div>
+
+
+				<div class="table-responsive">
+					<table id="drinker_data" class="table table-striped table-bordered">
+						<thead class="thead-dark">
+							<tr>
+							<th scope="col">License</th>
+							<th scope="col">BillID</th>
+							<th scope="col">ItemID</th>
+						</tr>
+						</thead>
+						<?php
+						$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+						$query12 = "SELECT * FROM BarBeerDrinker.Transaction_testing";
+						$result12 = mysqli_query($db, $query12);
+						while($row = mysqli_fetch_array($result12))
+						{
+							echo '<tr>
+							<td>'.$row["License"].'</td>
+							<td>'.$row["BillID"].'</td>
+							<td>'.$row["ItemID"].'</td>
+							</tr>
+							';
+						}
+			          ?>
+					</table>
+				</div>
 
 				<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
 					<div class="footer_wrap_inner widget_area_inner">

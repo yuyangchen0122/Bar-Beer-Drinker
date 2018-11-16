@@ -264,6 +264,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 									<div class="col-sm-10">
 										<label>Select Minute</label>
 										<select class="form-control" name=minute value=''>Select Minute</option>
+											<option value='00'>00</option>
 											<option value='01'>01</option>
 											<option value='02'>02</option>
 											<option value='03'>03</option>
@@ -329,6 +330,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 									<div class="col-sm-10">
 										<label>Select Second</label>
 										<select class="form-control" name=second value=''>Select Second</option>
+											<option value='00'>00</option>
 											<option value='01'>01</option>
 											<option value='02'>02</option>
 											<option value='03'>03</option>

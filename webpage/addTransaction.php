@@ -1,3 +1,6 @@
+<?php
+$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -185,6 +188,11 @@
 
 							<form method=post name=f1 action=''><input type=hidden name=todo value=submit>
 								<div class="form-group" >
+									<div class="col-sm-10">
+										<label>Input a Bill ID(Formate: 0)</label>
+										<input type=text name=billID size=20 value="">
+										<br>
+									</div>
 									<div class="col-sm-10">
 										<label>Input Your Name(First-Last)</label>
 										<input type=text name=name size=20 value="">
@@ -454,7 +462,8 @@
 				$todo=$_POST['todo'];
 
 				if(isset($todo) and $todo=="submit"){
-					
+
+					$inputBillID=$_POST['billID'];
 
 					$name=$_POST['name'];
 
@@ -487,15 +496,55 @@
 					$region1=$_POST['region'];
 					$city1=$_POST['city'];
 
-					echo "The State you selected is:$country1<br>";
+					$query3 = "
+					SELECT * 
+					FROM BarBeerDrinker.select_state
+					WHERE id = '$country1'
+					";
+					$result3 = mysqli_query($db,$query3);
+					while ($row = mysqli_fetch_array($result3)) {
+						$state_selected = $row["country"];
+						echo "The State you selected is:$state_selected<br>";
+					}
 
-					echo "The Bar you selected is:$region1<br>";
+					$query4 = "
+					SELECT * 
+					FROM BarBeerDrinker.select_bar
+					WHERE id = '$region1'
+					";
+					$result4 = mysqli_query($db,$query4);
+					while ($row = mysqli_fetch_array($result4)) {
+						$bar_selected = $row["region"];
+						echo "The Bar you selected is:$bar_selected<br>";
+					}
 
-					echo "The Item you selected is:$city1<br>";
+					$query5 = "
+					SELECT * 
+					FROM BarBeerDrinker.select_item
+					WHERE id = '$city1'
+					";
+					$result5 = mysqli_query($db,$query5);
+					while ($row = mysqli_fetch_array($result5)) {
+						$item_selected = $row["city"];
+						echo "The Bar you selected is:$item_selected<br>";
+					}
+
+					$query2 = "SELECT BILL.BillID
+								FROM BarBeerDrinker.BILL;";
+					$result2=mysqli_query($db,$query2);
+			        while($row = mysqli_fetch_array($result2))
+					{
+						$bill_id = $row["BillID"];
+					}
+					echo "The Bill ID you just input is:$inputBillID<br>";
+					if ($inputBillID >= $bill_id)
+					{
+					   echo 'valid Bill ID selected.<br>';
+					}else{
+						echo 'Sorry, the Bill ID you selected has existed, please select a different one.<br>';
+					}
 
 
-
-					$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
 					$query1 = "SELECT select_bar.id, select_bar.region, BAR.Open, BAR.Close 
 					FROM BarBeerDrinker.BAR 
 					LEFT JOIN BarBeerDrinker.select_bar ON BAR.id=select_bar.id 
@@ -511,9 +560,10 @@
 					}
 					if (strtotime($time_value) > strtotime($open_time) && strtotime($time_value) < strtotime($close_time))
 					{
-					   echo 'valid time selected';
+					   echo 'valid time selected.<br>';
+
 					}else{
-						echo 'the bar has been closed';
+						echo 'Sorry, the bar you selected has been closed at the time you just selected.<br>';
 					}
 				}
 				?>

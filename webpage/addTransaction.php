@@ -199,6 +199,11 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 										<br>
 									</div>
 									<div class="col-sm-10">
+										<label>Input Your SSN(xxx-xx-xx)</label>
+										<input type=text name=ssn size=20 value="">
+										<br>
+									</div>
+									<div class="col-sm-10">
 										<label>Select State</label>
 										<select class="form-control" name="country" id="country">
 											<option value="0">Select State</option>	
@@ -463,11 +468,17 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 				if(isset($todo) and $todo=="submit"){
 
+					$errors = array();
+
 					$inputBillID=$_POST['billID'];
 
 					$name=$_POST['name'];
 
 					echo "Your name : $name<br>";
+
+					$input_ssn=$_POST['ssn'];
+
+					echo "Your SSN: $ssn<br>";
 
 					$month=$_POST['month'];
 
@@ -475,9 +486,6 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 					$year=$_POST['year'];
 
-					$date_value="$month/$dt/$year";
-
-					echo "mm/dd/yyyy format :$date_value<br>";
 
 					$date_value="$year-$month-$dt";
 
@@ -495,6 +503,43 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					$country1=$_POST['country'];
 					$region1=$_POST['region'];
 					$city1=$_POST['city'];
+
+					if (empty($inputBillID)) {
+					    array_push($errors, "Bill ID is required");
+					}
+					if (empty($name)) {
+					    array_push($errors, "Your name is required");
+					}
+					if (empty($input_ssn)) {
+					    array_push($errors, "Your SSN is required");
+					}
+					if (empty($month)) {
+					    array_push($errors, "Month is required");
+					}
+					if (empty($dt)) {
+					    array_push($errors, "Day is required");
+					}
+					if (empty($year)) {
+					    array_push($errors, "Year is required");
+					}
+					if (empty($hour)) {
+					    array_push($errors, "Hour is required");
+					}
+					if (empty($minute)) {
+					    array_push($errors, "Minute is required");
+					}
+					if (empty($second)) {
+					    array_push($errors, "Second is required");
+					}
+					if (empty($country1)) {
+					    array_push($errors, "State is required");
+					}
+					if (empty($region1)) {
+					    array_push($errors, "Bar is required");
+					}
+					if (empty($city1)) {
+					    array_push($errors, "Item is required");
+					}
 
 					$query3 = "
 					SELECT * 
@@ -529,6 +574,27 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 						echo "The Bar you selected is:$item_selected<br>";
 					}
 
+					$query6 = "SELECT * FROM BarBeerDrinker.BAR
+								LEFT JOIN BarBeerDrinker.select_bar 
+								ON BAR.Bar = select_bar.region
+								WHERE select_bar.id = $region1";
+					$result6 = mysqli_query($db, $query6);
+					while($row = mysqli_fetch_array($result6)){
+						$bar_license = $row['License'];
+						echo "The Bar license is: $bar_license<br>";
+					}
+
+					$query7 = "SELECT *
+								FROM BarBeerDrinker.DRINKER
+								WHERE DRINKER.SSN = $input_ssn;";
+					$result7=mysqli_query($db,$query7);
+					$check_ssn = mysqli_fetch_array($result7);
+					if($check_ssn){
+						if($check_ssn['SSN'] === $input_ssn){
+							array_push($errors, "Sorry.This SSN has existed in our database.");
+						}
+					}
+
 					$query2 = "SELECT BILL.BillID
 								FROM BarBeerDrinker.BILL;";
 					$result2=mysqli_query($db,$query2);
@@ -541,7 +607,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					{
 					   echo 'valid Bill ID selected.<br>';
 					}else{
-						echo 'Sorry, the Bill ID you selected has existed, please select a different one.<br>';
+						array_push($errors, "This Bill ID has existed");
 					}
 
 
@@ -563,7 +629,16 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					   echo 'valid time selected.<br>';
 
 					}else{
-						echo 'Sorry, the bar you selected has been closed at the time you just selected.<br>';
+						array_push($errors, "This bar closes at the time of your choosing");
+					}
+
+					if (count($errors) == 0) {
+						$query9 = "INSERT INTO BarBeerDrinker.BILL_testing(BillID, Time, Date, SSN, License) 
+							VALUES('$inputBillID','$time_value','$date_value', '$input_ssn','$bar_license)";
+						$query10 = "INSERT INTO BarBeerDrinker.Transaction_testing(License, BillID, ItemID) 
+							VALUES ('$bar_license','$inputBillID', '$city1')";
+						mysqli_query($db, $query9);
+						mysqli_query($db, $query10);
 					}
 				}
 				?>

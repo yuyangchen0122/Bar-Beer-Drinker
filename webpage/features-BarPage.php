@@ -557,6 +557,12 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					<div id="Barchart5" style="width: 900px; height: 400px"></div>
 				</div>
 
+				<div class="container">
+					<div class="table-responsive">
+						<?php include 'addTransaction.php';?>
+					</div>
+				</div>
+
 
 
 				<footer class="footer_wrap widget_area scheme_original show-footer-border-no">

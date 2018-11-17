@@ -36,7 +36,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 			</thead>
 			<?php
 			$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-			$query11 = "SELECT * FROM BarBeerDrinker.testing1";
+			$query11 = "SELECT * FROM BarBeerDrinker.BILL ORDER BY BillID DESC LIMIT 1000";
 			$result11 = mysqli_query($db, $query11);
 			while($row = mysqli_fetch_array($result11))
 			{
@@ -67,7 +67,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 			</thead>
 			<?php
 			$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-			$query12 = "SELECT * FROM BarBeerDrinker.testing2";
+			$query12 = "SELECT * FROM BarBeerDrinker.Transaction ORDER BY BillID DESC LIMIT 1000";
 			$result12 = mysqli_query($db, $query12);
 			while($row = mysqli_fetch_array($result12))
 			{

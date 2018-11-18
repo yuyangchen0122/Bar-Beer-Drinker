@@ -412,10 +412,8 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 		echo '<h2>Valid Drinker Selected!</h2>';
 
 		}else{
-
-		array_push($errors, "Sorry.This drinker is not existed in our database.");
-		echo '<h2>Sorry.This drinker is not existed in our database.</h2>';
-
+			array_push($errors, "Sorry.This drinker is not existed in our database.");
+			echo '<h2>Sorry.This drinker is not existed in our database.</h2>';
 		}
 		}
 
@@ -438,28 +436,27 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 		$time_value="$hour:$minute:$second";
 		echo "<h3>hh/mm/ss format :$time_value</h3><br>";
 
-		$query1 = "SELECT * FROM
-		(SELECT BAR.id, BAR.Bar, select_state.id as state_id, BAR.License, BAR.Open, BAR.Close FROM BarBeerDrinker.BAR
-		LEFT JOIN BarBeerDrinker.select_state
-		ON BAR.State=select_state.State) AS temp 
-		WHERE temp.id = '$bar1'";
-		$result1 = mysqli_query($db,$query1);
-		while($row = mysqli_fetch_array($result1))
-		{
-			$open_time = $row["Open"];
-			$close_time = $row["Close"];
-			echo "<h3>The Open time for this bar is:$open_time</h3><br>";
-			echo "<h3>The Close for this bar is:$close_time</h3><br>";
+		// $query1 = "SELECT * FROM
+		// (SELECT BAR.id, BAR.Bar, select_state.id as state_id, BAR.License, BAR.Open, BAR.Close FROM BarBeerDrinker.BAR
+		// LEFT JOIN BarBeerDrinker.select_state
+		// ON BAR.State=select_state.State) AS temp 
+		// WHERE temp.id = '$bar1'";
+		// $result1 = mysqli_query($db,$query1);
+		// while($row = mysqli_fetch_array($result1))
+		// {
+		// 	$open_time = $row["Open"];
+		// 	$close_time = $row["Close"];
+		// }
+		// echo "<h3>The Open time for this bar is:$open_time</h3><br>";
+		// echo "<h3>The Close for this bar is:$close_time</h3><br>";
+		// if (strtotime($time_value) > strtotime($open_time) && strtotime($time_value) < strtotime($close_time))
+		// {
+		// 	echo 'valid time selected.<br>';
 
-		}
-		if (strtotime($time_value) > strtotime($open_time) && strtotime($time_value) < strtotime($close_time))
-		{
-			echo 'valid time selected.<br>';
-
-		}else{
-			array_push($errors, "This bar closes at the time of your choosing");
-			echo '<h2>This bar closes at the time of your choosing</h2>';
-		}
+		// }else{
+		// 	array_push($errors, "This bar closes at the time of your choosing");
+		// 	echo '<h2>This bar closes at the time of your choosing</h2>';
+		// }
 
 		$state1=$_POST['State'];
 		$bar1=$_POST['Bar'];
@@ -545,7 +542,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 		$result5 = mysqli_query($db,$query5);
 		while ($row = mysqli_fetch_array($result5)) {
 			$item_selected = $row["Item"];
-			echo "<h3>The Bar you selected is:$item_selected</h3><br>";
+			echo "<h3>The Item you selected is:$item_selected</h3><br>";
 		}
 
 		$query6 = "SELECT * FROM
@@ -560,9 +557,9 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 		}
 
 		if (count($errors) == 0) {
-			$query9 = "INSERT INTO BarBeerDrinker.testing1 (BillID, Time, Date, SSN, License) VALUES('$inputBillID', '$time_value', '$date_value', '$input_ssn', '$bar_license')";
+			$query9 = "INSERT INTO BarBeerDrinker.BILL (BillID, Time, Date, SSN, License) VALUES('$inputBillID', '$time_value', '$date_value', '$input_ssn', '$bar_license')";
 			mysqli_query($db, $query9);
-			$query10 = "INSERT INTO BarBeerDrinker.testing2 (License, BillID, ItemID) VALUES ('$bar_license', '$inputBillID', '$item1')";
+			$query10 = "INSERT INTO BarBeerDrinker.Transaction (License, BillID, ItemID) VALUES ('$bar_license', '$inputBillID', '$item1')";
 			mysqli_query($db, $query10);
 			echo "<h1>Tansaction Updated successfully! Thanks!</h1>";
 		}

@@ -178,6 +178,46 @@
 						<article class="post_item post_item_single page">
 							<div class="post_content">
 
+								<div class="container">
+									<?php
+									if (isset($_POST['BARsubmit']) || isset($_POST['BILLsubmit']) || isset($_POST['Drinkersubmit']) || isset($_POST['FREQsubmit']) || isset($_POST['ITEMsubmit']) || isset($_POST['LIKEsubmit']) || isset($_POST['HOURsubmit']) || isset($_POST['SELLsubmit']) || isset($_POST['TRANsubmit'])){
+										if (isset($_POST['BARsubmit'])) {
+											$query_table = $_POST['BARname'];
+										}elseif (isset($_POST['BILLsubmit'])) {
+											$query_table = $_POST['BILLname'];
+										}elseif (isset($_POST['Drinkersubmit'])) {
+											$query_table = $_POST['Drinkername'];
+										}elseif (isset($_POST['FREQsubmit'])) {
+											$query_table = $_POST['FREQname'];
+										}elseif (isset($_POST['ITEMsubmit'])) {
+											$query_table = $_POST['ITEMname'];
+										}elseif (isset($_POST['LIKEsubmit'])) {
+											$query_table = $_POST['LIKEname'];
+										}elseif (isset($_POST['SELLsubmit'])) {
+											$query_table = $_POST['SELLname'];
+										}elseif (isset($_POST['TRANsubmit'])) {
+											$query_table = $_POST['TRANname'];
+										}
+
+										$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+
+
+										if(! $db ) {
+											die('<h3>Could not connect to database</h3>' . mysqli_error($db));
+										}
+
+										$retval = mysqli_query( $db, $query_table);
+
+										if(! $retval ) {
+											die('<h3>Could not update data: </h3>' . mysqli_error($db));
+										}
+
+										echo "<h3>Updated data successfully\n</h3>";
+										mysqli_close($db);
+									}
+									?>
+								</div>
+
 								<section class="">
 									<div class="container">
 										<article class="post_item post_item_404">
@@ -340,146 +380,110 @@
 																<button type="submit" class="btn" name="TRANsubmit" style="background-color: black;width: 100%; color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Update</button>
 															</div>
 														</form>
-														<?php
-														if (isset($_POST['BARsubmit']) || isset($_POST['BILLsubmit']) || isset($_POST['Drinkersubmit']) || isset($_POST['FREQsubmit']) || isset($_POST['ITEMsubmit']) || isset($_POST['LIKEsubmit']) || isset($_POST['HOURsubmit']) || isset($_POST['SELLsubmit']) || isset($_POST['TRANsubmit'])){
-															if (isset($_POST['BARsubmit'])) {
-																$query_table = $_POST['BARname'];
-															}elseif (isset($_POST['BILLsubmit'])) {
-																$query_table = $_POST['BILLname'];
-															}elseif (isset($_POST['Drinkersubmit'])) {
-																$query_table = $_POST['Drinkername'];
-															}elseif (isset($_POST['FREQsubmit'])) {
-																$query_table = $_POST['FREQname'];
-															}elseif (isset($_POST['ITEMsubmit'])) {
-																$query_table = $_POST['ITEMname'];
-															}elseif (isset($_POST['LIKEsubmit'])) {
-																$query_table = $_POST['LIKEname'];
-															}elseif (isset($_POST['SELLsubmit'])) {
-																$query_table = $_POST['SELLname'];
-															}elseif (isset($_POST['TRANsubmit'])) {
-																$query_table = $_POST['TRANname'];
-															}
-
-															$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
-
-
-															if(! $db ) {
-																die('Could not connect: ' . mysqli_error($db));
-															}
-
-															$retval = mysqli_query( $db, $query_table);
-
-															if(! $retval ) {
-																die('Could not update data: ' . mysqli_error($db));
-															}
-
-															echo "Updated data successfully\n";
-															mysqli_close($db);
-														}
-														?>
 													</div>
-												</article>
-											</div>
-										</section>
+												</div>
+											</article>
+										</div>
+									</section>
 
-									</div>
-								</article>
-							</div>
-
+								</div>
+							</article>
 						</div>
 
-						<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
-							<div class="footer_wrap_inner widget_area_inner">
-								<div class="content_wrap">
-									<div class="columns_wrap">
-										<aside class="widget_number_1 column-1_3 widget widget_text">
-											<h2 class="widget_title">Email Address</h2>
-											<div class="textwidget">
-												<a href="chenyuyang0122@gmail.com">chenyuyang0122@gmail.com</a><br>
-												<a href="dingzihaojason@gmail.com ">dingzihaojason@gmail.com </a>
-											</div>
-										</aside><aside class="widget_number_2 column-1_3 widget widget_text">
-											<h2 class="widget_title">Phones &#038; Faxes</h2>
-											<div class="textwidget">
-												+1(732)581-1878<br>
-												+1(732)799-9275
-											</div>
-										</aside><aside class="widget_number_3 column-1_3 widget widget_text">
-											<h2 class="widget_title">Creater&#8217;s Name</h2>
-											<div class="textwidget">
-												Yuyang Chen<br>
-												Zihao Ding
-											</div>
-										</aside>
-									</div>
+					</div>
+
+					<footer class="footer_wrap widget_area scheme_original show-footer-border-no">
+						<div class="footer_wrap_inner widget_area_inner">
+							<div class="content_wrap">
+								<div class="columns_wrap">
+									<aside class="widget_number_1 column-1_3 widget widget_text">
+										<h2 class="widget_title">Email Address</h2>
+										<div class="textwidget">
+											<a href="chenyuyang0122@gmail.com">chenyuyang0122@gmail.com</a><br>
+											<a href="dingzihaojason@gmail.com ">dingzihaojason@gmail.com </a>
+										</div>
+									</aside><aside class="widget_number_2 column-1_3 widget widget_text">
+										<h2 class="widget_title">Phones &#038; Faxes</h2>
+										<div class="textwidget">
+											+1(732)581-1878<br>
+											+1(732)799-9275
+										</div>
+									</aside><aside class="widget_number_3 column-1_3 widget widget_text">
+										<h2 class="widget_title">Creater&#8217;s Name</h2>
+										<div class="textwidget">
+											Yuyang Chen<br>
+											Zihao Ding
+										</div>
+									</aside>
 								</div>
 							</div>
-						</footer>
+						</div>
+					</footer>
 
-						<footer class="contacts_wrap scheme_original show-footer-border-no">
-							<div class="contacts_wrap_inner">
-								<div class="content_wrap">
-									<div class="logo">
-										<a href="index.php">
-											<img src="images/logo_footer.png" class="logo_footer" alt="" width="132" height="54">
+					<footer class="contacts_wrap scheme_original show-footer-border-no">
+						<div class="contacts_wrap_inner">
+							<div class="content_wrap">
+								<div class="logo">
+									<a href="index.php">
+										<img src="images/logo_footer.png" class="logo_footer" alt="" width="132" height="54">
+									</a>
+								</div>
+							</div>
+						</div>
+					</footer>	
+
+					<div class="copyright_wrap copyright_style_socials scheme_original">
+						<div class="copyright_wrap_inner">
+							<div class="content_wrap">
+								<div class="copyright_text">
+									<a href="http://www.yuyangchen.com/">Yuyang&Zihao</a> © 2018 All Rights Reserved <a href="http://www.yuyangchen.com/">Terms of Use</a> and <a href="http://www.yuyangchen.com/">Privacy Policy</a>
+								</div>
+								<div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
+									<div class="sc_socials_item">
+										<a href="https://github.com/yuyangchen0122" target="_blank" class="social_icons social_github">
+											<span class="icon-github"></span>
+										</a>
+									</div><div class="sc_socials_item">
+										<a href="https://www.linkedin.com/in/yuyang-chen-16b0b1137/" target="_blank" class="social_icons social_linkedin">
+											<span class="icon-instagramm"></span>
+										</a>
+									</div><div class="sc_socials_item">
+										<a href="#" target="_blank" class="social_icons social_gpl">
+											<span class="icon-gpl"></span>
+										</a>
+									</div><div class="sc_socials_item">
+										<a href="#" target="_blank" class="social_icons social_tripadvisor">
+											<span class="icon-tripadvisor"></span>
 										</a>
 									</div>
 								</div>
 							</div>
-						</footer>	
-
-						<div class="copyright_wrap copyright_style_socials scheme_original">
-							<div class="copyright_wrap_inner">
-								<div class="content_wrap">
-									<div class="copyright_text">
-										<a href="http://www.yuyangchen.com/">Yuyang&Zihao</a> © 2018 All Rights Reserved <a href="http://www.yuyangchen.com/">Terms of Use</a> and <a href="http://www.yuyangchen.com/">Privacy Policy</a>
-									</div>
-									<div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
-										<div class="sc_socials_item">
-											<a href="https://github.com/yuyangchen0122" target="_blank" class="social_icons social_github">
-												<span class="icon-github"></span>
-											</a>
-										</div><div class="sc_socials_item">
-											<a href="https://www.linkedin.com/in/yuyang-chen-16b0b1137/" target="_blank" class="social_icons social_linkedin">
-												<span class="icon-instagramm"></span>
-											</a>
-										</div><div class="sc_socials_item">
-											<a href="#" target="_blank" class="social_icons social_gpl">
-												<span class="icon-gpl"></span>
-											</a>
-										</div><div class="sc_socials_item">
-											<a href="#" target="_blank" class="social_icons social_tripadvisor">
-												<span class="icon-tripadvisor"></span>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div> 
-
-					</div>
+						</div>
+					</div> 
 
 				</div>
 
+			</div>
 
-				<a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
-				<script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
-				<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
-				<script type='text/javascript' src='js/custom/__main.js'></script>
-				<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
-				<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
-				<script type='text/javascript' src='js/custom/jquery.slidemenu.min.js'></script>
-				<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
-				<script type='text/javascript' src='js/custom/core.init.js'></script>
-				<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
+			<a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
-				<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
-				<script type='text/javascript' src='js/vendor/core.min.js'></script>
-				<script type='text/javascript' src='js/vendor/widget.min.js'></script>
-				<script type='text/javascript' src='js/vendor/tabs.min.js'></script>
-				<script type='text/javascript' src='js/vendor/effect.min.js'></script>
-				<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
+			<script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
+			<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
+			<script type='text/javascript' src='js/custom/__main.js'></script>
+			<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
+			<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
+			<script type='text/javascript' src='js/custom/jquery.slidemenu.min.js'></script>
+			<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
+			<script type='text/javascript' src='js/custom/core.init.js'></script>
+			<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
 
-			</body>
-			</html>
+			<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
+			<script type='text/javascript' src='js/vendor/core.min.js'></script>
+			<script type='text/javascript' src='js/vendor/widget.min.js'></script>
+			<script type='text/javascript' src='js/vendor/tabs.min.js'></script>
+			<script type='text/javascript' src='js/vendor/effect.min.js'></script>
+			<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
+
+		</body>
+		</html>

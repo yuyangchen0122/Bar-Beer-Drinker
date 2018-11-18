@@ -93,12 +93,12 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					<div class="form-group" >
 						<div class="col-sm-10">
 							<label>Input a Bill ID(Formate: 0)</label>
-							<input type=text name=billID size=20 value="">
+							<input type=text name=billID size=20 placeholder="22315">
 							<br>
 						</div>
 						<div class="col-sm-10">
 							<label>Input Your SSN(xxx-xx-xx)</label>
-							<input type=text name=ssn size=20 value="">
+							<input type=text name=ssn size=20 placeholder="000-00-00">
 							<br>
 						</div>
 					</div>
@@ -356,7 +356,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 						<div class="col-sm-3">
 						</td><td  align=left  >   
-							Year(yyyy)<input type=text name=year size=4 value=2005>
+							Year(yyyy)<input type=text name=year size=4 placeholder="2018">
 							<br>
 							<br>
 							<input type=submit value=Submit>

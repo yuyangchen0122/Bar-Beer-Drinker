@@ -97,6 +97,19 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 							<br>
 						</div>
 						<div class="col-sm-10">
+							<label>Transaction_ID</label>
+							<?php
+							$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+							$query20="SELECT MAX(TransactionID)+1 AS max FROM BarBeerDrinker.Transaction;";
+							$result20=mysqli_query($db,$query20);
+							while($row = mysqli_fetch_array($result20)){
+								$transaction_ID = $row['max'];
+							};
+							?>
+							<input type=text name="" size=20 disabled placeholder="Transaction_ID" value="<?php echo $transaction_ID ?>">
+							<br>
+						</div>
+						<div class="col-sm-10">
 							<label>Input Your SSN(xxx-xx-xx)</label>
 							<input type=text name=ssn size=20 placeholder="000-00-00">
 							<br>
@@ -558,14 +571,22 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 		if (count($errors) == 0) {
 			$query9 = "INSERT INTO BarBeerDrinker.BILL (BillID, Time, Date, SSN, License) VALUES('$inputBillID', '$time_value', '$date_value', '$input_ssn', '$bar_license')";
-			mysqli_query($db, $query9);
-			$query10 = "INSERT INTO BarBeerDrinker.Transaction (License, BillID, ItemID) VALUES ('$bar_license', '$inputBillID', '$item1')";
-			mysqli_query($db, $query10);
-			echo "<h1>Tansaction Updated successfully! Thanks!</h1>";
-		}
-		else{
-			echo "<h1>Sorry, Transaction Updated failed! Please update again! Thanks! </h1>";
-		}		
+			$result9 = mysqli_query($db, $query9);
+			if ($result9 === TRUE) {
+			    echo "<h1>BILL Updated successfully! Thanks!</h1>";
+			} else {
+			    echo "<h1>Sorry, BILL Updated Failed</h1>";
+			}
+
+			$query10 = "INSERT INTO BarBeerDrinker.Transaction (TransactionID, License, BillID, ItemID) VALUES('$transaction_ID', '$bar_license', '$inputBillID', '$item1')";
+			$result10=mysqli_query($db, $query10);
+
+			if ($result10 === TRUE) {
+			    echo "<h1>Transaction Updated successfully! Thanks!</h1>";
+			} else {
+			    echo "<h1>Sorry, Transaction Updated Failed</h1>";
+			}
+		}	
 	}
 	?>
 </div>

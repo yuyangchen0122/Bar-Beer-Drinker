@@ -559,7 +559,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 				<div class="container">
 					<div class="table-responsive">
-						<?php include 'addTransaction.php';?>
+						<?php include 'test.php';?>
 					</div>
 				</div>
 

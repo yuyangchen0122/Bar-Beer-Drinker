@@ -4,7 +4,7 @@
 
 #include database configuration file
 require_once('DbConnection.php');
-$country_id = $_GET['state_id'];
+$drinker_state_id = $_GET['state_id'];
 $query = "SELECT * FROM BarBeerDrinker.select_bar where state_id = '$country_id' ORDER BY Bar";
 $Bars_data=mysqli_query($connection,$query);
 $Bars = array();

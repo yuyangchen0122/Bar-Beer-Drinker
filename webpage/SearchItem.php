@@ -4,12 +4,12 @@
 
 #include database configuration file
 require_once('DbConnection.php');
-$region_id = $_GET['region_id'];
-$regions_data=mysqli_query($connection,"SELECT * FROM BarBeerDrinker.select_item where region_id = $region_id ORDER BY city");
-$regions = array();
-while($region = mysqli_fetch_assoc($regions_data)){
-	array_push($regions, $region);
+$Bar_id = $_GET['bar_id'];
+$Bars_data=mysqli_query($connection,"SELECT * FROM BarBeerDrinker.select_item where bar_id = $Bar_id ORDER BY Item");
+$Bars = array();
+while($Bar = mysqli_fetch_assoc($Bars_data)){
+	array_push($Bars, $Bar);
 }
-print_r(json_encode($regions));
+print_r(json_encode($Bars));
 
 ?>

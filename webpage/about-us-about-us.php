@@ -64,231 +64,114 @@
 </header>
 
 <nav class="menu_pushy_nav_area pushy pushy-left scheme_dark">
-	<div class="pushy_inner">
-		<a href="#" class="close-pushy"></a>
-		<div class="logo">
-			<a href="index.php">
-				<img src="images/logo.png" class="logo_side" alt="" width="132" height="54">
-			</a>
-		</div>
-		<ul id="menu_pushy" class="menu_pushy_nav">
-			<li class="menu-item menu-item-object-page ">
-				<a href="index.php">Home</a>
-			</li>
-			<li class="menu-item  menu-item-has-children">
-				<a href="#">Features</a>
-				<ul class="sub-menu">
-					<li class="menu-item menu-item-object-page ">
-						<a href="features-BarPage.php">Bar Page</a>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="features-DrinkerPage.php">Drinker Page</a>
-					</li>
-					<li class="menu-item ">
-						<a href="features-BeerPage.php">Beer Page</a>
-					</li>
-					<li class="menu-item  menu-item-has-children">
-						<a href="#">Gallery</a>
-						<ul class="sub-menu">
+					<div class="pushy_inner">
+						<a href="#" class="close-pushy"></a>
+						<div class="logo">
+							<a href="index.php">
+								<img src="images/logo.png" class="logo_side" alt="" width="132" height="54">
+							</a>
+						</div>
+						<ul id="menu_pushy" class="menu_pushy_nav">
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-masonry.php">Masonry</a>
+								<a href="index.php">Home</a>
+							</li>
+							<li class="menu-item current-menu-ancestor menu-item-has-children">
+								<a href="#">Features</a>
+								<ul class="sub-menu">
+									<li class="menu-item menu-item-object-page ">
+										<a href="features-BarPage.php">Bar Page</a>
+									</li>
+									<li class="menu-item menu-item-object-page ">
+										<a href="features-DrinkerPage.php">Drinker Page</a>
+									</li>
+									<li class="menu-item ">
+										<a href="features-BeerPage.php">Beer Page</a>
+									</li>
+								</ul>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-grid.php">Grid</a>
+								<a href="features-query.php">SQL QUERY INTERFACE</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-cobbles.php">Cobbles</a>
+								<a href="modification.php">Modification</a>
+							</li>
+							<li class="menu-item menu-item-has-children ">
+								<a href="#">About us</a>
+								<ul class="sub-menu">
+									<li class="menu-item menu-item-object-page ">
+										<a href="about-us-about-us.php">About us</a>
+									</li>
+									<li class="menu-item ">
+										<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="menu-item menu-item-object-page ">
+								<a href="contacts.php">Contacts</a>
 							</li>
 						</ul>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-item menu-item-has-children current-menu-ancestor">
-				<a href="#">About us</a>
-				<ul class="sub-menu">
-					<li class="menu-item menu-item-object-page current-menu-item">
-						<a href="about-us-about-us.php">About us</a>
-					</li>
-					<li class="menu-item ">
-						<a href="about-us-bartender.php">Creater&#8217;s Page</a>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-item menu-item-has-children ">
-				<a href="#">News</a>
-				<ul class="sub-menu">
-					<li class="menu-item ">
-						<a href="news-post-formats.php">Post Formats</a>
-					</li>
-					<li class="menu-item ">
-						<a href="news-classic.php">Classic Style</a>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">Masonry Layout</a>
-						<ul class="sub-menu">
-							<li class="menu-item ">
-								<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
-							</li>
-							<li class="menu-item ">
-								<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">Portfolio Layout</a>
-						<ul class="sub-menu">
-							<li class="menu-item ">
-								<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
-							</li>
-							<li class="menu-item ">
-								<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-item menu-item-object-page ">
-				<a href="menu.php">Menu</a>
-			</li>
-			<li class="menu-item menu-item-has-children ">
-				<a href="#">Store</a>
-				<ul class="sub-menu">
-					<li class="menu-item menu-item-object-page ">
-						<a href="store-shop.php">Shop</a>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="store-cart.php">Cart</a>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="store-checkout.php">Checkout</a>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-item menu-item-object-page ">
-				<a href="contacts.php">Contacts</a>
-			</li>
-		</ul>
-	</div>
-</nav>
+					</div>
+				</nav>
 
-<!-- Site Overlay -->
-<div class="site-overlay"></div>
-<div class="header_mobile">
-	<div class="content_wrap">
-		<div class="menu_button icon-menu"></div>
-		<div class="logo">
-			<a href="index.php">
-				<img src="images/logo.png" class="logo_main" alt="" width="132" height="54">
-			</a>
-		</div>
-	</div>
-	<div class="side_wrap">
-		<div class="close">Close</div>
-		<div class="panel_top">
-			<nav class="menu_main_nav_area">
-				<ul id="menu_main" class="menu_main_nav">
-					<li class="menu-item menu-item-object-page ">
-						<a href="index.php">Home</a>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">Features</a>
-						<ul class="sub-menu">
-							<li class="menu-item menu-item-object-page ">
-								<a href="features-BarPage.html">Bar Page</a>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="features-DrinkerPage.html">Drinker Page</a>
-							</li>
-							<li class="menu-item current-menu-item">
-								<a href="features-BeerPage.html">Beer Page</a>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">Gallery</a>
-								<ul class="sub-menu">
+				<!-- Site Overlay -->
+				<div class="site-overlay"></div>
+				<div class="header_mobile">
+					<div class="content_wrap">
+						<div class="menu_button icon-menu"></div>
+						<div class="logo">
+							<a href="index.php">
+								<img src="images/logo.png" class="logo_main" alt="" width="132" height="54">
+							</a>
+						</div>
+					</div>
+					<div class="side_wrap">
+						<div class="close">Close</div>
+						<div class="panel_top">
+							<nav class="menu_main_nav_area">
+								<ul id="menu_main" class="menu_main_nav">
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-masonry.php">Masonry</a>
+										<a href="index.php">Home</a>
+									</li>
+									<li class="menu-item current-menu-ancestor menu-item-has-children">
+										<a href="#">Features</a>
+										<ul class="sub-menu">
+											<li class="menu-item menu-item-object-page ">
+												<a href="features-BarPage.php">Bar Page</a>
+											</li>
+											<li class="menu-item menu-item-object-page ">
+												<a href="features-DrinkerPage.php">Drinker Page</a>
+											</li>
+											<li class="menu-item ">
+												<a href="features-BeerPage.php">Beer Page</a>
+											</li>
+										</ul>
 									</li>
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-grid.php">Grid</a>
+										<a href="features-query.php">SQL QUERY INTERFACE</a>
 									</li>
+									<li class="menu-item menu-item-has-children ">
+										<a href="#">About us</a>
+										<ul class="sub-menu">
+											<li class="menu-item menu-item-object-page ">
+												<a href="about-us-about-us.html">About us</a>
+											</li>
+											<li class="menu-item ">
+												<a href="about-us-bartender.html">Bartender&#8217;s Page</a>
+											</li>
+										</ul>
+									</li>
+									
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-cobbles.php">Cobbles</a>
+										<a href="contacts.html">Contacts</a>
 									</li>
 								</ul>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-has-children current-menu-ancestor">
-						<a href="#">About us</a>
-						<ul class="sub-menu">
-							<li class="menu-item menu-item-object-page current-menu-item">
-								<a href="about-us-about-us.php">About us</a>
-							</li>
-							<li class="menu-item ">
-								<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">News</a>
-						<ul class="sub-menu">
-							<li class="menu-item ">
-								<a href="news-post-formats.php">Post Formats</a>
-							</li>
-							<li class="menu-item ">
-								<a href="news-classic.php">Classic Style</a>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">Masonry Layout</a>
-								<ul class="sub-menu">
-									<li class="menu-item ">
-										<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
-									</li>
-									<li class="menu-item ">
-										<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">Portfolio Layout</a>
-								<ul class="sub-menu">
-									<li class="menu-item ">
-										<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
-									</li>
-									<li class="menu-item ">
-										<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="menu.php">Menu</a>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">Store</a>
-						<ul class="sub-menu">
-							<li class="menu-item menu-item-object-page ">
-								<a href="store-shop.php">Shop</a>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="store-cart.php">Cart</a>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="store-checkout.php">Checkout</a>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="contacts.php">Contacts</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<div class="panel_bottom"></div>
-	</div>
-	<div class="mask"></div>
-</div>
+							</nav>
+						</div>
+						<div class="panel_bottom"></div>
+					</div>
+					<div class="mask"></div>
+				</div>
 
 
 	        <div class="top_panel_title top_panel_style_8 breadcrumbs_present scheme_original">
@@ -419,7 +302,7 @@
 										<div class="sc_call_to_action_info">
 											<h6 class="sc_call_to_action_subtitle sc_item_subtitle">aliquam erat volutpat</h6>
 											<h1 class="sc_call_to_action_title sc_item_title">About Us</h1>
-											<div class="sc_call_to_action_descr sc_item_descr lighter">We have been serving craft cocktails and small plates for over 7 years. Both a destination and neighborhood favorite, We offer something for everyone. The menu features a refined list of seasonally-driven classic and original cocktails, a wide spectrum of craft beers on tap and in bottle, and an eclectic collection of wines both old world and new. Though it’s just about the best bar for a date, the atmosphere is just as dynamic as the menu; it’s the perfect place to enjoy a sunny day from the shade of our lush garden, to relax by candlelight on weeknights, or to get your nightlife fix on the weekends with some of best DJs. We love what we do here, but we never take it too seriously. Our commitment to our craft is just as strong as our commitment to hospitality. Please feel free to ask questions about your drinks, and we’ll help you find what you are looking for whether it’s an old favorite or something new and unexplored. Our caring and knowledgeable staff’s goal is to serve you properly; fancy without the fussy.</div>
+											<div class="sc_call_to_action_descr sc_item_descr lighter"></div>
 											<div class="sc_call_to_action_buttons">
 												<div class="sc_call_to_action_button sc_item_button">
 													<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small style_color_light">View Our Menu</a>
@@ -427,149 +310,6 @@
 											</div>
 										</div>
 									</div>
-								</div>
-							</section>
-
-							<section class="spt47rem">
-								<div class="container-fluid">
-									<div class="sc_section aligncenter">
-										<div class="sc_section_inner">
-											<h5 class="sc_title margin_bottom_tiny">Photostream</h5>
-											<h1 class="sc_title margin_top_null margin_bottom_tiny-">Gallery</h1>
-										</div>
-									</div>
-									<article class="myportfolio-container minimal-light" id="esg-grid-4-1-wrap">
-										<div id="esg-grid-4-1" class="esg-grid">
-											<ul>
-												<li class="filterall eg-washington-wrapper" data-cobblesw="1" data-cobblesh="1">
-													<div class="esg-media-cover-wrapper">
-														<div class="esg-entry-media">
-															<img src="images/image-10.jpg" alt="">
-														</div>
-														<div class="esg-entry-cover esg-fade" data-delay="0">
-															<div class="esg-overlay esg-fade eg-washington-container" data-delay="0">
-															</div>
-															<div class="esg-center eg-washington-element-0-a esg-falldown" data-delay="0.1">
-																<a class="eg-washington-element-0 esgbox" href="images/image-10.jpg" data-lgtitle="image-10">
-																	<i class="eg-icon-search"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-1-a esg-falldown" data-delay="0.2">
-																<a class="eg-washington-element-1" href="javascript:void(0);" target="_self">
-																	<i class="eg-icon-link"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-8 esg-none esg-clear">
-															</div>
-															<div class="esg-center eg-washington-element-9 esg-none esg-clear">
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="filterall eg-washington-wrapper" data-cobblesw="1" data-cobblesh="1">
-													<div class="esg-media-cover-wrapper">
-														<div class="esg-entry-media">
-															<img src="images/event-3.jpg" alt="">
-														</div>
-														<div class="esg-entry-cover esg-fade" data-delay="0">
-															<div class="esg-overlay esg-fade eg-washington-container" data-delay="0">
-															</div>
-															<div class="esg-center eg-washington-element-0-a esg-falldown" data-delay="0.1">
-																<a class="eg-washington-element-0 esgbox" href="images/event-3.jpg" data-lgtitle="event-3">
-																	<i class="eg-icon-search"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-1-a esg-falldown" data-delay="0.2">
-																<a class="eg-washington-element-1" href="javascript:void(0);" target="_self">
-																	<i class="eg-icon-link"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-8 esg-none esg-clear">
-															</div>
-															<div class="esg-center eg-washington-element-9 esg-none esg-clear">
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="filterall eg-washington-wrapper" data-cobblesw="1" data-cobblesh="1">
-													<div class="esg-media-cover-wrapper">
-														<div class="esg-entry-media">
-															<img src="images/gallery_img3.jpg" alt="">
-														</div>
-														<div class="esg-entry-cover esg-fade" data-delay="0">
-															<div class="esg-overlay esg-fade eg-washington-container" data-delay="0">
-															</div>
-															<div class="esg-center eg-washington-element-0-a esg-falldown" data-delay="0.1">
-																<a class="eg-washington-element-0 esgbox" href="images/gallery_img3.jpg" data-lgtitle="gallery_img3">
-																	<i class="eg-icon-search"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-1-a esg-falldown" data-delay="0.2">
-																<a class="eg-washington-element-1" href="javascript:void(0);" target="_self">
-																	<i class="eg-icon-link"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-8 esg-none esg-clear">
-															</div>
-															<div class="esg-center eg-washington-element-9 esg-none esg-clear">
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="filterall eg-washington-wrapper" data-cobblesw="1" data-cobblesh="1">
-													<div class="esg-media-cover-wrapper">
-														<div class="esg-entry-media">
-															<img src="images/gallery-1.jpg" alt="">
-														</div>
-														<div class="esg-entry-cover esg-fade" data-delay="0">
-															<div class="esg-overlay esg-fade eg-washington-container" data-delay="0">
-															</div>
-															<div class="esg-center eg-washington-element-0-a esg-falldown" data-delay="0.1">
-																<a class="eg-washington-element-0 esgbox" href="images/gallery-1.jpg" data-lgtitle="gallery-1">
-																	<i class="eg-icon-search"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-1-a esg-falldown" data-delay="0.2">
-																<a class="eg-washington-element-1" href="javascript:void(0);" target="_self">
-																	<i class="eg-icon-link"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-8 esg-none esg-clear">
-															</div>
-															<div class="esg-center eg-washington-element-9 esg-none esg-clear">
-															</div>
-														</div>
-													</div>
-												</li>
-												<li class="filterall eg-washington-wrapper" data-cobblesw="1" data-cobblesh="1">
-													<div class="esg-media-cover-wrapper">
-														<div class="esg-entry-media">
-															<img src="images/gallery-2.jpg" alt="">
-														</div>
-														<div class="esg-entry-cover esg-fade" data-delay="0">
-															<div class="esg-overlay esg-fade eg-washington-container" data-delay="0">
-															</div>
-															<div class="esg-center eg-washington-element-0-a esg-falldown" data-delay="0.1">
-																<a class="eg-washington-element-0 esgbox" href="images/gallery-2.jpg" data-lgtitle="gallery-2">
-																	<i class="eg-icon-search"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-1-a esg-falldown" data-delay="0.2">
-																<a class="eg-washington-element-1" href="javascript:void(0);" target="_self">
-																	<i class="eg-icon-link"></i>
-																</a>
-															</div>
-															<div class="esg-center eg-washington-element-8 esg-none esg-clear">
-															</div>
-															<div class="esg-center eg-washington-element-9 esg-none esg-clear">
-															</div>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</article>
-									<div class="clear"></div>
 								</div>
 							</section>
 

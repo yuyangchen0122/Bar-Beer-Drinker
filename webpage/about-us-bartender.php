@@ -8,14 +8,6 @@
 	<title>Oldstory – Whiskey Bar HTML</title>
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/core.animation.min.css" />
@@ -64,231 +56,114 @@
 </header>
 
 <nav class="menu_pushy_nav_area pushy pushy-left scheme_dark">
-	<div class="pushy_inner">
-		<a href="#" class="close-pushy"></a>
-		<div class="logo">
-			<a href="index.php">
-				<img src="images/logo.png" class="logo_side" alt="" width="132" height="54">
-			</a>
-		</div>
-		<ul id="menu_pushy" class="menu_pushy_nav">
-			<li class="menu-item menu-item-object-page ">
-				<a href="index.php">Home</a>
-			</li>
-			<li class="menu-item  menu-item-has-children">
-				<a href="#">Features</a>
-				<ul class="sub-menu">
-					<li class="menu-item menu-item-object-page ">
-						<a href="features-BarPage.php">Bar Page</a>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="features-DrinkerPage.php">Drinker Page</a>
-					</li>
-					<li class="menu-item ">
-						<a href="features-BeerPage.php">Beer Page</a>
-					</li>
-					<li class="menu-item  menu-item-has-children">
-						<a href="#">Gallery</a>
-						<ul class="sub-menu">
+					<div class="pushy_inner">
+						<a href="#" class="close-pushy"></a>
+						<div class="logo">
+							<a href="index.php">
+								<img src="images/logo.png" class="logo_side" alt="" width="132" height="54">
+							</a>
+						</div>
+						<ul id="menu_pushy" class="menu_pushy_nav">
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-masonry.php">Masonry</a>
+								<a href="index.php">Home</a>
+							</li>
+							<li class="menu-item current-menu-ancestor menu-item-has-children">
+								<a href="#">Features</a>
+								<ul class="sub-menu">
+									<li class="menu-item menu-item-object-page ">
+										<a href="features-BarPage.php">Bar Page</a>
+									</li>
+									<li class="menu-item menu-item-object-page ">
+										<a href="features-DrinkerPage.php">Drinker Page</a>
+									</li>
+									<li class="menu-item ">
+										<a href="features-BeerPage.php">Beer Page</a>
+									</li>
+								</ul>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-grid.php">Grid</a>
+								<a href="features-query.php">SQL QUERY INTERFACE</a>
 							</li>
 							<li class="menu-item menu-item-object-page ">
-								<a href="features-gallery-cobbles.php">Cobbles</a>
+								<a href="modification.php">Modification</a>
+							</li>
+							<li class="menu-item menu-item-has-children ">
+								<a href="#">About us</a>
+								<ul class="sub-menu">
+									<li class="menu-item menu-item-object-page ">
+										<a href="about-us-about-us.php">About us</a>
+									</li>
+									<li class="menu-item ">
+										<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="menu-item menu-item-object-page ">
+								<a href="contacts.php">Contacts</a>
 							</li>
 						</ul>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-item menu-item-has-children current-menu-ancestor">
-				<a href="#">About us</a>
-				<ul class="sub-menu">
-					<li class="menu-item menu-item-object-page ">
-						<a href="about-us-about-us.php">About us</a>
-					</li>
-					<li class="menu-item current-menu-item">
-						<a href="about-us-bartender.php">Creater&#8217;s Page</a>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-item menu-item-has-children ">
-				<a href="#">News</a>
-				<ul class="sub-menu">
-					<li class="menu-item ">
-						<a href="news-post-formats.php">Post Formats</a>
-					</li>
-					<li class="menu-item ">
-						<a href="news-classic.php">Classic Style</a>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">Masonry Layout</a>
-						<ul class="sub-menu">
-							<li class="menu-item ">
-								<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
-							</li>
-							<li class="menu-item ">
-								<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">Portfolio Layout</a>
-						<ul class="sub-menu">
-							<li class="menu-item ">
-								<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
-							</li>
-							<li class="menu-item ">
-								<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-item menu-item-object-page ">
-				<a href="menu.php">Menu</a>
-			</li>
-			<li class="menu-item menu-item-has-children ">
-				<a href="#">Store</a>
-				<ul class="sub-menu">
-					<li class="menu-item menu-item-object-page ">
-						<a href="store-shop.php">Shop</a>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="store-cart.php">Cart</a>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="store-checkout.php">Checkout</a>
-					</li>
-				</ul>
-			</li>
-			<li class="menu-item menu-item-object-page ">
-				<a href="contacts.php">Contacts</a>
-			</li>
-		</ul>
-	</div>
-</nav>
+					</div>
+				</nav>
 
-<!-- Site Overlay -->
-<div class="site-overlay"></div>
-<div class="header_mobile">
-	<div class="content_wrap">
-		<div class="menu_button icon-menu"></div>
-		<div class="logo">
-			<a href="index.php">
-				<img src="images/logo.png" class="logo_main" alt="" width="132" height="54">
-			</a>
-		</div>
-	</div>
-	<div class="side_wrap">
-		<div class="close">Close</div>
-		<div class="panel_top">
-			<nav class="menu_main_nav_area">
-				<ul id="menu_main" class="menu_main_nav">
-					<li class="menu-item menu-item-object-page ">
-						<a href="index.php">Home</a>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">Features</a>
-						<ul class="sub-menu">
-							<li class="menu-item menu-item-object-page ">
-								<a href="features-BarPage.php">Bar Page</a>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="features-DrinkerPage.php">Drinker Page</a>
-							</li>
-							<li class="menu-item ">
-								<a href="features-BeerPage.php">Beer Page</a>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">Gallery</a>
-								<ul class="sub-menu">
+				<!-- Site Overlay -->
+				<div class="site-overlay"></div>
+				<div class="header_mobile">
+					<div class="content_wrap">
+						<div class="menu_button icon-menu"></div>
+						<div class="logo">
+							<a href="index.php">
+								<img src="images/logo.png" class="logo_main" alt="" width="132" height="54">
+							</a>
+						</div>
+					</div>
+					<div class="side_wrap">
+						<div class="close">Close</div>
+						<div class="panel_top">
+							<nav class="menu_main_nav_area">
+								<ul id="menu_main" class="menu_main_nav">
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-masonry.php">Masonry</a>
+										<a href="index.php">Home</a>
+									</li>
+									<li class="menu-item current-menu-ancestor menu-item-has-children">
+										<a href="#">Features</a>
+										<ul class="sub-menu">
+											<li class="menu-item menu-item-object-page ">
+												<a href="features-BarPage.php">Bar Page</a>
+											</li>
+											<li class="menu-item menu-item-object-page ">
+												<a href="features-DrinkerPage.php">Drinker Page</a>
+											</li>
+											<li class="menu-item ">
+												<a href="features-BeerPage.php">Beer Page</a>
+											</li>
+										</ul>
 									</li>
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-grid.php">Grid</a>
+										<a href="features-query.php">SQL QUERY INTERFACE</a>
 									</li>
+									<li class="menu-item menu-item-has-children ">
+										<a href="#">About us</a>
+										<ul class="sub-menu">
+											<li class="menu-item menu-item-object-page ">
+												<a href="about-us-about-us.html">About us</a>
+											</li>
+											<li class="menu-item ">
+												<a href="about-us-bartender.html">Bartender&#8217;s Page</a>
+											</li>
+										</ul>
+									</li>
+									
 									<li class="menu-item menu-item-object-page ">
-										<a href="features-gallery-cobbles.php">Cobbles</a>
+										<a href="contacts.html">Contacts</a>
 									</li>
 								</ul>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-has-children current-menu-ancestor">
-						<a href="#">About us</a>
-						<ul class="sub-menu">
-							<li class="menu-item menu-item-object-page ">
-								<a href="about-us-about-us.php">About us</a>
-							</li>
-							<li class="menu-item current-menu-item">
-								<a href="about-us-bartender.php">Bartender&#8217;s Page</a>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">News</a>
-						<ul class="sub-menu">
-							<li class="menu-item ">
-								<a href="news-post-formats.php">Post Formats</a>
-							</li>
-							<li class="menu-item ">
-								<a href="news-classic.php">Classic Style</a>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">Masonry Layout</a>
-								<ul class="sub-menu">
-									<li class="menu-item ">
-										<a href="news-masonry-layout-2-columns.php">Masonry (2 columns)</a>
-									</li>
-									<li class="menu-item ">
-										<a href="news-masonry-layout-3-columns.php">Masonry (3 columns)</a>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item menu-item-has-children ">
-								<a href="#">Portfolio Layout</a>
-								<ul class="sub-menu">
-									<li class="menu-item ">
-										<a href="news-portfolio-layout-2-columns.php">Portfolio (2 columns)</a>
-									</li>
-									<li class="menu-item ">
-										<a href="news-portfolio-layout-3-columns.php">Portfolio (3 columns)</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="menu.php">Menu</a>
-					</li>
-					<li class="menu-item menu-item-has-children ">
-						<a href="#">Store</a>
-						<ul class="sub-menu">
-							<li class="menu-item menu-item-object-page ">
-								<a href="store-shop.php">Shop</a>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="store-cart.php">Cart</a>
-							</li>
-							<li class="menu-item menu-item-object-page ">
-								<a href="store-checkout.php">Checkout</a>
-							</li>
-						</ul>
-					</li>
-					<li class="menu-item menu-item-object-page ">
-						<a href="contacts.php">Contacts</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<div class="panel_bottom"></div>
-	</div>
-	<div class="mask"></div>
-</div>
+							</nav>
+						</div>
+						<div class="panel_bottom"></div>
+					</div>
+					<div class="mask"></div>
+				</div>
 
 
 	        <div class="top_panel_title top_panel_style_8 breadcrumbs_present scheme_original">
@@ -319,7 +194,7 @@
 													<h3 class="sc_title margin_bottom_null mtn035em">Yuyang && Zihao</h3>
 													<div class="mbn_ne">
 														<p>Creater</p>
-														<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla.</p>
+														<p></p>
 													</div>
 													<div class="sc_skills sc_skills_bar sc_skills_horizontal mw480 mt16rem" data-type="bar" data-caption="Skills" data-dir="horizontal">
 														<div class="sc_skills_info">

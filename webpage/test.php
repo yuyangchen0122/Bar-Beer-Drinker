@@ -382,9 +382,42 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 		$inputBillID=$_POST['billID'];
 
+		$query2 = "SELECT BILL.BillID
+		FROM BarBeerDrinker.BILL;";
+		$result2=mysqli_query($db,$query2);
+		while($row = mysqli_fetch_array($result2))
+		{
+			$bill_id = $row["BillID"];
+		}
+		echo "<h3>The Bill ID you just input is:$inputBillID</h3><br>";
+		if ($inputBillID >= $bill_id)
+		{
+			echo '<h2>Valid Bill ID.</h2><br>';
+		}else{
+			array_push($errors, "This Bill ID has existed");
+			echo '<h2>Invalid Bill ID</h2>';
+		}
+
 		$input_ssn=$_POST['ssn'];
 
-		echo "Your SSN: $input_ssn<br>";
+		echo "<h3>Your SSN: $input_ssn</h3><br>";
+
+		$query7 = "SELECT *
+		FROM BarBeerDrinker.DRINKER
+		WHERE DRINKER.SSN = '$input_ssn';";
+		if($result7=mysqli_query($db,$query7)){
+
+		if(mysqli_num_rows($result7)>0){
+
+		echo '<h2>Valid Drinker Selected!</h2>';
+
+		}else{
+
+		array_push($errors, "Sorry.This drinker is not existed in our database.");
+		echo '<h2>Sorry.This drinker is not existed in our database.</h2>';
+
+		}
+		}
 
 		$month=$_POST['month'];
 
@@ -394,7 +427,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 		$date_value="$year-$month-$dt";
 
-		echo "YYYY-mm-dd format :$date_value<br>";
+		echo "<h3>YYYY-mm-dd format :$date_value</h3><br>";
 
 		$hour=$_POST['hour'];
 
@@ -403,7 +436,30 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 		$second=$_POST['second'];
 
 		$time_value="$hour:$minute:$second";
-		echo "hh/mm/ss format :$time_value<br>";
+		echo "<h3>hh/mm/ss format :$time_value</h3><br>";
+
+		$query1 = "SELECT * FROM
+		(SELECT BAR.id, BAR.Bar, select_state.id as state_id, BAR.License, BAR.Open, BAR.Close FROM BarBeerDrinker.BAR
+		LEFT JOIN BarBeerDrinker.select_state
+		ON BAR.State=select_state.State) AS temp 
+		WHERE temp.id = '$bar1'";
+		$result1 = mysqli_query($db,$query1);
+		while($row = mysqli_fetch_array($result1))
+		{
+			$open_time = $row["Open"];
+			$close_time = $row["Close"];
+			echo "<h3>The Open time for this bar is:$open_time</h3><br>";
+			echo "<h3>The Close for this bar is:$close_time</h3><br>";
+
+		}
+		if (strtotime($time_value) > strtotime($open_time) && strtotime($time_value) < strtotime($close_time))
+		{
+			echo 'valid time selected.<br>';
+
+		}else{
+			array_push($errors, "This bar closes at the time of your choosing");
+			echo '<h2>This bar closes at the time of your choosing</h2>';
+		}
 
 		$state1=$_POST['State'];
 		$bar1=$_POST['Bar'];
@@ -411,36 +467,47 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 		if (empty($inputBillID)) {
 			array_push($errors, "Bill ID is required");
+			echo '<h2>Bill ID is required</h2>';
 		}
 		if (empty($input_ssn)) {
 			array_push($errors, "Your SSN is required");
+			echo '<h2>Your SSN is required</h2>';
 		}
 		if (empty($month)) {
 			array_push($errors, "Month is required");
+			echo '<h2>Month is required</h2>';
 		}
 		if (empty($dt)) {
 			array_push($errors, "Day is required");
+			echo '<h2>Day is required</h2>';
 		}
 		if (empty($year)) {
 			array_push($errors, "Year is required");
+			echo '<h2>Year is required</h2>';
 		}
 		if (empty($hour)) {
 			array_push($errors, "Hour is required");
+			echo '<h2>Hour is required</h2>';
 		}
 		if (empty($minute)) {
 			array_push($errors, "Minute is required");
+			echo '<h2>Minute is required</h2>';
 		}
 		if (empty($second)) {
 			array_push($errors, "Second is required");
+			echo '<h2>Second is required</h2>';
 		}
 		if (empty($state1)) {
 			array_push($errors, "State is required");
+			echo '<h2>State is required</h2>';
 		}
 		if (empty($bar1)) {
 			array_push($errors, "Bar is required");
+			echo '<h2>Bar is required</h2>';
 		}
 		if (empty($item1)) {
 			array_push($errors, "Item is required");
+			echo '<h2>Item is required</h2>';
 		}
 
 		$query3 = "
@@ -451,93 +518,45 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 		$result3 = mysqli_query($db,$query3);
 		while ($row = mysqli_fetch_array($result3)) {
 			$state_selected = $row["State"];
-			echo "The State you selected is:$state_selected<br>";
+			echo "<h3>The State you selected is:$state_selected</h3><br>";
 		}
 
 		$query4 = "
-		SELECT * 
-		FROM BarBeerDrinker.select_bar
-		WHERE id = '$bar1'
+		SELECT * FROM
+		(SELECT BAR.id, BAR.Bar, select_state.id as state_id FROM BarBeerDrinker.BAR
+		LEFT JOIN BarBeerDrinker.select_state
+		ON BAR.State=select_state.State) AS temp
+		WHERE temp.id = '$bar1'
 		";
 		$result4 = mysqli_query($db,$query4);
 		while ($row = mysqli_fetch_array($result4)) {
 			$bar_selected = $row["Bar"];
-			echo "The Bar you selected is:$bar_selected<br>";
+			echo "<h3>The Bar you selected is:$bar_selected</h3><br>";
 		}
 
 		$query5 = "
-		SELECT * 
-		FROM BarBeerDrinker.select_item
-		WHERE id = '$item1'
+		SELECT * FROM
+		(SELECT Sells.ItemID as id, BAR.Bar, Sells.Item, select_state.id as state_id, BAR.id as bar_id FROM BarBeerDrinker.Sells
+		LEFT JOIN BarBeerDrinker.BAR ON Sells.Bar = BAR.Bar
+		LEFT JOIN BarBeerDrinker.select_state
+		ON BAR.State=select_state.State) AS temp
+		WHERE temp.id = '$item1'
 		";
 		$result5 = mysqli_query($db,$query5);
 		while ($row = mysqli_fetch_array($result5)) {
 			$item_selected = $row["Item"];
-			echo "The Bar you selected is:$item_selected<br>";
+			echo "<h3>The Bar you selected is:$item_selected</h3><br>";
 		}
 
-		$query6 = "SELECT * FROM BarBeerDrinker.BAR
-		LEFT JOIN BarBeerDrinker.select_bar 
-		ON BAR.Bar = select_bar.Bar
-		WHERE select_bar.id = $bar1";
+		$query6 = "SELECT * FROM
+		(SELECT BAR.id, BAR.Bar, select_state.id as state_id, BAR.License FROM BarBeerDrinker.BAR
+		LEFT JOIN BarBeerDrinker.select_state
+		ON BAR.State=select_state.State) AS temp
+		WHERE temp.id = $bar1";
 		$result6 = mysqli_query($db, $query6);
 		while($row = mysqli_fetch_array($result6)){
 			$bar_license = $row['License'];
-			echo "The Bar license is: $bar_license<br>";
-		}
-
-		$query7 = "SELECT *
-		FROM BarBeerDrinker.DRINKER
-		WHERE DRINKER.SSN = '$input_ssn';";
-		if($result7=mysqli_query($db,$query7)){
-
-		if(mysqli_num_rows($result7)>0){
-
-		echo 'Valid Drinker Selected!';
-
-		}else{
-
-		array_push($errors, "Sorry.This drinker is not existed in our database.");
-
-		}
-
-		}
-
-		$query2 = "SELECT BILL.BillID
-		FROM BarBeerDrinker.BILL;";
-		$result2=mysqli_query($db,$query2);
-		while($row = mysqli_fetch_array($result2))
-		{
-			$bill_id = $row["BillID"];
-		}
-		echo "The Bill ID you just input is:$inputBillID<br>";
-		if ($inputBillID >= $bill_id)
-		{
-			echo 'valid Bill ID selected.<br>';
-		}else{
-			array_push($errors, "This Bill ID has existed");
-		}
-
-
-		$query1 = "SELECT select_bar.id, select_bar.Bar, BAR.Open, BAR.Close 
-		FROM BarBeerDrinker.BAR 
-		LEFT JOIN BarBeerDrinker.select_bar ON BAR.id=select_bar.id 
-		WHERE select_bar.id = '$bar1'";
-		$result1 = mysqli_query($db,$query1);
-		while($row = mysqli_fetch_array($result1))
-		{
-			$open_time = $row["Open"];
-			$close_time = $row["Close"];
-			echo "The Open time for this bar is:$open_time<br>";
-			echo "The Close for this bar is:$close_time<br>";
-
-		}
-		if (strtotime($time_value) > strtotime($open_time) && strtotime($time_value) < strtotime($close_time))
-		{
-			echo 'valid time selected.<br>';
-
-		}else{
-			array_push($errors, "This bar closes at the time of your choosing");
+			echo "<h3>The Bar license is: $bar_license</h3><br>";
 		}
 
 		if (count($errors) == 0) {
@@ -545,10 +564,10 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 			mysqli_query($db, $query9);
 			$query10 = "INSERT INTO BarBeerDrinker.testing2 (License, BillID, ItemID) VALUES ('$bar_license', '$inputBillID', '$item1')";
 			mysqli_query($db, $query10);
-			echo "Tansaction Updated successfully! Thanks!";
+			echo "<h1>Tansaction Updated successfully! Thanks!</h1>";
 		}
 		else{
-			echo "Sorry, Transaction Updated failed! Please update again! Thanks! ";
+			echo "<h1>Sorry, Transaction Updated failed! Please update again! Thanks! </h1>";
 		}		
 	}
 	?>

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-	<title>Oldstory – Whiskey Bar HTML</title>
+	<title>Bar Beer Drinker</title>
 	
 	
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />

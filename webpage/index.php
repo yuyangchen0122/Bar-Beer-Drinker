@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-	<title>Best 336 Bar Project</title>
+	<title>Bar Beer Drinker</title>
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/essential-grid/public/assets/css/settings.css">
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/essential-grid/public/assets/css/lightbox.css">
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/revslider/public/assets/css/settings.css">

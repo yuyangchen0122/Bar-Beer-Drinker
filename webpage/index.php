@@ -238,7 +238,7 @@
 							data-splitout="none"
 							data-responsive_offset="on"
 							style="z-index: 7; white-space: nowrap;">
-							oldstory
+							We provides
 						</div>
 						<!-- LAYER NR. 4 -->
 						<div class="tp-caption MediumWhite   tp-resizeme"
@@ -255,7 +255,7 @@
 						data-splitout="none"
 						data-responsive_offset="on"
 						style="z-index: 8; white-space: nowrap;">
-						for long evenings
+						all info you want to know
 					</div>
 					<!-- LAYER NR. 5 -->
 					<div class="tp-caption ButtonFont   tp-resizeme"
@@ -313,7 +313,7 @@
 			data-splitout="none"
 			data-responsive_offset="on"
 			style="z-index: 6; white-space: nowrap;">
-			a mini-vacation<br>you can take
+			This is maybe<br>One of
 		</div>
 		<!-- LAYER NR. 3 -->
 		<div class="tp-caption MediumWhite   tp-resizeme"
@@ -330,7 +330,7 @@
 		data-splitout="none"
 		data-responsive_offset="on"
 		style="z-index: 7; white-space: nowrap;">
-		any day of the week
+		the most detailed project
 	</div>
 	<!-- LAYER NR. 4 -->
 	<div class="tp-caption ButtonFont   tp-resizeme"
@@ -388,7 +388,7 @@ data-splitin="none"
 data-splitout="none"
 data-responsive_offset="on"
 style="z-index: 6; white-space: nowrap;">
-The best place to<br>share
+For more<br>info
 </div>
 <!-- LAYER NR. 3 -->
 <div class="tp-caption MediumWhite   tp-resizeme"
@@ -405,7 +405,7 @@ data-splitin="none"
 data-splitout="none"
 data-responsive_offset="on"
 style="z-index: 7; white-space: nowrap;">
-with best friends
+click MENU button
 </div>
 <!-- LAYER NR. 4 -->
 <div class="tp-caption ButtonFont   tp-resizeme"
@@ -452,16 +452,11 @@ style="z-index: 8; white-space: nowrap;">
 								<h5 class="sc_title sc_align_left margin_top_small margin_bottom_tiny">Shortly About Us</h5>
 								<h1 class="sc_title sc_align_left margin_top_null margin_bottom_small">Welcome</h1>
 								<h3 class="sc_title sc_title_style_1">
-									Our Cocktail Menu is Inspired<br />
-									by Vintage and Contemporary<br />
-									Recipes
+									Our page provides you <br>all access to the information <br>in our Bar-Beer-Drinker Database.
 								</h3>
 								<div class="mbn_ne">
 									<p>
-										Located in midtown and inspired by each city<br />
-										block, Bar embodies the energy of New York with<br />
-										the laid back atmosphere of living room.<br />
-										Designed with relaxed approach to good food and alcohol in mind.
+										From the menu bar on the top right corner, <br>you can access Bar, Beer, Drinker Page. <br>All details of the information can be found in these pages.
 									</p>
 								</div>
 								<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_size_small margin_top_medium">Find Out More</a>
@@ -484,8 +479,8 @@ style="z-index: 8; white-space: nowrap;">
 																<h2 class="sc_title sc_title_style_2 white sc_align_center">Hours</h2>
 																<div class="sc_title sc_align_center white">
 																	<p class="margin_bottom_no">
-																		Mn &#8211; Tue 3Pm – 04Am<br />
-																		Fr &#8211; Sun 2pm – 04Am
+																		Mn &#8211; Tue 12Pm – 12Am<br />
+																		Fr &#8211; Sun 12pm – 12Am
 																	</p>
 																</div>
 															</div>

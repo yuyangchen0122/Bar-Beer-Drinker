@@ -322,7 +322,8 @@
 								LEFT JOIN BarBeerDrinker.Sells ON BAR.License = Sells.License
 								LEFT JOIN BarBeerDrinker.Items ON Sells.Item = Items.Item
 								WHERE DRINKER.SSN = '$person2' AND Items.Category = 'beer'
-								GROUP BY Items.Item;";
+								GROUP BY Items.Item
+								ORDER BY AmountOfBeer DESC;";
 								$result2 = mysqli_query($db, $query2);
 							}
 							?>
@@ -384,7 +385,7 @@
 													 LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 													 LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
 													 WHERE DRINKER.SSN = '$person3'
-													 GROUP BY BILL.Date";
+													 GROUP BY BILL.BillID";
 								$result3 = mysqli_query($db, $query3);
 							}
 								?>
@@ -399,7 +400,7 @@
 										['Bar','TotalAmount'],
 										<?php
 										while($row = mysqli_fetch_assoc($result3)){
-											echo "['".$row["Bar"]."', ".$row["TotalAmount"]."],";
+											echo "['".$row["Bar"]."-".$row["Date"]."', ".$row["TotalAmount"]."],";
 										}
 										?>
 									]);

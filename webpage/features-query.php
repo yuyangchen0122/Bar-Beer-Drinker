@@ -214,7 +214,7 @@
 												</div>
 												<div>
 													<div class="table-responsive">
-														<table class="table table-striped">
+														<table id="query_table" class="table table-striped">
 															<?php
 															if (isset($_POST['modify_query'])) {
 																$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
@@ -222,7 +222,7 @@
 																$result = mysqli_query($db,$query);
 
 																if (!$result) {
-																	die("Query to show fields from table failed");
+																	die("Something wrong with your query, so table wouldn't be shown.");
 																}
 
 																$fields_num = mysqli_num_fields($result);
@@ -334,8 +334,6 @@
 
 		<a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
-		<script type='text/javascript' src='js/custom/__main.js'></script>
-		<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
 		<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
 		<script type='text/javascript' src='js/custom/jquery.slidemenu.min.js'></script>
 		<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
@@ -354,6 +352,6 @@
 
 	<script>
 		$(document).ready(function(){
-			$('#drinker_data').DataTable();
+			$('#query_table').DataTable();
 		});
 	</script>

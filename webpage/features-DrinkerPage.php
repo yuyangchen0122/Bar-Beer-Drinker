@@ -216,7 +216,7 @@
 
 				<div class="container">
 					<h3 class="page_title">All his/her transactions ordered by time and grouped by different bars.</h1>
-						<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
+						<h3 class="page_subtitle">Please Enter a Drinker SSN in the Following Text Area</h3>
 
 						<form action="features-DrinkerPage.php" method="POST">
 
@@ -225,7 +225,7 @@
 							margin: 8px 0;
 							box-sizing: border-box;
 							border: 2px solid black;
-							border-radius: 4px;" placeholder="Please Enter the Drinker Name"
+							border-radius: 4px;" placeholder="Please Enter the Drinker SSN"
 							value="<?php echo $inputDrinker1;?>" name="inputDrinker1" />
 
 
@@ -241,7 +241,7 @@
 							LEFT JOIN BarBeerDrinker.Transaction ON BILL.BILLID = Transaction.BillID
 							LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
 							LEFT JOIN BarBeerDrinker.BAR ON Transaction.License = BAR.License
-							WHERE DRINKER.Name = '$person1'
+							WHERE DRINKER.SSN = '$person1'
 							ORDER BY datetime;";
 
 							$result1 = mysqli_query($db, $query1);
@@ -295,7 +295,7 @@
 
 					<div class="container">
 						<h3 class="page_title">Bar graphs of beers s/he orders the most</h1>
-							<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
+							<h3 class="page_subtitle">Please Enter a Drinker SSN in the Following Text Area</h3>
 							<form action="features-DrinkerPage.php" method="post">
 
 								<input style="    width: 100%;
@@ -304,7 +304,7 @@
 								box-sizing: border-box;
 								border: 2px solid black;
 								border-radius: 4px;
-								"type="text" placeholder="Please Enter the Drinker Name"
+								"type="text" placeholder="Please Enter the Drinker SSN"
 								value="<?php echo $person2;?>" name="inputDrinker2" />
 
 
@@ -321,7 +321,7 @@
 								LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 								LEFT JOIN BarBeerDrinker.Sells ON BAR.License = Sells.License
 								LEFT JOIN BarBeerDrinker.Items ON Sells.Item = Items.Item
-								WHERE DRINKER.Name = '$person2' AND Items.Category = 'beer'
+								WHERE DRINKER.SSN = '$person2' AND Items.Category = 'beer'
 								GROUP BY Items.Item;";
 								$result2 = mysqli_query($db, $query2);
 							}
@@ -358,7 +358,7 @@
 
 					<div class="container">
 						<h3 class="page_subtitle">Bar graph of his/her spending in different bars, on different dates/weeks/months</h3>
-							<h3 class="page_subtitle">Please Enter a Drinker Name in the Following Text Area</h3>
+							<h3 class="page_subtitle">Please Enter a Drinker SSN in the Following Text Area</h3>
 							<form action="features-DrinkerPage.php" method="post">
 
 								<input style="    width: 100%;
@@ -367,7 +367,7 @@
 								box-sizing: border-box;
 								border: 2px solid black;
 								border-radius: 4px;
-								"type="text" placeholder="Please Enter the Drinker Name"
+								"type="text" placeholder="Please Enter the Drinker SSN"
 								value="<?php echo $person3;?>" name="inputDrinker3" />
 
 
@@ -383,7 +383,7 @@
 													 LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
 													 LEFT JOIN BarBeerDrinker.BAR ON BILL.License = BAR.License
 													 LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-													 WHERE DRINKER.Name = '$person3'
+													 WHERE DRINKER.SSN = '$person3'
 													 GROUP BY BILL.Date";
 								$result3 = mysqli_query($db, $query3);
 							}

@@ -85,6 +85,9 @@
 							<li class="menu-item menu-item-object-page ">
 								<a href="modification.php">Modification</a>
 							</li>
+							<li class="menu-item menu-item-object-page ">
+								<a href="ER-Diagram.php">ER-Diagram</a>
+							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">About us</a>
 								<ul class="sub-menu">
@@ -139,6 +142,12 @@
 									</li>
 									<li class="menu-item menu-item-object-page ">
 										<a href="features-query.php">SQL QUERY INTERFACE</a>
+									</li>
+									<li class="menu-item menu-item-object-page ">
+										<a href="modification.php">Modification</a>
+									</li>
+									<li class="menu-item menu-item-object-page ">
+										<a href="ER-Diagram.php">ER-Diagram</a>
 									</li>
 									<li class="menu-item menu-item-has-children ">
 										<a href="#">About us</a>
@@ -223,7 +232,7 @@
 										<article class="post_item post_item_404">
 											<div class="post_content">
 												<div class="image404">
-													<img class="image-404" src="images/404_images.png" alt="">
+													<img class="image-404" src="images/Scheme.png" alt="">
 												</div>
 												<h1 class="page_title">Feel free to modify our database</h1>
 												<h3 class="page_subtitle">Please type in your query here</h3>
@@ -405,7 +414,7 @@
 									</aside><aside class="widget_number_2 column-1_3 widget widget_text">
 										<h2 class="widget_title">Phones &#038; Faxes</h2>
 										<div class="textwidget">
-											+1(732)581-1878<br>
+											+1(929)217-4708<br>
 											+1(732)799-9275
 										</div>
 									</aside><aside class="widget_number_3 column-1_3 widget widget_text">

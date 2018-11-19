@@ -8,7 +8,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-	<title>Best 336 Bar Project</title>
+	<title>Bar Beer Drinker</title>
 
 
 	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/mediaelement/mediaelementplayer.min.css">
@@ -100,6 +100,9 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 							<li class="menu-item menu-item-object-page ">
 								<a href="modification.php">Modification</a>
 							</li>
+							<li class="menu-item menu-item-object-page ">
+								<a href="ER-Diagram.php">ER-Diagram</a>
+							</li>
 							<li class="menu-item menu-item-has-children ">
 								<a href="#">About us</a>
 								<ul class="sub-menu">
@@ -151,6 +154,12 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 												<a href="features-BeerPage.php">Beer Page</a>
 											</li>
 										</ul>
+									</li>
+									<li class="menu-item menu-item-object-page ">
+										<a href="modification.php">Modification</a>
+									</li>
+									<li class="menu-item menu-item-object-page ">
+										<a href="ER-Diagram.php">ER-Diagram</a>
 									</li>
 									<li class="menu-item menu-item-object-page ">
 										<a href="features-query.php">SQL QUERY INTERFACE</a>
@@ -216,12 +225,12 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					if (isset($_POST['typedBeer1'])) {
 						$beer1=$_POST['inputBeer1'];
 						$query1 = "SELECT BILL.License, COUNT(BILL.License) AS TotalAmount
-									FROM BarBeerDrinker.BILL
-									LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.BillID
-									LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID=Sells.ItemID
-									WHERE Sells.Item = '$beer1'
-									GROUP BY BILL.License
-									LIMIT 10";
+						FROM BarBeerDrinker.BILL
+						LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.BillID
+						LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID=Sells.ItemID
+						WHERE Sells.Item = '$beer1'
+						GROUP BY BILL.License
+						LIMIT 10";
 						$result1 = mysqli_query($db, $query1);
 					}
 					?>
@@ -287,14 +296,14 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					if (isset($_POST['typedBeer2'])) {
 						$beer2=$_POST['inputBeer2'];
 						$query2 = "SELECT DRINKER.Name, COUNT(BILL.SSN) AS TotalAmount
-									FROM BarBeerDrinker.BILL
-									LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.BillID
-									LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
-									LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
-									WHERE Sells.Item = '$beer2'
-									GROUP BY BILL.SSN
-									ORDER BY TotalAmount DESC
-									LIMIT 10";
+						FROM BarBeerDrinker.BILL
+						LEFT JOIN BarBeerDrinker.Transaction ON BILL.BillID=Transaction.BillID
+						LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
+						LEFT JOIN BarBeerDrinker.DRINKER ON BILL.SSN = DRINKER.SSN
+						WHERE Sells.Item = '$beer2'
+						GROUP BY BILL.SSN
+						ORDER BY TotalAmount DESC
+						LIMIT 10";
 						$result2 = mysqli_query($db, $query2);
 					}
 					?>
@@ -341,7 +350,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 				<div class="container">
 					<?php include 'features-BeerPage-Time-Distribution.php';?>
 				</div>
-					
+				
 
 			</div>
 
@@ -422,30 +431,30 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 
 
 
-			<a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
+<a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
 
 
 
-			<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
-			<script type='text/javascript' src='js/custom/jquery.slidemenu.min.js'></script>
-			<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
-			<script type='text/javascript' src='js/custom/core.init.js'></script>
-			<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
-			<script type="text/javascript" src="js/vendor/mediaelement/mediaelement-and-player.min.js"></script>
-			<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
-			<script type='text/javascript' src='js/vendor/core.min.js'></script>
-			<script type='text/javascript' src='js/vendor/widget.min.js'></script>
-			<script type='text/javascript' src='js/vendor/tabs.min.js'></script>
-			<script type='text/javascript' src='js/vendor/effect.min.js'></script>
-			<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
-			<script type="text/javascript" src="js/vendor/swiper/swiper.min.js"></script>
+<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
+<script type='text/javascript' src='js/custom/jquery.slidemenu.min.js'></script>
+<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
+<script type='text/javascript' src='js/custom/core.init.js'></script>
+<script type='text/javascript' src='js/custom/theme.init.min.js'></script>
+<script type="text/javascript" src="js/vendor/mediaelement/mediaelement-and-player.min.js"></script>
+<script type='text/javascript' src='js/custom/theme.shortcodes.js'></script>
+<script type='text/javascript' src='js/vendor/core.min.js'></script>
+<script type='text/javascript' src='js/vendor/widget.min.js'></script>
+<script type='text/javascript' src='js/vendor/tabs.min.js'></script>
+<script type='text/javascript' src='js/vendor/effect.min.js'></script>
+<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
+<script type="text/javascript" src="js/vendor/swiper/swiper.min.js"></script>
 
-			<script type="text/javascript" src="js/vendor/accordion.min.js"></script>
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
-			<script type="text/javascript" src="js/custom/core.googlemap.min.js"></script>
-			<script type="text/javascript" src="js/vendor/chart.min.js"></script>
+<script type="text/javascript" src="js/vendor/accordion.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
+<script type="text/javascript" src="js/custom/core.googlemap.min.js"></script>
+<script type="text/javascript" src="js/vendor/chart.min.js"></script>
 
-			<script type="text/javascript" src="js/vendor/prettyphoto/jquery.prettyPhoto.min.js"></script>
+<script type="text/javascript" src="js/vendor/prettyphoto/jquery.prettyPhoto.min.js"></script>
 
 
 

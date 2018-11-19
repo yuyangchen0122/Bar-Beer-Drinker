@@ -1,3 +1,6 @@
+<?php
+$db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 'yuyangchen0122', 'a123123q45', 'RUCS336Group66');
+?>
 <!DOCTYPE html>
 <html lang="en-US" class="scheme_original">
 <head>
@@ -6,29 +9,31 @@
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 	<title>Bar Beer Drinker</title>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/mediaelement/mediaelementplayer.min.css">
+
 	<link rel="stylesheet" type="text/css" media="all" href="css/fontello/css/fontello.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/core.animation.min.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/theme.shortcodes.css" />
-	
+	<link rel="stylesheet" type="text/css" media="all" href="css/plugin.instagram-widget.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="css/skin.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
-	
-	
+	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/swiper/swiper.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="js/vendor/prettyphoto/css/prettyPhoto.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 </head>
 
-<body class="page body_filled article_style_stretch scheme_original top_panel_above sidebar_hide">
+<body class="page body_filled article_style_stretch scheme_original top_panel_above sidebar_show sidebar_right">
 
 	<div class="body_wrap header_style_8">
 
@@ -186,112 +191,27 @@
 				<div class="top_panel_title top_panel_style_8 breadcrumbs_present scheme_original">
 					<div class="top_panel_title_inner top_panel_inner_style_8 breadcrumbs_present_inner">
 						<div class="content_wrap">
-							<div class="breadcrumbs"><a class="breadcrumbs_item home" href="#">Home</a><span class="breadcrumbs_delimiter"></span><span class="breadcrumbs_item current">Contacts</span>
+							<div class="breadcrumbs"><a class="breadcrumbs_item home" href="#">Home</a><span class="breadcrumbs_delimiter"></span><span class="breadcrumbs_item current">Typography</span>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="page_content_wrap page_paddings_no">
+				<div class="container">
+					<article class="post_item post_item_404">
+						<div class="post_content">
+							<div class="image404">
+								<img class="image-404" src="images/ER-Diagram.png" alt="">
+							</div>
+						</div>
+					</article>
 
-					<div class="content">
-						<article class="post_item post_item_single page">
+					<div class="container">
+						<article class="post_item post_item_404">
 							<div class="post_content">
-
-								<section class="spt36rem">
-									<div class="container">
-										<div class="columns_wrap sc_columns">
-											<div class="column-1_3 sc_column_item sc_column_item_1 odd first">
-												<div class="sc_section section_style_colored aligncenter bg_color_1">
-													<div class="sc_section_inner">
-														<div class="sc_section_overlay">
-															<div class="sc_section_content padding_on">
-																<h2 class="sc_title sc_align_center white mb01em">Hours</h2>
-																<div class="mbn_ne">
-																	<p class="white">Mon-Sun <br>24Hours<br />
-																	</p>
-																	<br>
-
-
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div><div class="column-1_3 sc_column_item even">
-												<div class="sc_section section_style_colored aligncenter bg_color_1">
-													<div class="sc_section_inner">
-														<div class="sc_section_overlay">
-															<div class="sc_section_content padding_on">
-																<h2 class="sc_title sc_align_center white mb01em">Address</h2>
-																<div class="mbn_ne">
-																	<p class="white">57 US Highway 1, New Brunswick<br />
-																	NJ 08901-8554</p>
-
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div><div class="column-1_3 sc_column_item odd">
-												<div class="sc_section section_style_colored aligncenter bg_color_1">
-													<div class="sc_section_inner">
-														<div class="sc_section_overlay">
-															<div class="sc_section_content padding_on">
-																<h2 class="sc_title sc_align_center white mb01em">Phones</h2>
-																<div class="mbn_ne">
-																	<p class="white">+1(929)217-4708<br />
-																	+1(732)799-9275</p>
-																	<br>
-
-
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
-
-								<section class="spv5rem">
-									<div class="container">
-										<div class="sc_form_wrap">
-											<div class="sc_form sc_form_style_form_1 contact_form_main aligncenter mw470">
-												<h5 class="sc_form_subtitle sc_item_subtitle">Have a Question?</h5>
-												<h1 class="sc_form_title">Get in Touch</h1>
-												<form method="post" action="include/contact-form.php">
-													<div class="sc_form_info">
-														<div class="sc_form_item sc_form_field label_over">
-															<label class="required" for="sc_form_username">Name</label>
-															<input type="text" name="name" id="sc_form_username" placeholder="Name *">
-														</div>
-														<div class="sc_form_item sc_form_field label_over">
-															<label class="required" for="sc_form_email">E-mail</label>
-															<input type="text" name="email" id="sc_form_email" placeholder="Email *">
-														</div>
-														<div class="sc_form_item sc_form_field label_over">
-															<label class="required" for="sc_form_subj">Subject</label>
-															<input type="text" name="subject" id="sc_form_subj" placeholder="Subject *">
-														</div>
-													</div>
-													<div class="sc_form_item sc_form_message label_over">
-														<label class="required" for="sc_form_message">Message</label>
-														<textarea  id="sc_form_message" class="textAreaSize" name="message" placeholder="Message *"></textarea>
-													</div>
-													<div class="sc_contact_form_button">
-														<div class="sc_form_item sc_form_button">
-															<button type="submit" name="contact_submit" class="sc_form_button">Send Message</button>
-														</div>
-													</div>
-													<div class="result sc_infobox"></div>
-												</form>
-											</div>
-										</div>
-									</div>
-								</section>
-
+								<div class="image404">
+									<img class="image-404" src="images/Scheme.png" alt="">
+								</div>
 							</div>
 						</article>
 					</div>
@@ -336,7 +256,7 @@
 							</div>
 						</div>
 					</div>
-				</footer>
+				</footer>	
 
 				<div class="copyright_wrap copyright_style_socials scheme_original">
 					<div class="copyright_wrap_inner">
@@ -365,22 +285,20 @@
 							</div>
 						</div>
 					</div>
-				</div>	 
+				</div> 
 
 			</div>
 
 		</div>
 
 
+
 		<a href="#" class="scroll_to_top icon-up" title="Scroll to top"></a>
+
+
 
 		<script type='text/javascript' src='js/vendor/jquery-1.12.3.min.js'></script>
 		<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
-
-
-
-
-
 		<script type='text/javascript' src='js/custom/__main.js'></script>
 		<script type='text/javascript' src='js/vendor/jquery.cookie.min.js'></script>
 		<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
@@ -396,14 +314,6 @@
 		<script type='text/javascript' src='js/vendor/effect.min.js'></script>
 		<script type='text/javascript' src='js/vendor/effect-fade.min.js'></script>
 
-
-
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
-		<script type="text/javascript" src="js/custom/core.googlemap.min.js"></script>
-
-
-
-		<script type="text/javascript" src="js/custom/_form_contact.js"></script>
 
 
 	</body>

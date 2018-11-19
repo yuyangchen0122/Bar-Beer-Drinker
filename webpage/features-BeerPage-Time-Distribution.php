@@ -27,7 +27,7 @@ $db = mysqli_connect('rucs336group66.cmbbmvtvxryw.us-east-1.rds.amazonaws.com', 
 					LEFT JOIN BarBeerDrinker.Sells ON Transaction.ItemID = Sells.ItemID
 					WHERE Sells.Item = '$beer3'
 					GROUP BY time_hour
-					ORDER BY time_hour DESC
+					ORDER BY time_hour ASC
 		";
 		$result3 = mysqli_query($db, $query3);
 	}
